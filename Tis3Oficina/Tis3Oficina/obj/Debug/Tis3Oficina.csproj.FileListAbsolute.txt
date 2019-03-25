@@ -1,0 +1,15 @@
+C:\dev\c#\tis3oficina\Tis3Oficina\Tis3Oficina\bin\Debug\Tis3Oficina.exe.config
+C:\dev\c#\tis3oficina\Tis3Oficina\Tis3Oficina\bin\Debug\Tis3Oficina.exe
+C:\dev\c#\tis3oficina\Tis3Oficina\Tis3Oficina\bin\Debug\Tis3Oficina.pdb
+C:\dev\c#\tis3oficina\Tis3Oficina\Tis3Oficina\obj\Debug\Tis3Oficina.csprojAssemblyReference.cache
+C:\dev\c#\tis3oficina\Tis3Oficina\Tis3Oficina\obj\Debug\MainWindow.g.cs
+C:\dev\c#\tis3oficina\Tis3Oficina\Tis3Oficina\obj\Debug\App.g.cs
+C:\dev\c#\tis3oficina\Tis3Oficina\Tis3Oficina\obj\Debug\Tis3Oficina_MarkupCompile.cache
+C:\dev\c#\tis3oficina\Tis3Oficina\Tis3Oficina\obj\Debug\Tis3Oficina_MarkupCompile.lref
+C:\dev\c#\tis3oficina\Tis3Oficina\Tis3Oficina\obj\Debug\MainWindow.baml
+C:\dev\c#\tis3oficina\Tis3Oficina\Tis3Oficina\obj\Debug\Tis3Oficina.g.resources
+C:\dev\c#\tis3oficina\Tis3Oficina\Tis3Oficina\obj\Debug\Tis3Oficina.Properties.Resources.resources
+C:\dev\c#\tis3oficina\Tis3Oficina\Tis3Oficina\obj\Debug\Tis3Oficina.csproj.GenerateResource.cache
+C:\dev\c#\tis3oficina\Tis3Oficina\Tis3Oficina\obj\Debug\Tis3Oficina.csproj.CoreCompileInputs.cache
+C:\dev\c#\tis3oficina\Tis3Oficina\Tis3Oficina\obj\Debug\Tis3Oficina.exe
+C:\dev\c#\tis3oficina\Tis3Oficina\Tis3Oficina\obj\Debug\Tis3Oficina.pdb
