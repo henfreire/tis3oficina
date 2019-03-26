@@ -95,9 +95,18 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="src\assets\icons\" />
+    <Folder Include="src\assets\images\" />
     <Folder Include="src\Config\" />
     <Folder Include="src\DAO\" />
     <Folder Include="src\Telas\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="success.png" />
+    <Resource Include="T9N9LT1CK-U9NBPRTGC-f8ac31f57c4d-192.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="user.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
