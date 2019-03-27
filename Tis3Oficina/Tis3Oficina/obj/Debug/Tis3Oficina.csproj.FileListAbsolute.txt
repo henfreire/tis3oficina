@@ -15,3 +15,8 @@ C:\dev\c#\tis3oficina\Tis3Oficina\Tis3Oficina\obj\Debug\Tis3Oficina.exe
 C:\dev\c#\tis3oficina\Tis3Oficina\Tis3Oficina\obj\Debug\Tis3Oficina.pdb
 C:\dev\c#\tis3oficina\Tis3Oficina\Tis3Oficina\obj\Debug\src\Telas\CadastroCliente.g.cs
 C:\dev\c#\tis3oficina\Tis3Oficina\Tis3Oficina\obj\Debug\src\Telas\CadastroCliente.baml
+C:\dev\c#\tis3oficina\Tis3Oficina\Tis3Oficina\bin\Debug\Google.Protobuf.dll
+C:\dev\c#\tis3oficina\Tis3Oficina\Tis3Oficina\bin\Debug\MySql.Data.dll
+C:\dev\c#\tis3oficina\Tis3Oficina\Tis3Oficina\bin\Debug\Google.Protobuf.xml
+C:\dev\c#\tis3oficina\Tis3Oficina\Tis3Oficina\bin\Debug\MySql.Data.xml
+C:\dev\c#\tis3oficina\Tis3Oficina\Tis3Oficina\obj\Debug\Tis3Oficina.csproj.CopyComplete

@@ -14,25 +14,25 @@
         <Button Content="Novo Orçamento" HorizontalAlignment="Left" Margin="210,47,0,0" VerticalAlignment="Top" Width="338" Height="63" Background="#FF00AEFB" BorderBrush="#FF00AEFB" Click="Button_Click" FontSize="20" FontWeight="Bold" FontFamily="Roboto Black" Foreground="White" Grid.Column="1"/>
         <Button Grid.Column="1" HorizontalAlignment="Left" Margin="20,206,0,0" VerticalAlignment="Top" Width="116" Height="151" Background="#FF00AEFB" Click="Button_Click_2">
             <Grid>
-                <Label Content="Serviços" HorizontalAlignment="Left" Margin="21,105,0,0" VerticalAlignment="Top" FontFamily="Roboto" FontSize="14" RenderTransformOrigin="-0.088,0.37" Foreground="White"/>
+                <Label Content="Cliente" HorizontalAlignment="Left" Margin="33,110,0,0" VerticalAlignment="Top" FontFamily="Roboto" FontSize="14" RenderTransformOrigin="-0.088,0.37" Foreground="White"/>
                 <Image Margin="21,19,12,54" Source="src/assets/icons/user.png" Stretch="Fill"/>
             </Grid>
         </Button>
         <Button Grid.Column="1" HorizontalAlignment="Left" Margin="210,206,0,0" VerticalAlignment="Top" Width="116" Height="151" Background="#FF00AEFB">
             <Grid>
-                <Label Content="Serviços" HorizontalAlignment="Left" Margin="21,105,0,0" VerticalAlignment="Top" FontFamily="Roboto" FontSize="14" RenderTransformOrigin="-0.088,0.37" Foreground="White"/>
+                <Label Content="Serviços" HorizontalAlignment="Left" Margin="21,110,0,0" VerticalAlignment="Top" FontFamily="Roboto" FontSize="14" RenderTransformOrigin="-0.088,0.37" Foreground="White"/>
                 <Image Margin="21,19,12,54" Source="src/assets/icons/automobile.png" Stretch="Fill"/>
             </Grid>
         </Button>
         <Button Grid.Column="1" HorizontalAlignment="Left" Margin="412,206,0,0" VerticalAlignment="Top" Width="116" Height="151" Background="#FF00AEFB">
             <Grid>
-                <Label Content="Serviços" HorizontalAlignment="Left" Margin="21,105,0,0" VerticalAlignment="Top" FontFamily="Roboto" FontSize="14" RenderTransformOrigin="-0.088,0.37" Foreground="White"/>
+                <Label Content="Peças" HorizontalAlignment="Left" Margin="36,110,0,0" VerticalAlignment="Top" FontFamily="Roboto" FontSize="14" RenderTransformOrigin="-0.088,0.37" Foreground="White"/>
                 <Image Margin="21,19,12,54" Source="src/assets/icons/battery.png" Stretch="Fill"/>
             </Grid>
         </Button>
         <Button Grid.Column="1" HorizontalAlignment="Left" Margin="606,206,0,0" VerticalAlignment="Top" Width="116" Height="151" Background="#FF00AEFB">
             <Grid>
-                <Label Content="Serviços" HorizontalAlignment="Left" Margin="21,105,0,0" VerticalAlignment="Top" FontFamily="Roboto" FontSize="14" RenderTransformOrigin="-0.088,0.37" Foreground="White"/>
+                <Label Content="Relatórios" HorizontalAlignment="Left" Margin="21,105,0,0" VerticalAlignment="Top" FontFamily="Roboto" FontSize="14" RenderTransformOrigin="-0.088,0.37" Foreground="White"/>
                 <Image Margin="21,19,12,54" Source="src/assets/icons/plan.png" Stretch="Fill"/>
             </Grid>
         </Button>

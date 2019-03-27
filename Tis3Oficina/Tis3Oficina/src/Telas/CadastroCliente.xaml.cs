@@ -11,6 +11,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Tis3Oficina.src.Config;
+using Tis3Oficina.src.DAO;
 
 namespace Tis3Oficina.src.Telas
 {
@@ -22,6 +24,7 @@ namespace Tis3Oficina.src.Telas
         public CadastroCliente()
         {
             InitializeComponent();
+           
         }
 
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
@@ -31,7 +34,8 @@ namespace Tis3Oficina.src.Telas
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-
+            DAOCliente cliente = new DAOCliente();
+            cliente.inserir();
         }
     }
 }
