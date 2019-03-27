@@ -7,20 +7,24 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid Background="#FF202020">
-        <Button Content="Novo Orçamento" HorizontalAlignment="Left" Margin="260,47,0,0" VerticalAlignment="Top" Width="338" Height="63" Background="#FF00AEFB" BorderBrush="#FF00AEFB" Click="Button_Click" FontSize="20" FontWeight="Bold" FontFamily="Roboto Black" Foreground="White"/>
-        <Grid HorizontalAlignment="Left" Height="151" Margin="238,206,0,0" VerticalAlignment="Top" Width="116" Background="#FF00AEFB">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="25*"/>
+            <ColumnDefinition Width="371*"/>
+        </Grid.ColumnDefinitions>
+        <Button Content="Novo Orçamento" HorizontalAlignment="Left" Margin="210,47,0,0" VerticalAlignment="Top" Width="338" Height="63" Background="#FF00AEFB" BorderBrush="#FF00AEFB" Click="Button_Click" FontSize="20" FontWeight="Bold" FontFamily="Roboto Black" Foreground="White" Grid.Column="1"/>
+        <Grid HorizontalAlignment="Left" Height="151" Margin="188,206,0,0" VerticalAlignment="Top" Width="116" Background="#FF00AEFB" Grid.Column="1">
             <Label Content="Cliente" HorizontalAlignment="Left" Margin="33,107,0,0" VerticalAlignment="Top" FontFamily="Roboto" FontSize="14" RenderTransformOrigin="-0.088,0.37" Foreground="White"/>
             <Image Margin="21,19,24,60" Source="src/assets/icons/user.png" Stretch="Fill"/>
         </Grid>
-        <Grid HorizontalAlignment="Left" Height="151" Margin="27,206,0,0" VerticalAlignment="Top" Width="116" Background="#FF00AEFB">
+        <Grid HorizontalAlignment="Left" Height="151" Margin="27,206,0,0" VerticalAlignment="Top" Width="116" Background="#FF00AEFB" Grid.ColumnSpan="2">
             <Label Content="Cliente" HorizontalAlignment="Left" Margin="33,107,0,0" VerticalAlignment="Top" FontFamily="Roboto" FontSize="14" RenderTransformOrigin="-0.088,0.37" Foreground="White"/>
             <Image Margin="21,19,24,60" Source="src/assets/icons/user.png" Stretch="Fill"/>
         </Grid>
-        <Grid HorizontalAlignment="Left" Height="151" Margin="442,206,0,0" VerticalAlignment="Top" Width="116" Background="#FF00AEFB">
+        <Grid HorizontalAlignment="Left" Height="151" Margin="392,206,0,0" VerticalAlignment="Top" Width="116" Background="#FF00AEFB" Grid.Column="1">
             <Label Content="Cliente" HorizontalAlignment="Left" Margin="33,107,0,0" VerticalAlignment="Top" FontFamily="Roboto" FontSize="14" RenderTransformOrigin="-0.088,0.37" Foreground="White"/>
             <Image Margin="21,19,24,60" Source="src/assets/icons/user.png" Stretch="Fill"/>
         </Grid>
-        <Grid HorizontalAlignment="Left" Height="151" Margin="648,206,0,0" VerticalAlignment="Top" Width="116" Background="#FF00AEFB">
+        <Grid HorizontalAlignment="Left" Height="151" Margin="598,206,0,0" VerticalAlignment="Top" Width="116" Background="#FF00AEFB" Grid.Column="1">
             <Label Content="Cliente" HorizontalAlignment="Left" Margin="33,107,0,0" VerticalAlignment="Top" FontFamily="Roboto" FontSize="14" RenderTransformOrigin="-0.088,0.37" Foreground="White"/>
             <Image Margin="21,19,24,60" Source="src/assets/icons/user.png" Stretch="Fill"/>
         </Grid>

@@ -95,7 +95,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="src\assets\icons\" />
     <Folder Include="src\assets\images\" />
     <Folder Include="src\Config\" />
     <Folder Include="src\DAO\" />
@@ -107,6 +106,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="src\assets\icons\user.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
