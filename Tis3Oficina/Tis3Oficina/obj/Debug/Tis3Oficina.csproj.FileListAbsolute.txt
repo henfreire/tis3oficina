@@ -13,3 +13,5 @@ C:\dev\c#\tis3oficina\Tis3Oficina\Tis3Oficina\obj\Debug\Tis3Oficina.csproj.Gener
 C:\dev\c#\tis3oficina\Tis3Oficina\Tis3Oficina\obj\Debug\Tis3Oficina.csproj.CoreCompileInputs.cache
 C:\dev\c#\tis3oficina\Tis3Oficina\Tis3Oficina\obj\Debug\Tis3Oficina.exe
 C:\dev\c#\tis3oficina\Tis3Oficina\Tis3Oficina\obj\Debug\Tis3Oficina.pdb
+C:\dev\c#\tis3oficina\Tis3Oficina\Tis3Oficina\obj\Debug\src\Telas\CadastroCliente.g.cs
+C:\dev\c#\tis3oficina\Tis3Oficina\Tis3Oficina\obj\Debug\src\Telas\CadastroCliente.baml

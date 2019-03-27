@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Tis3Oficina.src.Telas;
 
 namespace Tis3Oficina
 {
@@ -33,6 +34,13 @@ namespace Tis3Oficina
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            var telaCadastroCliente = new CadastroCliente();
+            this.Close();
+            telaCadastroCliente.Show();
         }
     }
 }
