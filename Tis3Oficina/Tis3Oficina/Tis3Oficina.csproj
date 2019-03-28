@@ -74,6 +74,7 @@
     </ApplicationDefinition>
     <Compile Include="src\Config\Conexao.cs" />
     <Compile Include="src\DAO\DAOCliente.cs" />
+    <Compile Include="src\OBJETO\Cliente.cs" />
     <Compile Include="src\Telas\CadastroCliente.xaml.cs">
       <DependentUpon>CadastroCliente.xaml</DependentUpon>
     </Compile>

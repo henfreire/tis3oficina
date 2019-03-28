@@ -9,18 +9,18 @@
     <Grid Background="#FF202020">
         <Label Content="Cadastrar Cliente" HorizontalAlignment="Left" Margin="75,14,0,0" VerticalAlignment="Top" FontSize="36" Foreground="White" Height="52" Width="290" FontFamily="Roboto"/>
         <Image Margin="24,18,722,356" Source="/src/assets/icons/user.png" Stretch="Fill" RenderTransformOrigin="0.464,0.096"/>
-        <TextBox TextWrapping="Wrap" Background="{x:Null}" BorderBrush="White" Foreground="White" FontSize="24" FontFamily="Roboto" BorderThickness="0,0,0,2" Margin="24,99,382,275"/>
-        <Button Content="SALVAR" HorizontalAlignment="Left" Margin="440,341,0,0" VerticalAlignment="Top" Width="342" Height="63" Background="#FF00AEFB" BorderBrush="#FF00AEFB" Click="Button_Click" FontSize="20" FontWeight="Bold" FontFamily="Roboto Black" Foreground="White"/>
+        <TextBox x:Name="textoNome" TextWrapping="Wrap" Background="{x:Null}" BorderBrush="White" Foreground="White" FontSize="24" FontFamily="Roboto" BorderThickness="0,0,0,2" Margin="24,99,382,275"/>
+        <Button x:Name="botaoSalvar" Content="SALVAR" HorizontalAlignment="Left" Margin="440,341,0,0" VerticalAlignment="Top" Width="342" Height="63" Background="#FF00AEFB" BorderBrush="#FF00AEFB" Click="Button_Click" FontSize="20" FontWeight="Bold" FontFamily="Rockwell" Foreground="White"/>
         <Label Content="Nome" HorizontalAlignment="Left" Margin="22,76,0,0" VerticalAlignment="Top" FontFamily="Roboto" FontSize="14" RenderTransformOrigin="-0.088,0.37" Foreground="White"/>
-        <TextBox TextWrapping="Wrap" Background="{x:Null}" BorderBrush="White" Foreground="White" FontSize="24" FontFamily="Roboto" BorderThickness="0,0,0,2" Margin="428,99,10,275"/>
+        <TextBox x:Name="textoCpf" TextWrapping="Wrap" Background="{x:Null}" BorderBrush="White" Foreground="White" FontSize="24" FontFamily="Roboto" BorderThickness="0,0,0,2" Margin="428,99,10,275"/>
         <Label Content="CPF" HorizontalAlignment="Left" Margin="426,76,0,0" VerticalAlignment="Top" FontFamily="Roboto" FontSize="14" RenderTransformOrigin="-0.088,0.37" Foreground="White"/>
-        <TextBox TextWrapping="Wrap" Background="{x:Null}" BorderBrush="White" Foreground="White" FontSize="24" FontFamily="Roboto" BorderThickness="0,0,0,2" Margin="26,184,380,190"/>
+        <TextBox x:Name="textoTelefone" TextWrapping="Wrap" Background="{x:Null}" BorderBrush="White" Foreground="White" FontSize="24" FontFamily="Roboto" BorderThickness="0,0,0,2" Margin="26,184,380,190"/>
         <Label Content="Telefone" HorizontalAlignment="Left" Margin="24,159,0,0" VerticalAlignment="Top" FontFamily="Roboto" FontSize="14" RenderTransformOrigin="-0.088,0.37" Foreground="White"/>
-        <TextBox TextWrapping="Wrap" Background="{x:Null}" BorderBrush="White" Foreground="White" FontSize="24" FontFamily="Roboto" BorderThickness="0,0,0,2" Margin="430,184,8,190"/>
+        <TextBox x:Name="textoEmail" TextWrapping="Wrap" Background="{x:Null}" BorderBrush="White" Foreground="White" FontSize="24" FontFamily="Roboto" BorderThickness="0,0,0,2" Margin="430,184,8,190"/>
         <Label Content="E-mail" HorizontalAlignment="Left" Margin="428,159,0,0" VerticalAlignment="Top" FontFamily="Roboto" FontSize="14" RenderTransformOrigin="-0.088,0.37" Foreground="White"/>
-        <TextBox TextWrapping="Wrap" Background="{x:Null}" BorderBrush="White" Foreground="White" FontSize="24" FontFamily="Roboto" BorderThickness="0,0,0,2" Margin="28,269,10,105"/>
+        <TextBox x:Name="textoEndereco" TextWrapping="Wrap" Background="{x:Null}" BorderBrush="White" Foreground="White" FontSize="24" FontFamily="Roboto" BorderThickness="0,0,0,2" Margin="28,269,10,105"/>
         <Label Content="Endereço" HorizontalAlignment="Left" Margin="26,240,0,0" VerticalAlignment="Top" FontFamily="Roboto" FontSize="14" RenderTransformOrigin="-0.088,0.37" Foreground="White"/>
-        <TextBox TextWrapping="Wrap" Background="{x:Null}" BorderBrush="White" Foreground="White" FontSize="24" FontFamily="Roboto" BorderThickness="0,0,0,2" Margin="28,360,378,14"/>
+        <TextBox x:Name="textoObservacao" TextWrapping="Wrap" Background="{x:Null}" BorderBrush="White" Foreground="White" FontSize="24" FontFamily="Roboto" BorderThickness="0,0,0,2" Margin="28,360,378,14"/>
         <Label Content="Observação" HorizontalAlignment="Left" Margin="26,331,0,0" VerticalAlignment="Top" FontFamily="Roboto" FontSize="14" RenderTransformOrigin="-0.088,0.37" Foreground="White"/>
     </Grid>
 </Window>
