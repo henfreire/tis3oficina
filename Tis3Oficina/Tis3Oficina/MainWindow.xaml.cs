@@ -41,6 +41,7 @@ namespace Tis3Oficina
             var telaCadastroCliente = new CadastroCliente();
             this.Close();
             telaCadastroCliente.Show();
+
         }
     }
 }

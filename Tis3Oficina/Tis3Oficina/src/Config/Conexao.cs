@@ -25,7 +25,8 @@ namespace Tis3Oficina.src.Config
             {
                 this.instancia = new MySqlConnection("server=localhost;port=3306;User Id=root;database=oficina;password=''");
                 this.instancia.Open();
-                //System.Windows.Forms.MessageBox.Show("conectado");
+              //  System.Windows.Forms.MessageBox.Show("conectado");
+              
             }
             catch (MySqlException msqle)
             {
