@@ -15,7 +15,15 @@
             <Label Content="Clientes" HorizontalAlignment="Left" Margin="75,14,0,0" VerticalAlignment="Top" FontSize="36" Foreground="White" Height="52" Width="290" FontFamily="Roboto"/>
             <Image Margin="24,18,349,356" Source="/Tis3Oficina;component/src/assets/icons/user.png" Stretch="Fill" RenderTransformOrigin="0.464,0.096"/>
             <DataGrid Name="dataGrid1" HorizontalAlignment="Left" Height="278" Margin="24,99,0,0" VerticalAlignment="Top" Width="736" Grid.ColumnSpan="2"/>
+            <Button Content="Voltar" Grid.Column="1" HorizontalAlignment="Left" Margin="288,18,0,0" VerticalAlignment="Top" Width="75" FontFamily="Roboto Black" FontSize="16" Background="#FF00AEFB" Foreground="White" BorderBrush="#FF00AEFB" Click="btnVoltar"/>
 
+
+            <Button Margin="138,14,0,0" VerticalAlignment="Top" Width="145" Height="41" Click="btnNovoCliente" Grid.Column="1" Background="#FF202020" HorizontalAlignment="Left">
+                <Grid>
+                    <Label Content="Novo Cliente" HorizontalAlignment="Left" Margin="46,5,0,0" VerticalAlignment="Top" FontFamily="Roboto" FontSize="14" RenderTransformOrigin="-0.088,0.37" Foreground="White"/>
+                    <Image Margin="0,0,104,3" Source="/Tis3Oficina;component/src/assets/icons/add.png" Stretch="Fill" UseLayoutRounding="False"/>
+                </Grid>
+            </Button>
         </Grid>
 
     </Grid>

@@ -45,5 +45,21 @@ namespace Tis3Oficina.src.Telas
           
 
         }
+
+        //Botao Voltar
+        private void btnVoltar(object sender, RoutedEventArgs e)
+        {
+            var menu = new MainWindow();
+            this.Close();
+            menu.Show();
+        }
+
+        //Botao Criar novo Cliente
+        private void btnNovoCliente(object sender, RoutedEventArgs e)
+        {
+            var Cadastro = new CadastroCliente();
+            this.Close();
+            Cadastro.Show();
+        }
     }
 }
