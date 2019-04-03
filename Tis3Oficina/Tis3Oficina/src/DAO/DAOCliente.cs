@@ -51,7 +51,7 @@ namespace Tis3Oficina.src.DAO
 
                 MySqlDataAdapter da = new MySqlDataAdapter();
                 da.SelectCommand = cmd;
-       
+
                 da.Fill(dt);
             }
             catch (Exception ex)
@@ -63,7 +63,7 @@ namespace Tis3Oficina.src.DAO
         }
         public List<Cliente> getTodos()
         {
-            List<Cliente> clientes = new List<Cliente>();
+            List<Cliente> listaClientes = new List<Cliente>();
             DataTable dt = new DataTable();
             try
             {
@@ -78,15 +78,24 @@ namespace Tis3Oficina.src.DAO
                     {
                         Cliente c = new Cliente();
 
+                        c.Id = dr["id"].ToString();
+                        c.Nome = (String)dr["Nome"];
+                        c.Cpf = (String)dr["Cpf"];
+                        c.Email = (String)dr["Email"];
+                        c.Telefone = (String)dr["Telefone"];
+                        c.Endereco = (String)dr["Endereco"];
+                        c.Observacao = (String)dr["Observacao"];
+
+                        listaClientes.Add(c);
                     }
                 }
             }
             catch (Exception ex)
             {
-                System.Windows.Forms.MessageBox.Show("Erro inserir Cliente : " + ex.Message, "Erro");
+                System.Windows.Forms.MessageBox.Show("Erro buscar todos Clientes : " + ex.Message, "Erro");
             }
-            Console.WriteLine("Teste", dt.ToString());
-            return clientes;
+           
+            return listaClientes;
         }
 
     }

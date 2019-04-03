@@ -9,8 +9,8 @@ namespace Tis3Oficina.src.OBJETOS
     public class Cliente
     {
 
-        string nome, cpf, telefone, endereco, observacao,email;
-
+        string id,nome, cpf, telefone, endereco, observacao,email;
+        public string Id { get => id; set => id = value; }
         public string Nome { get => nome; set => nome = value; }
         public string Cpf { get => cpf; set => cpf = value; }
         public string Telefone { get => telefone; set => telefone = value; }

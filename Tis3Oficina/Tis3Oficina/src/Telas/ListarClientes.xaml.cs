@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using Tis3Oficina.src.DAO;
+using Tis3Oficina.src.OBJETOS;
 
 namespace Tis3Oficina.src.Telas
 {
@@ -35,7 +36,13 @@ namespace Tis3Oficina.src.Telas
             
           DAOCliente daoC = new DAOCliente();
             DataTable result = daoC.listarTodos();
-            dataGrid1.ItemsSource = result.DefaultView;
+            List<Cliente> c = daoC.getTodos();
+            dataGrid1.ItemsSource = c;
+
+           
+            
+           
+          
 
         }
     }
