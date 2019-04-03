@@ -38,9 +38,11 @@ namespace Tis3Oficina
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
-            var telaCadastroCliente = new CadastroCliente();
+            // var telaCadastroCliente = new CadastroCliente();
+            
+            var telaListarClientes = new ListarClientes();
             this.Close();
-            telaCadastroCliente.Show();
+            telaListarClientes.Show();
 
         }
     }

@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\tis3\tis3oficina\Tis3Oficina\Tis3Oficina\obj\Debug\
+C:\dev\c#\tis3oficina\Tis3Oficina\Tis3Oficina\obj\Debug\
 Tis3Oficina
 none
 false
 DEBUG;TRACE
-C:\tis3\tis3oficina\Tis3Oficina\Tis3Oficina\App.xaml
-2367242697
+C:\dev\c#\tis3oficina\Tis3Oficina\Tis3Oficina\App.xaml
+31564728179
 
-13-1655749856
-261919887075
-MainWindow.xaml;src\Telas\CadastroCliente.xaml;
+14146198760
+26-1479233804
+MainWindow.xaml;src\Telas\CadastroCliente.xaml;src\Telas\ListarClientes.xaml;
 
 True
 

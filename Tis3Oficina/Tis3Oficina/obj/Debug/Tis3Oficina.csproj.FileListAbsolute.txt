@@ -42,3 +42,5 @@ C:\tis3\tis3oficina\Tis3Oficina\Tis3Oficina\obj\Debug\Tis3Oficina.csproj.CoreCom
 C:\tis3\tis3oficina\Tis3Oficina\Tis3Oficina\obj\Debug\Tis3Oficina.csproj.CopyComplete
 C:\tis3\tis3oficina\Tis3Oficina\Tis3Oficina\obj\Debug\Tis3Oficina.exe
 C:\tis3\tis3oficina\Tis3Oficina\Tis3Oficina\obj\Debug\Tis3Oficina.pdb
+C:\dev\c#\tis3oficina\Tis3Oficina\Tis3Oficina\obj\Debug\src\Telas\ListarCLientes.g.cs
+C:\dev\c#\tis3oficina\Tis3Oficina\Tis3Oficina\obj\Debug\src\Telas\ListarClientes.baml
