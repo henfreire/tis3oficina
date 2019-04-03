@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -60,6 +61,37 @@ namespace Tis3Oficina.src.Telas
         private void TextBox_TextChanged_1(object sender, TextChangedEventArgs e)
         {
 
+        }
+
+        //Botao Voltar
+        private void btnVoltar(object sender, RoutedEventArgs e)
+        {
+            var telaListarClientes = new ListarClientes();
+            this.Close();
+            telaListarClientes.Show();
+        }
+
+        //Verificar se esta digitando letra ao invés de numero no CPF
+        private void TxtCpf_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            e.Handled = new Regex("[^0-9]+").IsMatch(e.Text);
+        }
+
+        //Verificação do email
+        private void TxtEmail_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            e.Handled = new Regex(@"^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$").IsMatch(e.Text);
+        }
+
+        //Verificar se é so numero no telefone
+        private void Txt_tela_telefone_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            e.Handled = new Regex("[^0-9]+").IsMatch(e.Text);
+        }
+
+        private void Txt_tela_nome_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            e.Handled = new Regex("[^a-zA-Z]+").IsMatch(e.Text);
         }
     }
 }
