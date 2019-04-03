@@ -15,6 +15,9 @@
             <Label Content="Clientes" HorizontalAlignment="Left" Margin="75,14,0,0" VerticalAlignment="Top" FontSize="36" Foreground="White" Height="52" Width="290" FontFamily="Roboto"/>
             <Image Margin="24,18,349,356" Source="/Tis3Oficina;component/src/assets/icons/user.png" Stretch="Fill" RenderTransformOrigin="0.464,0.096"/>
             <DataGrid Name="dataGrid1" HorizontalAlignment="Left" Height="278" Margin="24,99,0,0" VerticalAlignment="Top" Width="736" Grid.ColumnSpan="2"/>
+            <Button Content="Novo" HorizontalAlignment="Left" Margin="177,18,0,0" VerticalAlignment="Top" Width="164" Height="63" Background="#FF00AEFB" BorderBrush="#FF00AEFB" Click="Button_Click" FontSize="20" FontWeight="Bold" FontFamily="Roboto Black" Foreground="White" Grid.Column="1">
+                <Image Source="src/assets/icons/plus.png" Stretch="Fill"/>
+            </Button>
 
         </Grid>
 

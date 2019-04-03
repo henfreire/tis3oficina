@@ -82,6 +82,14 @@ namespace Tis3Oficina.src.Telas {
             case 1:
             this.dataGrid1 = ((System.Windows.Controls.DataGrid)(target));
             return;
+            case 2:
+            
+            #line 18 "..\..\..\..\src\Telas\ListarClientes.xaml"
+            ((System.Windows.Controls.Button)(target)).Click += new System.Windows.RoutedEventHandler(this.Button_Click);
+            
+            #line default
+            #line hidden
+            return;
             }
             this._contentLoaded = true;
         }
