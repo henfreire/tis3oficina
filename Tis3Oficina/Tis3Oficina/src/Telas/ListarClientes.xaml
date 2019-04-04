@@ -5,27 +5,32 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Tis3Oficina.src.Telas"
         mc:Ignorable="d"
-        Title="ListarCLientes" Height="450" Width="800">
+        Title="ListarCLientes" Height="450" Width="800" WindowState="Maximized" WindowStartupLocation="CenterScreen" Background="#FF202020">
     <Grid>
-        <Grid Background="#FF202020" HorizontalAlignment="Left" Width="792">
+        <Grid HorizontalAlignment="Center" Width="792">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="419*"/>
                 <ColumnDefinition Width="373*"/>
             </Grid.ColumnDefinitions>
-            <Label Content="Clientes" HorizontalAlignment="Left" Margin="75,14,0,0" VerticalAlignment="Top" FontSize="36" Foreground="White" Height="52" Width="290" FontFamily="Roboto"/>
-            <Image Margin="24,18,349,356" Source="/Tis3Oficina;component/src/assets/icons/user.png" Stretch="Fill" RenderTransformOrigin="0.464,0.096"/>
             <DataGrid Name="dataGrid1" HorizontalAlignment="Left" Height="278" Margin="24,99,0,0" VerticalAlignment="Top" Width="736" Grid.ColumnSpan="2"/>
 
 
-            <Button Margin="138,14,0,0" VerticalAlignment="Top" Width="145" Height="41" Click="btnNovoCliente" Grid.Column="1" Background="#FF202020" HorizontalAlignment="Left">
+            <Button Margin="196,36,0,0" VerticalAlignment="Top" Width="145" Height="41" Click="btnNovoCliente" Grid.Column="1" Background="#FF202020" HorizontalAlignment="Left" BorderThickness="0">
                 <Grid>
                     <Label Content="Novo Cliente" HorizontalAlignment="Left" Margin="46,5,0,0" VerticalAlignment="Top" FontFamily="Roboto" FontSize="14" RenderTransformOrigin="-0.088,0.37" Foreground="White"/>
-                    <Image Margin="0,0,104,3" Source="/Tis3Oficina;component/src/assets/icons/add.png" Stretch="Fill" UseLayoutRounding="False"/>
+                    <Image Margin="0,3,104,0" Source="/src/assets/icons/add.png" Stretch="Fill" UseLayoutRounding="False"/>
                 </Grid>
             </Button>
+            <Button Content="Voltar" HorizontalAlignment="Left" Margin="267,382,0,0" VerticalAlignment="Top" Width="74" FontFamily="Roboto Black" FontSize="16" Background="#FF00AEFB" Foreground="White" BorderBrush="#FF00AEFB" Click="btnVoltar" Grid.Column="1"/>
+            <Grid HorizontalAlignment="Left" Height="41" Margin="24,36,0,0" VerticalAlignment="Top" Width="385">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0*"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Image Source="/src/assets/icons/user.png" Grid.ColumnSpan="2" Margin="0,0,322,4"/>
+                <Label Grid.ColumnSpan="2" Content="Clientes" HorizontalAlignment="Left" Margin="56,-1,0,-2" VerticalAlignment="Top" Width="319" Height="44" Foreground="White" FontFamily="Roboto" FontSize="25"/>
+            </Grid>
         </Grid>
 
     </Grid>
 </Window>
-
-            <Button Content="Voltar" Grid.Column="1" HorizontalAlignment="Left" Margin="288,18,0,0" VerticalAlignment="Top" Width="75" FontFamily="Roboto Black" FontSize="16" Background="#FF00AEFB" Foreground="White" BorderBrush="#FF00AEFB" Click="btnVoltar"/>

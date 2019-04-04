@@ -34,7 +34,7 @@ namespace Tis3Oficina.src.Telas
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             Cliente gravaCliente = new Cliente();
-
+            /*
             gravaCliente.Nome = txt_tela_nome.Text;
             gravaCliente.Cpf = txtCpf.Text;
             gravaCliente.Telefone = txt_tela_telefone.Text;
@@ -42,6 +42,7 @@ namespace Tis3Oficina.src.Telas
             gravaCliente.Endereco = textEndereco.Text;
             gravaCliente.Observacao = textObservacao.Text;
 
+    
 
 
 
@@ -51,6 +52,7 @@ namespace Tis3Oficina.src.Telas
             var menu = new MainWindow();
             this.Close();
             menu.Show();
+            */
 
         }
         //

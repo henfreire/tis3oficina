@@ -145,5 +145,11 @@
   <ItemGroup>
     <Resource Include="src\assets\icons\automobile.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="src\assets\icons\plus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="src\assets\icons\add.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
