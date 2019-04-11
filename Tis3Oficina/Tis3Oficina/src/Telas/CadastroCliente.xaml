@@ -11,30 +11,76 @@
             <ColumnDefinition Width="415*"/>
             <ColumnDefinition Width="377*"/>
         </Grid.ColumnDefinitions>
-        <Button Content="Voltar" HorizontalAlignment="Left" Margin="292,386,0,0" VerticalAlignment="Top" Width="75" FontFamily="Roboto Black" FontSize="16" Background="#FF00AEFB" Foreground="White" BorderBrush="#FF00AEFB" Click="btnVoltar" Height="23" Grid.Column="1"/>
-        <Grid Margin="10,68,0,281">
+        <Grid Margin="10,68,59,281" Height="70">
             <Label Content="Nome" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top" FontFamily="Roboto" FontSize="14" RenderTransformOrigin="-0.088,0.37" Foreground="White"/>
-            <TextBox x:Name="txt_tela_nome" TextWrapping="Wrap" Background="{x:Null}" BorderBrush="White" Foreground="White" FontSize="24" FontFamily="Roboto" BorderThickness="0,0,0,2" Margin="10,27,0,10" TextChanged="TextBox_TextChanged_1" PreviewTextInput="Txt_tela_nome_PreviewTextInput">
+            <TextBox x:Name="textNome" TextWrapping="Wrap" Background="{x:Null}" BorderBrush="White" Foreground="White" FontSize="24" FontFamily="Roboto" BorderThickness="0,0,0,2" Margin="10,27,0,10"  PreviewTextInput="Txt_tela_nome_PreviewTextInput">
                 <TextBox.ContextMenu>
                     <ContextMenu/>
                 </TextBox.ContextMenu>
             </TextBox>
         </Grid>
-        <Grid Margin="10,143,0,206">
-            <Label Content="Nome" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top" FontFamily="Roboto" FontSize="14" RenderTransformOrigin="-0.088,0.37" Foreground="White"/>
-            <TextBox x:Name="txt_tela_nome1" TextWrapping="Wrap" Background="{x:Null}" BorderBrush="White" Foreground="White" FontSize="24" FontFamily="Roboto" BorderThickness="0,0,0,2" Margin="10,27,0,10" TextChanged="TextBox_TextChanged_1" PreviewTextInput="Txt_tela_nome_PreviewTextInput">
+        <Grid Margin="10,160,59,189" Height="70">
+            <Label Content="E-mail" HorizontalAlignment="Left" Margin="10,0,0,43" FontFamily="Roboto" FontSize="14" RenderTransformOrigin="-0.088,0.37" Foreground="White"/>
+            <TextBox x:Name="textEmail" TextWrapping="Wrap" Background="{x:Null}" BorderBrush="White" Foreground="White" FontSize="24" FontFamily="Roboto" BorderThickness="0,0,0,2" Margin="10,27,0,10"  PreviewTextInput="TxtEmail_PreviewTextInput">
                 <TextBox.ContextMenu>
                     <ContextMenu/>
                 </TextBox.ContextMenu>
             </TextBox>
         </Grid>
-        <Grid Margin="0,235,10,114">
-            <Label Content="Nome" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top" FontFamily="Roboto" FontSize="14" RenderTransformOrigin="-0.088,0.37" Foreground="White"/>
-            <TextBox x:Name="txt_tela_nome2" TextWrapping="Wrap" Background="{x:Null}" BorderBrush="White" Foreground="White" FontSize="24" FontFamily="Roboto" BorderThickness="0,0,0,2" Margin="10,27,0,10" TextChanged="TextBox_TextChanged_1" PreviewTextInput="Txt_tela_nome_PreviewTextInput">
+        <Grid Margin="10,262,59,87" Height="70">
+            <Label Content="Endereço" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top" FontFamily="Roboto" FontSize="14" RenderTransformOrigin="-0.088,0.37" Foreground="White"/>
+            <TextBox x:Name="textEndereco" TextWrapping="Wrap" Background="{x:Null}" BorderBrush="White" Foreground="White" FontSize="24" FontFamily="Roboto" BorderThickness="0,0,0,2" Margin="10,27,0,10" >
                 <TextBox.ContextMenu>
                     <ContextMenu/>
                 </TextBox.ContextMenu>
             </TextBox>
         </Grid>
+        <Grid Margin="21,68,10,281" Height="70" Grid.Column="1">
+            <Label Content="Cpf/Cnpj" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top" FontFamily="Roboto" FontSize="14" RenderTransformOrigin="-0.088,0.37" Foreground="White"/>
+            <TextBox x:Name="textCpf" TextWrapping="Wrap" Background="{x:Null}" BorderBrush="White" Foreground="White" FontSize="24" FontFamily="Roboto" BorderThickness="0,0,0,2" Margin="10,27,0,10"  PreviewTextInput="TxtCpf_PreviewTextInput">
+                <TextBox.ContextMenu>
+                    <ContextMenu/>
+                </TextBox.ContextMenu>
+            </TextBox>
+        </Grid>
+        <Grid Margin="21,160,10,189" Height="70" Grid.Column="1">
+            <Label Content="Telefone" HorizontalAlignment="Left" Margin="10,0,0,43" FontFamily="Roboto" FontSize="14" RenderTransformOrigin="-0.088,0.37" Foreground="White"/>
+            <TextBox x:Name="textTelefone" TextWrapping="Wrap" Background="{x:Null}" BorderBrush="White" Foreground="White" FontSize="24" FontFamily="Roboto" BorderThickness="0,0,0,2" Margin="10,27,0,10"  >
+                <TextBox.ContextMenu>
+                    <ContextMenu/>
+                </TextBox.ContextMenu>
+            </TextBox>
+        </Grid>
+        <Grid Margin="21,262,10,87" Height="70" Grid.Column="1">
+            <Label Content="Observação" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top" FontFamily="Roboto" FontSize="14" RenderTransformOrigin="-0.088,0.37" Foreground="White"/>
+            <TextBox x:Name="textObservacao" TextWrapping="Wrap" Background="{x:Null}" BorderBrush="White" Foreground="White" FontSize="24" FontFamily="Roboto" BorderThickness="0,0,0,2" Margin="10,27,0,10" >
+                <TextBox.ContextMenu>
+                    <ContextMenu/>
+                </TextBox.ContextMenu>
+            </TextBox>
+        </Grid>
+        <Grid Margin="291,395,10,0" Height="24" Grid.Column="1">
+            <Button Content="Voltar" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="75" FontFamily="Roboto Black" FontSize="16" Background="#FF00AEFB" Foreground="White" BorderBrush="#FF00AEFB" Click="btnVoltar" Height="24" Grid.Column="1" UseLayoutRounding="False" Padding="1,1,1,5"/>
+        </Grid>
+        <Grid Margin="314,359,278,10" Height="50" Width="200" Grid.ColumnSpan="2">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition Height="24*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="45*"/>
+                <ColumnDefinition Width="11*"/>
+            </Grid.ColumnDefinitions>
+            <Button Content="SALVAR" FontFamily="Roboto Black" FontSize="16" Background="#FF00AEFB" Foreground="White" BorderBrush="#FF00AEFB" Click="btnSalvar" UseLayoutRounding="False" Grid.RowSpan="2" RenderTransformOrigin="0.501,0.5" Margin="0,0,0,10" Grid.ColumnSpan="2"/>
+        </Grid>
+        <Grid HorizontalAlignment="Left" Height="41" Margin="10,22,0,0" VerticalAlignment="Top" Width="385">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0*"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Image Source="/Tis3Oficina;component/src/assets/icons/user.png" Grid.ColumnSpan="2" Margin="0,0,322,4"/>
+            <Label Grid.ColumnSpan="2" Content="Cadastrar Cliente" HorizontalAlignment="Left" Margin="56,-2,0,-1" VerticalAlignment="Top" Width="204" Height="44" Foreground="White" FontFamily="Roboto" FontSize="25"/>
+        </Grid>
+
     </Grid>
 </Window>

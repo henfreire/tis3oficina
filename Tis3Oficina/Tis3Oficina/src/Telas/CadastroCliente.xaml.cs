@@ -31,39 +31,30 @@ namespace Tis3Oficina.src.Telas
 
        
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void btnSalvar(object sender, RoutedEventArgs e)
         {
-            Cliente gravaCliente = new Cliente();
-            /*
-            gravaCliente.Nome = txt_tela_nome.Text;
-            gravaCliente.Cpf = txtCpf.Text;
-            gravaCliente.Telefone = txt_tela_telefone.Text;
-            gravaCliente.Email = txtEmail.Text;
-            gravaCliente.Endereco = textEndereco.Text;
-            gravaCliente.Observacao = textObservacao.Text;
+            Cliente novoCliente = new Cliente();
 
-    
-
-
+            novoCliente.Nome = textNome.Text;
+            novoCliente.Cpf = textCpf.Text;
+            novoCliente.Telefone = textTelefone.Text;
+            novoCliente.Email = textEmail.Text;
+            novoCliente.Endereco = textEndereco.Text;
+            novoCliente.Observacao = textObservacao.Text;
 
             DAOCliente cliente = new DAOCliente();
-            cliente.inserir(gravaCliente);
+            cliente.inserir(novoCliente);
             System.Windows.Forms.MessageBox.Show("Cliente Salvo");
             var menu = new MainWindow();
             this.Close();
-            menu.Show();
-            */
+     
+            var telaListarClientes = new ListarClientes();
+            telaListarClientes.Show();
+            
 
         }
         //
-       
 
-        
-
-        private void TextBox_TextChanged_1(object sender, TextChangedEventArgs e)
-        {
-
-        }
 
         //Botao Voltar
         private void btnVoltar(object sender, RoutedEventArgs e)
