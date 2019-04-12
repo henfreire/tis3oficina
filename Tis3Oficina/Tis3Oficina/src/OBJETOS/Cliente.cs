@@ -17,5 +17,16 @@ namespace Tis3Oficina.src.OBJETOS
         public string Endereco { get => endereco; set => endereco = value; }
         public string Observacao { get => observacao; set => observacao = value; }
         public string Email { get => email; set => email = value; }
+
+        public override string ToString() {
+
+            return "ID: " + id +
+                "\nNome: " + Nome +
+                "\nCpf: " + Cpf +
+                "\nTelefone: " + Telefone +
+                "\nEndereco: " + Endereco +
+                "\nObservacao: " + Observacao +
+                "\nEmail: " + Email;
+        }
     }
 }

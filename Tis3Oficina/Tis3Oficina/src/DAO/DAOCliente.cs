@@ -98,5 +98,28 @@ namespace Tis3Oficina.src.DAO
             return listaClientes;
         }
 
+        public void editar(Cliente cliente, string id)
+        {
+            try
+            {
+                // Query mysql
+                String query = "UPDATE cliente SET nome = '" + cliente.Nome + "', cpf= '" + cliente.Cpf + "', telefone='" +
+                    cliente.Telefone + "', email='" + cliente.Email + "', endereco='" + cliente.Endereco + "', observacao='" +
+                    cliente.Observacao + "' WHERE id = " + id + "; ";
+                Console.WriteLine(query);
+
+                // Aqui passar a query e estância de conexão que é configurada na Classe no Conexao na pasta config
+                MySqlCommand command = new MySqlCommand(query, conexao.getInstancia());
+
+                // Executa a query
+
+                command.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show("Erro inserir Cliente : " + ex.Message, "Erro");
+            }
+        }
+
     }
 }

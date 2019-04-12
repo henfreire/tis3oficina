@@ -12,7 +12,7 @@
                 <ColumnDefinition Width="419*"/>
                 <ColumnDefinition Width="373*"/>
             </Grid.ColumnDefinitions>
-            <DataGrid Name="dataGrid1" HorizontalAlignment="Left" Height="278" Margin="24,99,0,0" VerticalAlignment="Top" Width="736" Grid.ColumnSpan="2"/>
+            <DataGrid Name="dataGrid1" HorizontalAlignment="Left" Height="278" Margin="24,99,0,0" VerticalAlignment="Top" Width="736" Grid.ColumnSpan="2" MouseDoubleClick="DataGrid1_MouseDoubleClick"/>
 
 
             <Button Margin="196,36,0,0" VerticalAlignment="Top" Width="145" Height="41" Click="btnNovoCliente" Grid.Column="1" Background="#FF202020" HorizontalAlignment="Left" BorderThickness="0">
@@ -22,6 +22,8 @@
                 </Grid>
             </Button>
             <Button Content="Voltar" HorizontalAlignment="Left" Margin="267,382,0,0" VerticalAlignment="Top" Width="74" FontFamily="Roboto Black" FontSize="16" Background="#FF00AEFB" Foreground="White" BorderBrush="#FF00AEFB" Click="btnVoltar" Grid.Column="1"/>
+            <Button Name="BEdit" Content="Editar" HorizontalAlignment="Left" Margin="178,382,0,0" VerticalAlignment="Top" Width="74" FontFamily="Roboto Black" FontSize="16" Background="#FF00AEFB" Foreground="White" BorderBrush="#FF00AEFB" Click="btnEditar" Grid.Column="1" IsEnabled="False"/>
+            <Button Content="Deletar" HorizontalAlignment="Left" Margin="88,382,0,0" VerticalAlignment="Top" Width="74" FontFamily="Roboto Black" FontSize="16" Background="#FF00AEFB" Foreground="White" BorderBrush="#FF00AEFB" Click="btnDeletar" Grid.Column="1"/>
             <Grid HorizontalAlignment="Left" Height="41" Margin="24,36,0,0" VerticalAlignment="Top" Width="385">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="0*"/>

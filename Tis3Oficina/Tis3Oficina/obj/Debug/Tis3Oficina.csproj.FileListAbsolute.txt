@@ -68,3 +68,5 @@ C:\Users\Caique\Documents\TIS3\tis3oficina\Tis3Oficina\Tis3Oficina\obj\Debug\Tis
 C:\Users\Caique\Documents\TIS3\tis3oficina\Tis3Oficina\Tis3Oficina\obj\Debug\Tis3Oficina.csproj.CopyComplete
 C:\Users\Caique\Documents\TIS3\tis3oficina\Tis3Oficina\Tis3Oficina\obj\Debug\Tis3Oficina.exe
 C:\Users\Caique\Documents\TIS3\tis3oficina\Tis3Oficina\Tis3Oficina\obj\Debug\Tis3Oficina.pdb
+C:\Users\Caique\Documents\TIS3\tis3oficina\Tis3Oficina\Tis3Oficina\obj\Debug\src\Telas\EditarCliente.g.cs
+C:\Users\Caique\Documents\TIS3\tis3oficina\Tis3Oficina\Tis3Oficina\obj\Debug\src\Telas\EditarCliente.baml
