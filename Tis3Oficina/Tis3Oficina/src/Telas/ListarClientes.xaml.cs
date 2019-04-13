@@ -38,7 +38,7 @@ namespace Tis3Oficina.src.Telas
           DAOCliente daoC = new DAOCliente();
             DataTable result = daoC.listarTodos();
             List<Cliente> c = daoC.getTodos();
-            this.dataGrid1.ItemsSource = c;
+            dataGrid1.ItemsSource = c;
         }
 
         //Botao Voltar
@@ -62,10 +62,14 @@ namespace Tis3Oficina.src.Telas
         //Botao Deletar
         private void btnDeletar(object sender, RoutedEventArgs e)
         {
-            Console.WriteLine(id);
-            var menu = new MainWindow();
-            this.Close();
-            menu.Show();
+
+            DAOCliente delete = new DAOCliente();
+            delete.deletar(id);
+            DataTable result = delete.listarTodos();
+            List<Cliente> c = delete.getTodos();
+            dataGrid1.ItemsSource = c;
+            BEdit.IsEnabled = false;
+            BDelete.IsEnabled = false;
         }
 
         //Botao Criar novo Cliente
@@ -82,11 +86,12 @@ namespace Tis3Oficina.src.Telas
             {
                 object item = dataGrid1.SelectedItem;
                 id = (dataGrid1.SelectedCells[0].Column.GetCellContent(item) as TextBlock).Text;
-                
-                
             }
             if (id != null)
+            {
                 BEdit.IsEnabled = true;
+                BDelete.IsEnabled = true;
+            }
         }
     }
 }

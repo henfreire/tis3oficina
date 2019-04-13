@@ -121,5 +121,25 @@ namespace Tis3Oficina.src.DAO
             }
         }
 
+        public void deletar(string id)
+        {
+            try
+            {
+                // Query mysql
+                String query = "DELETE FROM `cliente` WHERE `id` = "+id+";";
+
+                // Aqui passar a query e estância de conexão que é configurada na Classe no Conexao na pasta config
+                MySqlCommand command = new MySqlCommand(query, conexao.getInstancia());
+
+                // Executa a query
+
+                command.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show("Erro inserir Cliente : " + ex.Message, "Erro");
+            }
+        }
+
     }
 }

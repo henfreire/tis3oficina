@@ -23,7 +23,7 @@
             </Button>
             <Button Content="Voltar" HorizontalAlignment="Left" Margin="267,382,0,0" VerticalAlignment="Top" Width="74" FontFamily="Roboto Black" FontSize="16" Background="#FF00AEFB" Foreground="White" BorderBrush="#FF00AEFB" Click="btnVoltar" Grid.Column="1"/>
             <Button Name="BEdit" Content="Editar" HorizontalAlignment="Left" Margin="178,382,0,0" VerticalAlignment="Top" Width="74" FontFamily="Roboto Black" FontSize="16" Background="#FF00AEFB" Foreground="White" BorderBrush="#FF00AEFB" Click="btnEditar" Grid.Column="1" IsEnabled="False"/>
-            <Button Content="Deletar" HorizontalAlignment="Left" Margin="88,382,0,0" VerticalAlignment="Top" Width="74" FontFamily="Roboto Black" FontSize="16" Background="#FF00AEFB" Foreground="White" BorderBrush="#FF00AEFB" Click="btnDeletar" Grid.Column="1"/>
+            <Button Name="BDelete" Content="Deletar" HorizontalAlignment="Left" Margin="88,382,0,0" VerticalAlignment="Top" Width="74" FontFamily="Roboto Black" FontSize="16" Background="#FF00AEFB" Foreground="White" BorderBrush="#FF00AEFB" Click="btnDeletar" Grid.Column="1" IsEnabled="False"/>
             <Grid HorizontalAlignment="Left" Height="41" Margin="24,36,0,0" VerticalAlignment="Top" Width="385">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="0*"/>
