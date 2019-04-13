@@ -5,21 +5,21 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Tis3Oficina"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" WindowState="Maximized" Background="#FF202020">
+        Title="Tela Inicial" Height="450" WindowState="Maximized" Background="#FF202020">
     <Grid HorizontalAlignment="Center" Width="761">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="759*"/>
             <ColumnDefinition/>
             <ColumnDefinition Width="0*"/>
         </Grid.ColumnDefinitions>
-        <Button Content="Novo Orçamento" HorizontalAlignment="Left" Margin="190,47,0,0" VerticalAlignment="Top" Width="338" Height="63" Background="#FF00AEFB" BorderBrush="#FF00AEFB" Click="Button_Click" FontSize="20" FontWeight="Bold" FontFamily="Roboto Black" Foreground="White"/>
-        <Button HorizontalAlignment="Left" Margin="46,201,0,0" VerticalAlignment="Top" Width="116" Height="151" Background="#FF00AEFB" Click="Button_Click_2">
+        <Button Content="Novo Orçamento" HorizontalAlignment="Left" Margin="190,47,0,0" VerticalAlignment="Top" Width="338" Height="63" Background="#FF00AEFB" BorderBrush="#FF00AEFB" FontSize="20" FontWeight="Bold" FontFamily="Roboto Black" Foreground="White"/>
+        <Button HorizontalAlignment="Left" Margin="46,201,0,0" VerticalAlignment="Top" Width="116" Height="151" Background="#FF00AEFB" Click="btnCliente">
             <Grid>
                 <Label Content="Cliente" HorizontalAlignment="Left" Margin="33,110,0,0" VerticalAlignment="Top" FontFamily="Roboto" FontSize="14" RenderTransformOrigin="-0.088,0.37" Foreground="White"/>
                 <Image Margin="21,19,12,54" Source="src/assets/icons/user.png" Stretch="Fill"/>
             </Grid>
         </Button>
-        <Button HorizontalAlignment="Left" Margin="220,201,0,0" VerticalAlignment="Top" Width="116" Height="151" Background="#FF00AEFB">
+        <Button HorizontalAlignment="Left" Margin="220,201,0,0" VerticalAlignment="Top" Width="116" Height="151" Background="#FF00AEFB" Click="btnServico">
             <Grid>
                 <Label Content="Serviços" HorizontalAlignment="Left" Margin="21,110,0,0" VerticalAlignment="Top" FontFamily="Roboto" FontSize="14" RenderTransformOrigin="-0.088,0.37" Foreground="White"/>
                 <Image Margin="21,19,12,54" Source="src/assets/icons/automobile.png" Stretch="Fill"/>

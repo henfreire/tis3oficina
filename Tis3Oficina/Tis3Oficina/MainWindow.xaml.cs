@@ -26,23 +26,21 @@ namespace Tis3Oficina
             InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void Button_Click_1(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void Button_Click_2(object sender, RoutedEventArgs e)
+        private void btnCliente(object sender, RoutedEventArgs e)
         {
             // var telaCadastroCliente = new CadastroCliente();
             
             var telaListarClientes = new ListarClientes();
             this.Close();
             telaListarClientes.Show();
+
+        }
+
+        private void btnServico(object sender, RoutedEventArgs e)
+        {
+            var telaListarServico = new ListarServico();
+            this.Close();
+            telaListarServico.Show();
 
         }
     }

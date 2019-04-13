@@ -23,12 +23,11 @@ namespace Tis3Oficina.src.Telas
     public partial class ListarClientes : Window
     {
         public static string id="";
+
         public ListarClientes()
         {
             InitializeComponent();
             this.carregarDados();
-
-
         }
 
       

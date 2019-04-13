@@ -6,6 +6,7 @@
         xmlns:local="clr-namespace:Tis3Oficina.src.Telas"
         mc:Ignorable="d"
         Title="ListarCLientes" Height="450" Width="800" WindowState="Maximized" WindowStartupLocation="CenterScreen" Background="#FF202020">
+
     <Grid>
         <Grid HorizontalAlignment="Center" Width="792">
             <Grid.ColumnDefinitions>
@@ -13,7 +14,6 @@
                 <ColumnDefinition Width="373*"/>
             </Grid.ColumnDefinitions>
             <DataGrid Name="dataGrid1" HorizontalAlignment="Left" Height="278" Margin="24,99,0,0" VerticalAlignment="Top" Width="736" Grid.ColumnSpan="2" MouseDoubleClick="DataGrid1_MouseDoubleClick"/>
-
 
             <Button Margin="196,36,0,0" VerticalAlignment="Top" Width="145" Height="41" Click="btnNovoCliente" Grid.Column="1" Background="#FF202020" HorizontalAlignment="Left" BorderThickness="0">
                 <Grid>

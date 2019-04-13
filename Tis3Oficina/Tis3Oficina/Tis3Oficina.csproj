@@ -76,16 +76,24 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="src\Config\Conexao.cs" />
+    <Compile Include="src\DAO\DAOServico.cs" />
     <Compile Include="src\DAO\DAOCliente.cs" />
+    <Compile Include="src\OBJETOS\Servico.cs" />
     <Compile Include="src\OBJETOS\Cliente.cs" />
     <Compile Include="src\Telas\CadastroCliente.xaml.cs">
       <DependentUpon>CadastroCliente.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="src\Telas\CadastroServico.xaml.cs">
+      <DependentUpon>CadastroServico.xaml</DependentUpon>
     </Compile>
     <Compile Include="src\Telas\EditarCliente.xaml.cs">
       <DependentUpon>EditarCliente.xaml</DependentUpon>
     </Compile>
     <Compile Include="src\Telas\ListarClientes.xaml.cs">
       <DependentUpon>ListarClientes.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="src\Telas\ListarServico.xaml.cs">
+      <DependentUpon>ListarServico.xaml</DependentUpon>
     </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -103,11 +111,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="src\Telas\CadastroServico.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="src\Telas\EditarCliente.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="src\Telas\ListarClientes.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="src\Telas\ListarServico.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
