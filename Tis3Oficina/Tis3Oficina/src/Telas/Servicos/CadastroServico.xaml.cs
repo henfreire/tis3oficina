@@ -15,7 +15,7 @@ using System.Windows.Shapes;
 using Tis3Oficina.src.DAO;
 using Tis3Oficina.src.OBJETOS;
 
-namespace Tis3Oficina.src.Telas
+namespace Tis3Oficina.src.Telas.Servicos
 {
     /// <summary>
     /// Lógica interna para CadastroServico.xaml
@@ -33,12 +33,14 @@ namespace Tis3Oficina.src.Telas
             Servico novoServico = new Servico();
 
             novoServico.NomeServico = textNomeServico.Text;
-            novoServico.Valor = textValor.Text;
+            novoServico.Valor = textValor.Text.Replace("_","");
 
             DAOServico servico = new DAOServico();
             servico.inserir(novoServico);
-            System.Windows.Forms.MessageBox.Show("Servico Salvo");
-            
+            var alerta = new Alerta();
+            alerta.conteudo.Content = "Serviço criado com sucesso";
+            alerta.ShowDialog();
+
 
             var telaListaServico = new ListarServico();
             this.Close();

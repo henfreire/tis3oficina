@@ -15,7 +15,7 @@ using System.Windows.Shapes;
 using Tis3Oficina.src.DAO;
 using Tis3Oficina.src.OBJETOS;
 
-namespace Tis3Oficina.src.Telas
+namespace Tis3Oficina.src.Telas.CadastroCliente
 {
     /// <summary>
     /// Lógica interna para ListarCliente.xaml

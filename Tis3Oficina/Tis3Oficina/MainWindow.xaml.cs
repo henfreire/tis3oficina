@@ -12,7 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using Tis3Oficina.src.Telas;
+using Tis3Oficina.src.Telas.Servicos;
+using Tis3Oficina.src.Telas.CadastroCliente;
 
 namespace Tis3Oficina
 {

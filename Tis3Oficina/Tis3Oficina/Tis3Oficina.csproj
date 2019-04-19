@@ -101,19 +101,22 @@
     <Compile Include="src\Telas\Alerta.xaml.cs">
       <DependentUpon>Alerta.xaml</DependentUpon>
     </Compile>
-    <Compile Include="src\Telas\CadastroCliente.xaml.cs">
+    <Compile Include="src\Telas\CadastroCliente\CadastroCliente.xaml.cs">
       <DependentUpon>CadastroCliente.xaml</DependentUpon>
     </Compile>
-    <Compile Include="src\Telas\CadastroServico.xaml.cs">
+    <Compile Include="src\Telas\Servicos\CadastroServico.xaml.cs">
       <DependentUpon>CadastroServico.xaml</DependentUpon>
     </Compile>
-    <Compile Include="src\Telas\EditarCliente.xaml.cs">
+    <Compile Include="src\Telas\CadastroCliente\EditarCliente.xaml.cs">
       <DependentUpon>EditarCliente.xaml</DependentUpon>
     </Compile>
-    <Compile Include="src\Telas\ListarClientes.xaml.cs">
+    <Compile Include="src\Telas\CadastroCliente\ListarClientes.xaml.cs">
       <DependentUpon>ListarClientes.xaml</DependentUpon>
     </Compile>
-    <Compile Include="src\Telas\ListarServico.xaml.cs">
+    <Compile Include="src\Telas\Servicos\EditarServico.xaml.cs">
+      <DependentUpon>EditarServico.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="src\Telas\Servicos\ListarServico.xaml.cs">
       <DependentUpon>ListarServico.xaml</DependentUpon>
     </Compile>
     <Page Include="MainWindow.xaml">
@@ -132,23 +135,27 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="src\Telas\CadastroCliente.xaml">
+    <Page Include="src\Telas\CadastroCliente\CadastroCliente.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="src\Telas\CadastroServico.xaml">
+    <Page Include="src\Telas\Servicos\CadastroServico.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="src\Telas\EditarCliente.xaml">
+    <Page Include="src\Telas\CadastroCliente\EditarCliente.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="src\Telas\ListarClientes.xaml">
+    <Page Include="src\Telas\CadastroCliente\ListarClientes.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="src\Telas\ListarServico.xaml">
+    <Page Include="src\Telas\Servicos\EditarServico.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="src\Telas\Servicos\ListarServico.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -201,15 +208,6 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="src\assets\icons\add.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="icon.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="icone.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="car.ico" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="carro.ico" />

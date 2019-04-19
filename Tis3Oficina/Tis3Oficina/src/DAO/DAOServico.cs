@@ -92,14 +92,12 @@ namespace Tis3Oficina.src.DAO
             return listaServicos;
         }
 
-        /*public void editar(Cliente cliente, string id)
+        public void editar(Servico servico, string id)
         {
             try
             {
                 // Query mysql
-                String query = "UPDATE cliente SET nome = '" + cliente.Nome + "', cpf= '" + cliente.Cpf + "', telefone='" +
-                    cliente.Telefone + "', email='" + cliente.Email + "', endereco='" + cliente.Endereco + "', observacao='" +
-                    cliente.Observacao + "' WHERE id = " + id + "; ";
+                String query = "UPDATE servico SET nomeServico = '" + servico.NomeServico + "', valor= '" + servico.Valor + "' WHERE id = " + id + "; ";
                 Console.WriteLine(query);
 
                 // Aqui passar a query e estância de conexão que é configurada na Classe no Conexao na pasta config
@@ -120,7 +118,7 @@ namespace Tis3Oficina.src.DAO
             try
             {
                 // Query mysql
-                String query = "DELETE FROM `cliente` WHERE `id` = "+id+";";
+                String query = "DELETE FROM `servico` WHERE `id` = "+id+";";
 
                 // Aqui passar a query e estância de conexão que é configurada na Classe no Conexao na pasta config
                 MySqlCommand command = new MySqlCommand(query, conexao.getInstancia());
@@ -133,7 +131,7 @@ namespace Tis3Oficina.src.DAO
             {
                 System.Windows.Forms.MessageBox.Show("Erro inserir Cliente : " + ex.Message, "Erro");
             }
-        }*/
+        }
 
     }
 }

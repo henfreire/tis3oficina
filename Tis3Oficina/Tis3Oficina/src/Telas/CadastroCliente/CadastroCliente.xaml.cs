@@ -16,7 +16,7 @@ using Tis3Oficina.src.Config;
 using Tis3Oficina.src.DAO;
 using Tis3Oficina.src.OBJETOS;
 
-namespace Tis3Oficina.src.Telas
+namespace Tis3Oficina.src.Telas.CadastroCliente
 {
     /// <summary>
     /// Lógica interna para CadastroCliente.xaml
@@ -375,7 +375,5 @@ namespace Tis3Oficina.src.Telas
             digito = digito + resto.ToString();
             return cnpj.EndsWith(digito);
         }
-
-
     }
 }

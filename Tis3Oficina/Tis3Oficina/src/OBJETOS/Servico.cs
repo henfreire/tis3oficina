@@ -12,8 +12,9 @@ namespace Tis3Oficina.src.OBJETOS
         string id,nomeServico,valor;
 
         public string Id { get => id; set => id = value; }
-        public string Valor { get => valor; set => valor = value; }
         public string NomeServico { get => nomeServico; set => nomeServico = value; }
+        public string Valor { get => valor; set => valor = value; }
+        
 
         public override string ToString() {
 
