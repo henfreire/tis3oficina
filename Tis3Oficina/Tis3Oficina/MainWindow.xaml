@@ -31,7 +31,7 @@
                 <Image Margin="15,19,18,54" Source="src/assets/icons/plan.png" Stretch="Fill"/>
             </Grid>
         </Button>
-        <Button HorizontalAlignment="Left" Margin="395,201,0,0" VerticalAlignment="Top" Width="116" Height="151" Background="#FF00AEFB">
+        <Button HorizontalAlignment="Left" Margin="395,201,0,0" VerticalAlignment="Top" Width="116" Height="151" Background="#FF00AEFB" Click="btnPeca">
             <Grid>
                 <Label Content="Peças" HorizontalAlignment="Left" Margin="36,110,0,0" VerticalAlignment="Top" FontFamily="Roboto" FontSize="14" RenderTransformOrigin="-0.088,0.37" Foreground="White"/>
                 <Image Margin="21,19,12,54" Source="src/assets/icons/battery.png" Stretch="Fill"/>

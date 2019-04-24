@@ -93,3 +93,9 @@ C:\Users\Caique\Documents\TIS3\tis3oficina\Tis3Oficina\Tis3Oficina\obj\Debug\src
 C:\Users\Caique\Documents\TIS3\tis3oficina\Tis3Oficina\Tis3Oficina\obj\Debug\src\Telas\Servicos\ListarServico.baml
 C:\Users\Caique\Documents\TIS3\tis3oficina\Tis3Oficina\Tis3Oficina\obj\Debug\src\Telas\Servicos\EditarServico.g.cs
 C:\Users\Caique\Documents\TIS3\tis3oficina\Tis3Oficina\Tis3Oficina\obj\Debug\src\Telas\Servicos\EditarServico.baml
+C:\Users\Caique\Documents\TIS3\tis3oficina\Tis3Oficina\Tis3Oficina\obj\Debug\src\Telas\Pecas\CadastroPeca.g.cs
+C:\Users\Caique\Documents\TIS3\tis3oficina\Tis3Oficina\Tis3Oficina\obj\Debug\src\Telas\Pecas\EditarPeca.g.cs
+C:\Users\Caique\Documents\TIS3\tis3oficina\Tis3Oficina\Tis3Oficina\obj\Debug\src\Telas\Pecas\ListarPecas.g.cs
+C:\Users\Caique\Documents\TIS3\tis3oficina\Tis3Oficina\Tis3Oficina\obj\Debug\src\Telas\Pecas\CadastroPeca.baml
+C:\Users\Caique\Documents\TIS3\tis3oficina\Tis3Oficina\Tis3Oficina\obj\Debug\src\Telas\Pecas\EditarPeca.baml
+C:\Users\Caique\Documents\TIS3\tis3oficina\Tis3Oficina\Tis3Oficina\obj\Debug\src\Telas\Pecas\ListarPecas.baml

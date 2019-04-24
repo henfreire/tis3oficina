@@ -94,8 +94,10 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="src\Config\Conexao.cs" />
+    <Compile Include="src\DAO\DAOPeca.cs" />
     <Compile Include="src\DAO\DAOServico.cs" />
     <Compile Include="src\DAO\DAOCliente.cs" />
+    <Compile Include="src\OBJETOS\Peca.cs" />
     <Compile Include="src\OBJETOS\Servico.cs" />
     <Compile Include="src\OBJETOS\Cliente.cs" />
     <Compile Include="src\Telas\Alerta.xaml.cs">
@@ -103,6 +105,15 @@
     </Compile>
     <Compile Include="src\Telas\CadastroCliente\CadastroCliente.xaml.cs">
       <DependentUpon>CadastroCliente.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="src\Telas\Pecas\CadastroPeca.xaml.cs">
+      <DependentUpon>CadastroPeca.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="src\Telas\Pecas\EditarPeca.xaml.cs">
+      <DependentUpon>EditarPeca.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="src\Telas\Pecas\ListarPecas.xaml.cs">
+      <DependentUpon>ListarPecas.xaml</DependentUpon>
     </Compile>
     <Compile Include="src\Telas\Servicos\CadastroServico.xaml.cs">
       <DependentUpon>CadastroServico.xaml</DependentUpon>
@@ -136,6 +147,18 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="src\Telas\CadastroCliente\CadastroCliente.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="src\Telas\Pecas\CadastroPeca.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="src\Telas\Pecas\EditarPeca.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="src\Telas\Pecas\ListarPecas.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

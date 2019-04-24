@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Tis3Oficina.src.Telas.Servicos;
 using Tis3Oficina.src.Telas.CadastroCliente;
+using Tis3Oficina.src.Telas.Pecas;
 
 namespace Tis3Oficina
 {
@@ -43,6 +44,13 @@ namespace Tis3Oficina
             this.Close();
             telaListarServico.Show();
 
+        }
+
+        private void btnPeca(object sender, RoutedEventArgs e)
+        {
+            var telaListarPeca = new ListarPecas();
+            this.Close();
+            telaListarPeca.Show();
         }
     }
 }

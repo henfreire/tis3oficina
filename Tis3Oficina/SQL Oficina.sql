@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 19-Abr-2019 às 07:33
+-- Generation Time: 24-Abr-2019 às 22:09
 -- Versão do servidor: 10.1.38-MariaDB
 -- versão do PHP: 7.2.16
 
@@ -38,6 +38,39 @@ CREATE TABLE `cliente` (
   `observacao` varchar(100) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Extraindo dados da tabela `cliente`
+--
+
+INSERT INTO `cliente` (`id`, `nome`, `cpf`, `telefone`, `email`, `endereco`, `observacao`) VALUES
+(1, 'OICNAOsncoi', '12048689647', '31993799016', 'caosij@oascmio.com', 'Riuahsiu', 'iuasbiasub');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `orcamento`
+--
+
+CREATE TABLE `orcamento` (
+  `CodOrc` int(10) NOT NULL,
+  `ItemOrc` varchar(100) NOT NULL,
+  `QtdeOrc` varchar(3) DEFAULT NULL,
+  `TotOrc` varchar(7) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `pecas`
+--
+
+CREATE TABLE `pecas` (
+  `CodPec` int(11) NOT NULL,
+  `NomePec` varchar(100) DEFAULT NULL,
+  `QtdePec` varchar(3) DEFAULT NULL,
+  `ValPec` varchar(8) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
 -- --------------------------------------------------------
 
 --
@@ -51,6 +84,13 @@ CREATE TABLE `servico` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
+-- Extraindo dados da tabela `servico`
+--
+
+INSERT INTO `servico` (`id`, `nomeServico`, `valor`) VALUES
+(1, 'oi', '188,');
+
+--
 -- Indexes for dumped tables
 --
 
@@ -59,6 +99,18 @@ CREATE TABLE `servico` (
 --
 ALTER TABLE `cliente`
   ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `orcamento`
+--
+ALTER TABLE `orcamento`
+  ADD PRIMARY KEY (`CodOrc`);
+
+--
+-- Indexes for table `pecas`
+--
+ALTER TABLE `pecas`
+  ADD PRIMARY KEY (`CodPec`);
 
 --
 -- Indexes for table `servico`
@@ -74,13 +126,25 @@ ALTER TABLE `servico`
 -- AUTO_INCREMENT for table `cliente`
 --
 ALTER TABLE `cliente`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `orcamento`
+--
+ALTER TABLE `orcamento`
+  MODIFY `CodOrc` int(10) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `pecas`
+--
+ALTER TABLE `pecas`
+  MODIFY `CodPec` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `servico`
 --
 ALTER TABLE `servico`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

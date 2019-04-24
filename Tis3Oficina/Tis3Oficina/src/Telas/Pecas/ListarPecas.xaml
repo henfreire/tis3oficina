@@ -1,11 +1,11 @@
-﻿<Window x:Class="Tis3Oficina.src.Telas.Servicos.ListarServico"
+﻿<Window x:Class="Tis3Oficina.src.Telas.Pecas.ListarPecas"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Tis3Oficina.src.Telas"
+        xmlns:local="clr-namespace:Tis3Oficina.src.Telas.Pecas"
         mc:Ignorable="d"
-        Title="Serviços" Height="473" Width="800" WindowState="Maximized" WindowStartupLocation="CenterScreen" Background="#FF202020">
+        Title="ListarPecas" Height="473" Width="800" WindowState="Maximized" WindowStartupLocation="CenterScreen" Background="#FF202020">
 
     <Grid>
         <Grid HorizontalAlignment="Center" Width="Auto">
@@ -19,8 +19,8 @@
                     <ColumnDefinition Width="3*"/>
                     <ColumnDefinition Width="52*"/>
                 </Grid.ColumnDefinitions>
-                <Image Source="/src/assets/icons/automobile.png" Margin="115.685,4,185,0" Grid.Column="2"/>
-                <Label Content="Serviços disponíveis" HorizontalAlignment="Left" Margin="171.685,3,-127,-6" VerticalAlignment="Top" Width="319" Height="44" Foreground="White" FontFamily="Roboto" FontSize="25" Grid.Column="2"/>
+                <Image Source="/src/assets/icons/battery.png" Margin="115.685,4,185,0" Grid.Column="2"/>
+                <Label Content="Peças em estoque" HorizontalAlignment="Left" Margin="171.685,3,-127,-6" VerticalAlignment="Top" Width="319" Height="44" Foreground="White" FontFamily="Roboto" FontSize="25" Grid.Column="2"/>
             </Grid>
             <Grid Margin="24,341,10,31" Height="70">
                 <StackPanel Margin="10,0,24,0" Height="70" Orientation="Horizontal" HorizontalAlignment="Right">
@@ -28,7 +28,7 @@
                     <Button Name="BEdit" Content="Editar" Margin="0,0,10,0" VerticalAlignment="Bottom" Width="74" FontFamily="Roboto Black" FontSize="16" Background="#FF00AEFB" Foreground="White" BorderBrush="#FF00AEFB" Click="btnEditar" IsEnabled="False"/>
                     <Button Content="Voltar" HorizontalAlignment="Right" VerticalAlignment="Bottom"  Width="74" FontFamily="Roboto" FontSize="16" Background="#FF00AEFB" Foreground="White" BorderBrush="#FF00AEFB" Click="btnVoltar" Grid.Column="1"/>
                 </StackPanel>
-                <Button Content="CRIAR NOVO SERVIÇO" HorizontalAlignment="Center" VerticalAlignment="Bottom" Height="50" Width="180" FontFamily="Roboto" FontSize="16" Background="#FF00AEFB" Foreground="White" BorderBrush="#FF00AEFB" Click="btnCriarServico" UseLayoutRounding="False" RenderTransformOrigin="0.501,0.5" Grid.Column="1"/>
+                <Button Content="CADASTRAR NOVA PEÇA" HorizontalAlignment="Center" VerticalAlignment="Bottom" Height="50" Width="182" FontFamily="Roboto" FontSize="16" Background="#FF00AEFB" Foreground="White" BorderBrush="#FF00AEFB" Click="btnCriarPeca" UseLayoutRounding="False" RenderTransformOrigin="0.501,0.5" Margin="273,0,271,0"/>
             </Grid>
         </Grid>
 

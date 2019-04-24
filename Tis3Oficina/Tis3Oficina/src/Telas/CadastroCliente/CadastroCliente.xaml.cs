@@ -270,7 +270,7 @@ namespace Tis3Oficina.src.Telas.CadastroCliente
             e.Handled = new Regex("[^a-zA-Z]+").IsMatch(e.Text);
         }
 
-        //Verificar se esta digitando letra ao invés de numero
+        //Verificar se esta digitando numero ao invés de letra
         private void validateCPFTel(object sender, TextCompositionEventArgs e)
         {
             e.Handled = new Regex("[^0-9]+").IsMatch(e.Text);
