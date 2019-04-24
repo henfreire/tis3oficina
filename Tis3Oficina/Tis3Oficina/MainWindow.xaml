@@ -12,7 +12,7 @@
             <ColumnDefinition/>
             <ColumnDefinition Width="0*"/>
         </Grid.ColumnDefinitions>
-        <Button Content="Novo Orçamento" HorizontalAlignment="Left" Margin="190,47,0,0" VerticalAlignment="Top" Width="338" Height="63" Background="#FF00AEFB" BorderBrush="#FF00AEFB" FontSize="20" FontWeight="Bold" FontFamily="Roboto Black" Foreground="White"/>
+        <Button Content="Novo Orçamento" Click="btnOrcamento" HorizontalAlignment="Left" Margin="190,47,0,0" VerticalAlignment="Top" Width="338" Height="63" Background="#FF00AEFB" BorderBrush="#FF00AEFB" FontSize="20" FontWeight="Bold" FontFamily="Roboto Black" Foreground="White"/>
         <Button HorizontalAlignment="Left" Margin="46,201,0,0" VerticalAlignment="Top" Width="116" Height="151" Background="#FF00AEFB" Click="btnCliente">
             <Grid>
                 <Label Content="Cliente" HorizontalAlignment="Left" Margin="33,110,0,0" VerticalAlignment="Top" FontFamily="Roboto" FontSize="14" RenderTransformOrigin="-0.088,0.37" Foreground="White"/>

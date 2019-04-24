@@ -106,6 +106,9 @@
     <Compile Include="src\Telas\CadastroCliente\CadastroCliente.xaml.cs">
       <DependentUpon>CadastroCliente.xaml</DependentUpon>
     </Compile>
+    <Compile Include="src\Telas\Orcamento\CriarOrcamento.xaml.cs">
+      <DependentUpon>CriarOrcamento.xaml</DependentUpon>
+    </Compile>
     <Compile Include="src\Telas\Pecas\CadastroPeca.xaml.cs">
       <DependentUpon>CadastroPeca.xaml</DependentUpon>
     </Compile>
@@ -147,6 +150,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="src\Telas\CadastroCliente\CadastroCliente.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="src\Telas\Orcamento\CriarOrcamento.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -234,6 +241,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="carro.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="src\assets\icons\orca.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -99,3 +99,5 @@ C:\Users\Caique\Documents\TIS3\tis3oficina\Tis3Oficina\Tis3Oficina\obj\Debug\src
 C:\Users\Caique\Documents\TIS3\tis3oficina\Tis3Oficina\Tis3Oficina\obj\Debug\src\Telas\Pecas\CadastroPeca.baml
 C:\Users\Caique\Documents\TIS3\tis3oficina\Tis3Oficina\Tis3Oficina\obj\Debug\src\Telas\Pecas\EditarPeca.baml
 C:\Users\Caique\Documents\TIS3\tis3oficina\Tis3Oficina\Tis3Oficina\obj\Debug\src\Telas\Pecas\ListarPecas.baml
+C:\Users\Caique\Documents\TIS3\tis3oficina\Tis3Oficina\Tis3Oficina\obj\Debug\src\Telas\Orcamento\CriarOrcamento.g.cs
+C:\Users\Caique\Documents\TIS3\tis3oficina\Tis3Oficina\Tis3Oficina\obj\Debug\src\Telas\Orcamento\CriarOrcamento.baml

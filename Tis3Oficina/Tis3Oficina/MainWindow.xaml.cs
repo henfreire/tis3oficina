@@ -15,6 +15,7 @@ using System.Windows.Shapes;
 using Tis3Oficina.src.Telas.Servicos;
 using Tis3Oficina.src.Telas.CadastroCliente;
 using Tis3Oficina.src.Telas.Pecas;
+using Tis3Oficina.src.Telas.Orcamento;
 
 namespace Tis3Oficina
 {
@@ -51,6 +52,13 @@ namespace Tis3Oficina
             var telaListarPeca = new ListarPecas();
             this.Close();
             telaListarPeca.Show();
+        }
+
+        private void btnOrcamento(object sender, RoutedEventArgs e)
+        {
+            var telaOrcamento = new CriarOrcamento();
+            this.Close();
+            telaOrcamento.Show();
         }
     }
 }

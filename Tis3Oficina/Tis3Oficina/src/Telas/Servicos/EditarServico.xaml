@@ -46,7 +46,7 @@
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
             <Image Source="/Tis3Oficina;component/src/assets/icons/automobile.png" Grid.ColumnSpan="2" Margin="0,0,322,4"/>
-            <Label Grid.ColumnSpan="2" Content="Cadastrar Serviço" HorizontalAlignment="Left" Margin="56,-2,0,-1" VerticalAlignment="Top" Width="204" Height="44" Foreground="White" FontFamily="Roboto" FontSize="25"/>
+            <Label Grid.ColumnSpan="2" Content="Editar Serviço" HorizontalAlignment="Left" Margin="56,-2,0,-1" VerticalAlignment="Top" Width="204" Height="44" Foreground="White" FontFamily="Roboto" FontSize="25"/>
         </Grid>
 
     </Grid>

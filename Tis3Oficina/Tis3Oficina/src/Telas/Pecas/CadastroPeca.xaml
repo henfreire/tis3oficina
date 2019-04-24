@@ -29,7 +29,7 @@
         </Grid>
         <Grid x:Name="gridEmail" Margin="10,184,301,165" Height="70">
             <Label Content="Quantidade" HorizontalAlignment="Left" Margin="10,0,0,43" FontFamily="Roboto" FontSize="14" RenderTransformOrigin="-0.088,0.37" Foreground="White"/>
-            <TextBox x:Name="textQtdePec" PreviewTextInput="validateNumber" TextWrapping="Wrap" Background="{x:Null}" BorderBrush="White" Foreground="White" FontSize="24" FontFamily="Roboto" BorderThickness="0,0,0,2" Margin="10,27,0,10" >
+            <TextBox x:Name="textQtdePec" PreviewTextInput="validateNumber" MaxLength="3" TextWrapping="Wrap" Background="{x:Null}" BorderBrush="White" Foreground="White" FontSize="24" FontFamily="Roboto" BorderThickness="0,0,0,2" Margin="10,27,0,10" >
                 <TextBox.ContextMenu>
                     <ContextMenu/>
                 </TextBox.ContextMenu>

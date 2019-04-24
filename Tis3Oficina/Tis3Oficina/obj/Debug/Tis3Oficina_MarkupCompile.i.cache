@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\Caique\Documents\TIS3\tis3oficina\Tis3Oficina\Tis3Oficina\App.xaml
-11931088328
+12306526395
 
-231380879923
+24531930108
 31-1481299757
-MainWindow.xaml;src\Telas\Alerta.xaml;src\Telas\CadastroCliente\CadastroCliente.xaml;src\Telas\Pecas\CadastroPeca.xaml;src\Telas\Pecas\EditarPeca.xaml;src\Telas\Pecas\ListarPecas.xaml;src\Telas\Servicos\CadastroServico.xaml;src\Telas\CadastroCliente\EditarCliente.xaml;src\Telas\CadastroCliente\ListarClientes.xaml;src\Telas\Servicos\EditarServico.xaml;src\Telas\Servicos\ListarServico.xaml;
+MainWindow.xaml;src\Telas\Alerta.xaml;src\Telas\CadastroCliente\CadastroCliente.xaml;src\Telas\Orcamento\CriarOrcamento.xaml;src\Telas\Pecas\CadastroPeca.xaml;src\Telas\Pecas\EditarPeca.xaml;src\Telas\Pecas\ListarPecas.xaml;src\Telas\Servicos\CadastroServico.xaml;src\Telas\CadastroCliente\EditarCliente.xaml;src\Telas\CadastroCliente\ListarClientes.xaml;src\Telas\Servicos\EditarServico.xaml;src\Telas\Servicos\ListarServico.xaml;
 
-True
+False
 

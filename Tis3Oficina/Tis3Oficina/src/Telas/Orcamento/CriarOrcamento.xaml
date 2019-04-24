@@ -1,0 +1,43 @@
+﻿<Window x:Class="Tis3Oficina.src.Telas.Orcamento.CriarOrcamento"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Tis3Oficina.src.Telas.Orcamento"
+        xmlns:wpfx="http://schemas.xceed.com/wpf/xaml/toolkit"
+        mc:Ignorable="d"
+        Title="CriarOrcamento" Height="450" Width="800" WindowState="Maximized" WindowStartupLocation="CenterScreen" Background="#FF202020">
+    <Grid HorizontalAlignment="Center" Width="792">
+        <Grid HorizontalAlignment="Left" Height="129" Margin="10,10,0,0" VerticalAlignment="Top" Width="164">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0*"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Image Source="/Tis3Oficina;component/src/assets/icons/orca.png" Grid.ColumnSpan="2" HorizontalAlignment="Left" VerticalAlignment="Top" Width="53" Height="44"/>
+            <Label Grid.ColumnSpan="2" HorizontalAlignment="Left" VerticalAlignment="Center" Width="164" Height="86" Foreground="White" FontFamily="Roboto" FontSize="25" Margin="0,43,0,0">
+                <TextBlock>
+                    Novo <LineBreak/>Orçamento
+                </TextBlock>
+            </Label>
+        </Grid>
+
+        <Grid Margin="701,395,10,0">
+            <Button Content="Voltar" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="75" FontFamily="Roboto Black" FontSize="16" Background="#FF00AEFB" Foreground="White" BorderBrush="#FF00AEFB" Click="btnVoltar" Height="24" Grid.Column="1" UseLayoutRounding="False" Padding="1,1,1,5"/>
+        </Grid>
+        <Grid Margin="179,123,474,239">
+            <StackPanel>
+                <Label Content="Itens" FontFamily="Roboto" FontSize="14" RenderTransformOrigin="-0.088,0.37" Foreground="White"/>
+                <ComboBox x:Name="comboItem" SelectionChanged="Changed" DropDownClosed="Closes" SelectedIndex="0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="135">
+                    <ComboBoxItem Content="Selecione um item"/>
+                </ComboBox>
+            </StackPanel>
+        </Grid>
+
+        <Grid Margin="377,123,334,239">
+            <StackPanel>
+                <Label Content="Quantidade" FontFamily="Roboto" FontSize="14" RenderTransformOrigin="-0.088,0.37" Foreground="White"/>
+                <wpfx:IntegerUpDown x:Name="qtdeInt" Value="1" Increment="1" Minimum="1"/>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Window>
