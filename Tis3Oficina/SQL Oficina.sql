@@ -44,13 +44,10 @@ CREATE TABLE IF NOT EXISTS `item_orcamento` (
   `idPeca` int(11) DEFAULT NULL,
   `idServico` int(11) DEFAULT NULL,
   `idOrcamento` int(11) DEFAULT NULL,
-  `idCliente` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `FK_itemorcamento_pecas` (`idPeca`),
   KEY `FK_itemorcamento_servico` (`idServico`),
   KEY `FK_itemorcamento_orcamento` (`idOrcamento`),
-  KEY `FK_itemorcamento_cliente` (`idCliente`),
-  CONSTRAINT `FK_itemorcamento_cliente` FOREIGN KEY (`idCliente`) REFERENCES `cliente` (`id`),
   CONSTRAINT `FK_itemorcamento_orcamento` FOREIGN KEY (`idOrcamento`) REFERENCES `orcamento` (`CodOrc`),
   CONSTRAINT `FK_itemorcamento_pecas` FOREIGN KEY (`idPeca`) REFERENCES `pecas` (`CodPec`),
   CONSTRAINT `FK_itemorcamento_servico` FOREIGN KEY (`idServico`) REFERENCES `servico` (`id`)
@@ -64,10 +61,13 @@ DELETE FROM `item_orcamento`;
 -- Copiando estrutura para tabela oficina.orcamento
 CREATE TABLE IF NOT EXISTS `orcamento` (
   `CodOrc` int(10) NOT NULL AUTO_INCREMENT,
+  `QtdeItens` varchar(3) DEFAULT NULL,
   `ItemOrc` varchar(100) NOT NULL,
-  `QtdeOrc` varchar(3) DEFAULT NULL,
   `TotOrc` varchar(7) DEFAULT NULL,
-  PRIMARY KEY (`CodOrc`)
+  `idCliente` int(11) DEFAULT NULL,
+  PRIMARY KEY (`CodOrc`),
+  KEY `FK_orcamento_cliente` (`idCliente`),
+  CONSTRAINT `FK_orcamento_cliente` FOREIGN KEY (`idCliente`) REFERENCES `cliente` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- Copiando dados para a tabela oficina.orcamento: ~0 rows (aproximadamente)
