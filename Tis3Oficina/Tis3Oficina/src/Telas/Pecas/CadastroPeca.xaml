@@ -5,9 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Tis3Oficina.src.Telas.Pecas"
         xmlns:wpfx="http://schemas.xceed.com/wpf/xaml/toolkit"
+        xmlns:teste="clr-namespace:CurrencyTextBoxControl;assembly=CurrencyTextBoxControl"
         mc:Ignorable="d"
         Title="Cadastro de Peças" Height="450" Width="800" WindowState="Maximized" WindowStartupLocation="CenterScreen" Background="#FF202020">
-    
+
     <Window.Resources>
         <BooleanToVisibilityConverter x:Key="b2v" />
     </Window.Resources>
@@ -21,27 +22,24 @@
         <Grid x:Name="gridNomePec" Margin="10,92,59,257" Height="70">
 
             <Label Content="Nome da peça" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top" FontFamily="Roboto" FontSize="14" RenderTransformOrigin="-0.088,0.37" Foreground="White"/>
-            <TextBox x:Name="textNomePec" PreviewTextInput="validateNome" TextWrapping="Wrap" Background="{x:Null}" BorderBrush="White" Foreground="White" FontSize="24" FontFamily="Roboto" BorderThickness="0,0,0,2" Margin="10,27,0,10"  >
+            <Label x:Name="lblNomeIncorreto" Content="NOME INCORRETO" HorizontalAlignment="Right" VerticalAlignment="Top" FontFamily="Roboto" FontSize="14" RenderTransformOrigin="-0.088,0.37" Foreground="RED" Visibility="Hidden"/>
+            <TextBox x:Name="textNomePec" LostFocus="validaNome"  CaretBrush="White" PreviewTextInput="validateNome" TextWrapping="Wrap" Background="{x:Null}" BorderBrush="White" Foreground="White" FontSize="24" FontFamily="Roboto" BorderThickness="0,0,0,2" Margin="10,27,0,10"  >
                 <TextBox.ContextMenu>
                     <ContextMenu/>
                 </TextBox.ContextMenu>
             </TextBox>
         </Grid>
-        <Grid x:Name="gridEmail" Margin="10,184,301,165" Height="70">
+        <Grid x:Name="gridQuantidade" Margin="10,184,301,165" Height="70">
             <Label Content="Quantidade" HorizontalAlignment="Left" Margin="10,0,0,43" FontFamily="Roboto" FontSize="14" RenderTransformOrigin="-0.088,0.37" Foreground="White"/>
-            <TextBox x:Name="textQtdePec" PreviewTextInput="validateNumber" MaxLength="3" TextWrapping="Wrap" Background="{x:Null}" BorderBrush="White" Foreground="White" FontSize="24" FontFamily="Roboto" BorderThickness="0,0,0,2" Margin="10,27,0,10" >
-                <TextBox.ContextMenu>
-                    <ContextMenu/>
-                </TextBox.ContextMenu>
-            </TextBox>
+            <wpfx:IntegerUpDown x:Name="textQtdePec" PreviewTextInput="validateNumber" Value="1" Increment="1" Minimum="1" MaxLength="3" Background="{x:Null}" BorderBrush="White" Foreground="White" FontSize="24" FontFamily="Roboto" BorderThickness="0,0,0,2" Margin="10,27,0,10" AllowTextInput="False"/>
         </Grid>
-        
-        <Grid Margin="21,92,10,257" Height="70" Grid.Column="1">
-            <Label Content="Valor da peça" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top" FontFamily="Roboto" FontSize="14" RenderTransformOrigin="-0.088,0.37" Foreground="White"/>
-            <wpfx:MaskedTextBox x:Name="textValorPec" TextWrapping="Wrap" Background="{x:Null}" BorderBrush="White" Foreground="White" FontSize="24" FontFamily="Roboto" BorderThickness="0,0,0,2" Margin="10,27,243,10" Mask="0000.00" />
 
+        <Grid Margin="21,92,32,257" Height="70" Grid.Column="1">
+            <Label x:Name="lblValorIncorreto" Content="VALOR NÃO PODE SER $0.00" HorizontalAlignment="Right" VerticalAlignment="Top" FontFamily="Roboto" FontSize="14" RenderTransformOrigin="-0.088,0.37" Foreground="RED" Visibility="Hidden"/>
+            <Label Content="Valor da peça" HorizontalAlignment="Left" Margin="40,0,0,0" VerticalAlignment="Top" FontFamily="Roboto" FontSize="14" RenderTransformOrigin="-0.088,0.37" Foreground="White"/>
+            <teste:CurrencyTextBox x:Name="textValorPec" LostFocus="validaValor" MaxLength="7" TextWrapping="Wrap" Background="{x:Null}" BorderBrush="White" Foreground="White" FontSize="24" FontFamily="Roboto" BorderThickness="0,0,0,2" Margin="40,27,138,10"/>
         </Grid>
-        
+
         <Grid Margin="291,395,10,0" Height="24" Grid.Column="1">
             <Button Content="Voltar" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="75" FontFamily="Roboto Black" FontSize="16" Background="#FF00AEFB" Foreground="White" BorderBrush="#FF00AEFB" Click="btnVoltar" Height="24" Grid.Column="1" UseLayoutRounding="False" Padding="1,1,1,5"/>
         </Grid>

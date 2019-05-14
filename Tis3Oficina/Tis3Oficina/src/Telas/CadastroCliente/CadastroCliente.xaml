@@ -18,22 +18,23 @@
             <ColumnDefinition Width="377*"/>
         </Grid.ColumnDefinitions>
         <Grid Margin="10,63,173,332" Height="70">
-            <RadioButton x:Name="radioCPF"  BorderBrush="White" Foreground="White" FontSize="14" FontFamily="Roboto" Content="Pessoa Física" GroupName="pessoa" HorizontalAlignment="Left" VerticalAlignment="Top" IsChecked="True"/>
-            <RadioButton x:Name="radioCNPJ"  Background="White" BorderBrush="White" Foreground="White" FontSize="14" FontFamily="Roboto" Content="Pessoa Jurídica" GroupName="pessoa" HorizontalAlignment="Right" VerticalAlignment="Top"/>
+            <RadioButton x:Name="radioCPF"  BorderBrush="White" Foreground="White" FontSize="14" FontFamily="Roboto" Content="Pessoa Física" GroupName="pessoa" HorizontalAlignment="Left" VerticalAlignment="Top" IsChecked="True" Click="RadioCPF_Click"/>
+            <RadioButton x:Name="radioCNPJ"  Background="White" BorderBrush="White" Foreground="White" FontSize="14" FontFamily="Roboto" Content="Pessoa Jurídica" GroupName="pessoa" HorizontalAlignment="Right" VerticalAlignment="Top" Click="RadioCNPJ_Click"/>
         </Grid>
         
         <Grid x:Name="gridNome" Margin="10,92,59,257" Height="70">
-            
+            <Label x:Name="lblNomeIncorreto" Content="NOME INCORRETO" HorizontalAlignment="Right" VerticalAlignment="Top" FontFamily="Roboto" FontSize="14" RenderTransformOrigin="-0.088,0.37" Foreground="RED" Visibility="Hidden"/>
             <Label Content="Nome" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top" FontFamily="Roboto" FontSize="14" RenderTransformOrigin="-0.088,0.37" Foreground="White"/>
-            <TextBox x:Name="textNome" LostFocus="validaNome" TextWrapping="Wrap" Background="{x:Null}" BorderBrush="White" Foreground="White" FontSize="24" FontFamily="Roboto" BorderThickness="0,0,0,2" Margin="10,27,0,10"  PreviewTextInput="validateNome">
+            <TextBox x:Name="textNome" CaretBrush="White" LostFocus="validaNome" TextWrapping="Wrap" Background="{x:Null}" BorderBrush="White" Foreground="White" FontSize="24" FontFamily="Roboto" BorderThickness="0,0,0,2" Margin="10,27,0,10"  PreviewTextInput="validateNome">
                 <TextBox.ContextMenu>
                     <ContextMenu/>
                 </TextBox.ContextMenu>
             </TextBox>
         </Grid>
         <Grid x:Name="gridEmail" Margin="10,184,59,165" Height="70">
+            <Label x:Name="lblEmailIncorreto" Content="EMAIL INCORRETO" HorizontalAlignment="Right" VerticalAlignment="Top" FontFamily="Roboto" FontSize="14" RenderTransformOrigin="-0.088,0.37" Foreground="RED" Visibility="Hidden"/>
             <Label Content="E-mail" HorizontalAlignment="Left" Margin="10,0,0,43" FontFamily="Roboto" FontSize="14" RenderTransformOrigin="-0.088,0.37" Foreground="White"/>
-            <TextBox x:Name="textEmail" TextWrapping="Wrap" Background="{x:Null}" BorderBrush="White" Foreground="White" FontSize="24" FontFamily="Roboto" BorderThickness="0,0,0,2" Margin="10,27,0,10" LostFocus="validaEmail">
+            <TextBox x:Name="textEmail" CaretBrush="White" TextWrapping="Wrap" Background="{x:Null}" BorderBrush="White" Foreground="White" FontSize="24" FontFamily="Roboto" BorderThickness="0,0,0,2" Margin="10,27,0,10" LostFocus="validaEmail">
                 <TextBox.ContextMenu>
                     <ContextMenu/>
                 </TextBox.ContextMenu>
@@ -41,28 +42,31 @@
         </Grid>
         <Grid Margin="10,286,59,63" Height="70">
             <Label Content="Endereço" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top" FontFamily="Roboto" FontSize="14" RenderTransformOrigin="-0.088,0.37" Foreground="White"/>
-            <TextBox x:Name="textEndereco" TextWrapping="Wrap" Background="{x:Null}" BorderBrush="White" Foreground="White" FontSize="24" FontFamily="Roboto" BorderThickness="0,0,0,2" Margin="10,27,0,10" >
+            <TextBox x:Name="textEndereco" CaretBrush="White" TextWrapping="Wrap" Background="{x:Null}" BorderBrush="White" Foreground="White" FontSize="24" FontFamily="Roboto" BorderThickness="0,0,0,2" Margin="10,27,0,10" >
                 <TextBox.ContextMenu>
                     <ContextMenu/>
                 </TextBox.ContextMenu>
             </TextBox>
         </Grid>
         <Grid x:Name="gridCPFCNPJ" Margin="21,92,10,257" Height="70" Grid.Column="1">
+            <Label x:Name="lblCPFIncorreto" Content="CPF INCORRETO" HorizontalAlignment="Right" VerticalAlignment="Top" FontFamily="Roboto" FontSize="14" RenderTransformOrigin="-0.088,0.37" Foreground="RED" Visibility="Hidden"/>
             <Label Visibility="{Binding IsChecked,ElementName=radioCPF,Converter={StaticResource b2v}}" Content="CPF" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top" FontFamily="Roboto" FontSize="14" RenderTransformOrigin="-0.088,0.37" Foreground="White"/>
-            <wpfx:MaskedTextBox x:Name="textCpf" LostFocus="verificaCPF" PreviewTextInput="validateCPFTel" Mask="000,000,000-00" Visibility="{Binding IsChecked,ElementName=radioCPF,Converter={StaticResource b2v}}" TextWrapping="Wrap" Background="{x:Null}" BorderBrush="White" Foreground="White" FontSize="24" FontFamily="Roboto" BorderThickness="0,0,0,2" Margin="10,27,0,10"/>
-            
+            <wpfx:MaskedTextBox x:Name="textCpf" CaretBrush="White" LostFocus="verificaCPF" PreviewTextInput="validateCPFTel" Mask="000,000,000-00" Visibility="{Binding IsChecked,ElementName=radioCPF,Converter={StaticResource b2v}}" TextWrapping="Wrap" Background="{x:Null}" BorderBrush="White" Foreground="White" FontSize="24" FontFamily="Roboto" BorderThickness="0,0,0,2" Margin="10,27,0,10"/>
+
+            <Label x:Name="lblCNPJIncorreto" Content="CNPJ INCORRETO" HorizontalAlignment="Right" VerticalAlignment="Top" FontFamily="Roboto" FontSize="14" RenderTransformOrigin="-0.088,0.37" Foreground="RED" Visibility="Hidden"/>
             <Label Visibility="{Binding IsChecked,ElementName=radioCNPJ,Converter={StaticResource b2v}}" Content="CNPJ" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top" FontFamily="Roboto" FontSize="14" RenderTransformOrigin="-0.088,0.37" Foreground="White"/>
-            <wpfx:MaskedTextBox x:Name="textCNPJ" LostFocus="verificaCNPJ" Mask="00,000,000/0000-00" Visibility="{Binding IsChecked,ElementName=radioCNPJ,Converter={StaticResource b2v}}" TextWrapping="Wrap" Background="{x:Null}" BorderBrush="White" Foreground="White" FontSize="24" FontFamily="Roboto" BorderThickness="0,0,0,2" Margin="10,27,0,10"/>
+            <wpfx:MaskedTextBox x:Name="textCNPJ" CaretBrush="White" LostFocus="verificaCNPJ" Mask="00,000,000/0000-00" Visibility="{Binding IsChecked,ElementName=radioCNPJ,Converter={StaticResource b2v}}" TextWrapping="Wrap" Background="{x:Null}" BorderBrush="White" Foreground="White" FontSize="24" FontFamily="Roboto" BorderThickness="0,0,0,2" Margin="10,27,0,10"/>
             
         </Grid>
         <Grid x:Name="gridTel" Margin="21,184,10,165" Height="70" Grid.Column="1">
+            <Label x:Name="lblTelIncorreto" Content="TELEFONE INCORRETO" HorizontalAlignment="Right" VerticalAlignment="Top" FontFamily="Roboto" FontSize="14" RenderTransformOrigin="-0.088,0.37" Foreground="RED" Visibility="Hidden"/>
             <Label Content="Telefone" HorizontalAlignment="Left" Margin="10,0,0,43" FontFamily="Roboto" FontSize="14" RenderTransformOrigin="-0.088,0.37" Foreground="White"/>
-            <wpfx:MaskedTextBox x:Name="textTelefone" LostFocus="verificaTel" PreviewTextInput="validateCPFTel" TextWrapping="Wrap" Background="{x:Null}" BorderBrush="White" Foreground="White" FontSize="24" FontFamily="Roboto" BorderThickness="0,0,0,2" Margin="10,27,0,10" Mask="(00)00000-0000" />
+            <wpfx:MaskedTextBox x:Name="textTelefone" CaretBrush="White" LostFocus="verificaTel" PreviewTextInput="validateCPFTel" TextWrapping="Wrap" Background="{x:Null}" BorderBrush="White" Foreground="White" FontSize="24" FontFamily="Roboto" BorderThickness="0,0,0,2" Margin="10,27,0,10" Mask="(00)00000-0000" />
             
         </Grid>
         <Grid Margin="21,286,10,63" Height="70" Grid.Column="1">
             <Label Content="Observação" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top" FontFamily="Roboto" FontSize="14" RenderTransformOrigin="-0.088,0.37" Foreground="White"/>
-            <TextBox x:Name="textObservacao" TextWrapping="Wrap" Background="{x:Null}" BorderBrush="White" Foreground="White" FontSize="24" FontFamily="Roboto" BorderThickness="0,0,0,2" Margin="10,27,0,10" >
+            <TextBox x:Name="textObservacao" CaretBrush="White" TextWrapping="Wrap" Background="{x:Null}" BorderBrush="White" Foreground="White" FontSize="24" FontFamily="Roboto" BorderThickness="0,0,0,2" Margin="10,27,0,10" >
                 <TextBox.ContextMenu>
                     <ContextMenu/>
                 </TextBox.ContextMenu>

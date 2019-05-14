@@ -159,151 +159,56 @@ namespace Tis3Oficina.src.Telas.CadastroCliente
         private void validaNome(object sender, RoutedEventArgs e)
         {
             bool result = isName(textNome.Text);
-            Label dynamicLabel = new Label();
 
             if (!result)
-            {
-                dynamicLabel.Name = "nomeIncorreto";
-                dynamicLabel.Foreground = new SolidColorBrush(Colors.Red);
-                dynamicLabel.Content = "NOME INCORRETO!";
-                dynamicLabel.HorizontalAlignment = HorizontalAlignment.Right;
-                gridNome.Children.Add(dynamicLabel);
+                lblNomeIncorreto.Visibility = Visibility.Visible;
 
-            }
-            if (result)
-            {
-                try
-                {
-                    var child = gridNome.Children.OfType<Control>().Where(x => x.Name == "nomeIncorreto").First();
-                    gridNome.Children.Remove(child);
-                }
-                catch (InvalidOperationException erro)
-                {
-                    Console.WriteLine(erro.Message);
-                }
-
-            }
+            else
+                lblNomeIncorreto.Visibility = Visibility.Hidden;
         }
 
         //Mostra messagem de erro para usuario caso email esteja incorreto
         private void validaEmail(object sender, RoutedEventArgs e)
         {
             bool result = IsValidEmailAddress(textEmail.Text);
-            Label dynamicLabel = new Label();
 
             if (!result)
-            {
-                dynamicLabel.Name = "emailIncorreto";
-                dynamicLabel.Foreground = new SolidColorBrush(Colors.Red);
-                dynamicLabel.Content = "EMAIL INCORRETO!";
-                dynamicLabel.HorizontalAlignment = HorizontalAlignment.Right;
-                gridEmail.Children.Add(dynamicLabel);
-
-            }
-            if (result)
-            {
-                try
-                {
-                    var child = gridEmail.Children.OfType<Control>().Where(x => x.Name == "emailIncorreto").First();
-                    gridEmail.Children.Remove(child);
-                }
-                catch (InvalidOperationException erro)
-                {
-                    Console.WriteLine(erro.Message);
-                }
-
-            }
+                lblEmailIncorreto.Visibility = Visibility.Visible;
+            else
+                lblEmailIncorreto.Visibility = Visibility.Hidden;
         }
 
         //Mostra messagem de erro para usuario caso CPF esteja incorreto
         private void verificaCPF(object sender, RoutedEventArgs e)
         {
             bool result = IsCpf(textCpf.Text.Replace(".", "").Replace("-", "").Replace("_", ""));
-            Label dynamicLabel = new Label();
 
             if (!result)
-            {
-
-                dynamicLabel.Name = "cpfIncorreto";
-                dynamicLabel.Foreground = new SolidColorBrush(Colors.Red);
-                dynamicLabel.Content = "CPF INCORRETO!";
-                dynamicLabel.HorizontalAlignment = HorizontalAlignment.Right;
-                gridCPFCNPJ.Children.Add(dynamicLabel);
-
-            }
+                lblCPFIncorreto.Visibility = Visibility.Visible;
             else
-            {
-                try
-                {
-                    var child = gridCPFCNPJ.Children.OfType<Control>().Where(x => x.Name == "cpfIncorreto").First();
-                    gridCPFCNPJ.Children.Remove(child);
-                }
-                catch (InvalidOperationException erro)
-                {
-                    Console.WriteLine(erro.Message);
-                }
-
-            }
+                lblCPFIncorreto.Visibility = Visibility.Hidden;
         }
 
         //Mostra messagem de erro para usuario caso CNPJ esteja incorreto
         private void verificaCNPJ(object sender, RoutedEventArgs e)
         {
             bool result = IsCnpj(textCNPJ.Text.Replace(".", "").Replace("-", "").Replace("/", "").Replace("_", ""));
-            Label dynamicLabel = new Label();
 
             if (!result)
-            {
-                dynamicLabel.Name = "cnpjIncorreto";
-                dynamicLabel.Foreground = new SolidColorBrush(Colors.Red);
-                dynamicLabel.Content = "CNPJ INCORRETO!";
-                dynamicLabel.HorizontalAlignment = HorizontalAlignment.Right;
-                gridCPFCNPJ.Children.Add(dynamicLabel);
-
-            }
-            if (result)
-            {
-                try
-                {
-                    var child = gridCPFCNPJ.Children.OfType<Control>().Where(x => x.Name == "cnpjIncorreto").First();
-                    gridCPFCNPJ.Children.Remove(child);
-                }
-                catch (InvalidOperationException erro)
-                {
-                    Console.WriteLine(erro.Message);
-                }
-
-            }
+                lblCNPJIncorreto.Visibility = Visibility.Visible;
+            else
+                lblCNPJIncorreto.Visibility = Visibility.Hidden;
         }
 
         //Mostra messagem de erro para usuario caso CNPJ esteja incorreto
         private void verificaTel(object sender, RoutedEventArgs e)
         {
             bool result = IsValidTel(textTelefone.Text.Replace("_", "").Replace("(", "").Replace(")", "").Replace("-", ""));
-            Label dynamicLabel = new Label();
 
             if (!result)
-            {
-                dynamicLabel.Name = "telefoneIncorreto";
-                dynamicLabel.Foreground = new SolidColorBrush(Colors.Red);
-                dynamicLabel.Content = "TELEFONE INCORRETO!";
-                dynamicLabel.HorizontalAlignment = HorizontalAlignment.Right;
-                gridTel.Children.Add(dynamicLabel);
-
-            }
-            if (result)
-            {
-                try
-                {
-                    var child = gridTel.Children.OfType<Control>().Where(x => x.Name == "telefoneIncorreto").First();
-                    gridTel.Children.Remove(child);
-                }
-                catch (InvalidOperationException erro)
-                {
-                    Console.WriteLine(erro.Message);
-                }
-
-            }
+                lblTelIncorreto.Visibility = Visibility.Visible;
+            else
+                lblTelIncorreto.Visibility = Visibility.Hidden;
         }
 
         //Validando entrada de nome para somente caracteres
@@ -312,7 +217,7 @@ namespace Tis3Oficina.src.Telas.CadastroCliente
             e.Handled = new Regex("[^a-zA-Z]+").IsMatch(e.Text);
         }
 
-        //Verificar se esta digitando letra ao invés de numero
+        //Verificar se esta digitando numero ao invés de letra
         private void validateCPFTel(object sender, TextCompositionEventArgs e)
         {
             e.Handled = new Regex("[^0-9]+").IsMatch(e.Text);
@@ -416,6 +321,16 @@ namespace Tis3Oficina.src.Telas.CadastroCliente
                 resto = 11 - resto;
             digito = digito + resto.ToString();
             return cnpj.EndsWith(digito);
+        }
+
+        private void RadioCNPJ_Click(object sender, RoutedEventArgs e)
+        {
+            lblCPFIncorreto.Visibility = Visibility.Hidden;
+        }
+
+        private void RadioCPF_Click(object sender, RoutedEventArgs e)
+        {
+            lblCNPJIncorreto.Visibility = Visibility.Hidden;
         }
     }
 }

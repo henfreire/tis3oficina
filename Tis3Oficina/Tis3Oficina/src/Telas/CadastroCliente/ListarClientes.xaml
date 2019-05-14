@@ -5,17 +5,56 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Tis3Oficina.src.Telas"
         mc:Ignorable="d"
-        Title="ListarCLientes" Height="450" Width="800" WindowState="Maximized" WindowStartupLocation="CenterScreen" Background="#FF202020">
+        Title="Listar Clientes" Height="450" Width="800" WindowState="Maximized" WindowStartupLocation="CenterScreen" Background="#FF202020">
+    <Window.Resources>
+        <SolidColorBrush x:Key="Button.Disabled.Background" Color="#FFF4F4F4"/>
+        <SolidColorBrush x:Key="Button.Disabled.Border" Color="#FFADB2B5"/>
+        <SolidColorBrush x:Key="Button.Disabled.Foreground" Color="#FF838383"/>
+        <SolidColorBrush x:Key="Button.Enabled.Background" Color="#FF00AEFB"/>
+        <SolidColorBrush x:Key="Button.Enabled.Border" Color="#FF00AEFB"/>
+        <SolidColorBrush x:Key="Button.Enabled.Foreground" Color="White"/>
+        <SolidColorBrush x:Key="Button.MouseOver.Background" Color="#FFBEE6FD"/>
+        <SolidColorBrush x:Key="Button.MouseOver.Border" Color="#FF3C7FB1"/>
+        <Style x:Key="ButtonStyle1" TargetType="{x:Type Button}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border x:Name="border" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" SnapsToDevicePixels="true">
+                            <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Disabled.Background}"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Disabled.Border}"/>
+                                <Setter Property="TextElement.Foreground" TargetName="contentPresenter" Value="{StaticResource Button.Disabled.Foreground}"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="true">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Enabled.Background}"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Enabled.Border}"/>
+                                <Setter Property="TextElement.Foreground" TargetName="contentPresenter" Value="{StaticResource Button.Enabled.Foreground}"/>
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="true">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.MouseOver.Background}"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.MouseOver.Border}"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+
 
     <Grid>
         <Grid HorizontalAlignment="Center" Width="792">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="419*"/>
+                <ColumnDefinition Width="59*"/>
+                <ColumnDefinition Width="360*"/>
                 <ColumnDefinition Width="373*"/>
             </Grid.ColumnDefinitions>
-            <DataGrid Name="dataGrid1" HorizontalAlignment="Left" Height="278" Margin="24,99,0,0" VerticalAlignment="Top" Width="736" Grid.ColumnSpan="2" MouseDoubleClick="DataGrid1_MouseDoubleClick"/>
+            <DataGrid Name="dataGrid1" HorizontalAlignment="Left" Height="278" Margin="24,99,0,0" VerticalAlignment="Top" Width="736" Grid.ColumnSpan="3" MouseDoubleClick="DataGrid1_MouseDoubleClick"/>
 
-            <Button Margin="196,36,0,0" VerticalAlignment="Top" Width="145" Height="41" Click="btnNovoCliente" Grid.Column="1" Background="#FF202020" HorizontalAlignment="Left" BorderThickness="0">
+            <Button Margin="196,36,0,0" VerticalAlignment="Top" Width="145" Height="41" Click="btnNovoCliente" Grid.Column="2" Background="#FF202020" HorizontalAlignment="Left" BorderThickness="0">
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="32*"/>
@@ -25,10 +64,10 @@
                     <Image Margin="0,3,104,0" Source="/src/assets/icons/add.png" Stretch="Fill" UseLayoutRounding="False" Grid.RowSpan="2"/>
                 </Grid>
             </Button>
-            <Button Content="Voltar" HorizontalAlignment="Left" Margin="267,382,0,0" VerticalAlignment="Top" Width="74" FontFamily="Roboto Black" FontSize="16" Background="#FF00AEFB" Foreground="White" BorderBrush="#FF00AEFB" Click="btnVoltar" Grid.Column="1"/>
-            <Button Name="BEdit" Content="Editar" HorizontalAlignment="Left" Margin="178,382,0,0" VerticalAlignment="Top" Width="74" FontFamily="Roboto Black" FontSize="16" Background="#FF00AEFB" Foreground="White" BorderBrush="#FF00AEFB" Click="btnEditar" Grid.Column="1" IsEnabled="False"/>
-            <Button Name="BDelete" Content="Deletar" HorizontalAlignment="Left" Margin="88,382,0,0" VerticalAlignment="Top" Width="74" FontFamily="Roboto Black" FontSize="16" Background="#FF00AEFB" Foreground="White" BorderBrush="#FF00AEFB" Click="btnDeletar" Grid.Column="1" IsEnabled="False"/>
-            <Grid HorizontalAlignment="Left" Height="41" Margin="24,36,0,0" VerticalAlignment="Top" Width="385">
+            <Button Content="Voltar" HorizontalAlignment="Left" Margin="267,382,0,0" VerticalAlignment="Top" Width="74" FontFamily="Roboto Black" FontSize="16" Click="btnVoltar" Grid.Column="2" Style="{StaticResource ButtonStyle1}"/>
+            <Button Name="BEdit" Content="Editar" HorizontalAlignment="Left" Margin="178,382,0,0" VerticalAlignment="Top" Width="74" FontFamily="Roboto Black" FontSize="16" Click="btnEditar" Grid.Column="2" IsEnabled="False" Style="{StaticResource ButtonStyle1}"/>
+            <Button Name="BDelete" Content="Deletar" HorizontalAlignment="Left" Margin="88,382,0,0" VerticalAlignment="Top" Width="74" FontFamily="Roboto Black" FontSize="16"  Click="btnDeletar" Grid.Column="2" IsEnabled="False" Style="{StaticResource ButtonStyle1}"/>
+            <Grid HorizontalAlignment="Left" Height="41" Margin="24,36,0,0" VerticalAlignment="Top" Width="385" Grid.ColumnSpan="2">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="0*"/>
                     <ColumnDefinition/>
