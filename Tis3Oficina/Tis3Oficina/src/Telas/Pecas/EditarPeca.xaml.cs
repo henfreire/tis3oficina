@@ -68,30 +68,35 @@ namespace Tis3Oficina.src.Telas.Pecas
             Peca novaPeca = new Peca();
             string nome = textNomePec.Text.Trim();
             string quantidade = textQtdePec.Text;
-            string valor = textValorPec.Text.Replace("_", "");
+            string valor = textValorPec.Text.Replace("$", "").Replace(",", "");
 
-            novaPeca.NomePec = nome;
-            novaPeca.QtdePeca = quantidade;
-            novaPeca.ValPec = valor;
+            if (isName(nome) && isValue(textValorPec.Text))
+            {
+                novaPeca.NomePec = nome;
+                novaPeca.QtdePeca = quantidade;
+                novaPeca.ValPec = valor;
 
-            DAOPeca peca = new DAOPeca();
-            peca.editar(novaPeca, codPec);
-            var alerta = new Alerta();
-            alerta.conteudo.Content = "Peça editada com sucesso";
-            alerta.ShowDialog();
+                DAOPeca peca = new DAOPeca();
+                peca.editar(novaPeca, codPec);
+                var alerta = new Alerta();
+                alerta.conteudo.Content = "Peça editada com sucesso";
+                alerta.ShowDialog();
+                var telaListarPeca = new ListarPecas();
+                this.Close();
+                telaListarPeca.Show();
+            }
+            else
+            {
+                if (!isName(nome))
+                    lblNomeIncorreto.Visibility = Visibility.Visible;
+                if (!isValue(textValorPec.Text))
+                    lblValorIncorreto.Visibility = Visibility.Visible;
 
+                var alerta = new Alerta();
+                alerta.conteudo.Content = "Preencha os campos corretamente!";
+                alerta.ShowDialog();
+            }
 
-            var telaListarPeca = new ListarPecas();
-            this.Close();
-            telaListarPeca.Show();
-        }
-
-        //Botao Voltar
-        private void btnVoltar(object sender, RoutedEventArgs e)
-        {
-            var telaListarPeca = new ListarPecas();
-            this.Close();
-            telaListarPeca.Show();
         }
 
         //Validando entrada de nome para somente caracteres
@@ -103,7 +108,65 @@ namespace Tis3Oficina.src.Telas.Pecas
         //Verificar se esta digitando numero ao invés de letra
         private void validateNumber(object sender, TextCompositionEventArgs e)
         {
-            e.Handled = new Regex("[^0-9]+").IsMatch(e.Text);
+            e.Handled = new Regex("[^0-999]+").IsMatch(e.Text);
+
+
         }
+
+        private void btnVoltar(object sender, RoutedEventArgs e)
+        {
+            var telaListarPeca = new ListarPecas();
+            this.Close();
+            telaListarPeca.Show();
+        }
+
+        //Mostra messagem de erro para usuario caso nome esteja incorreto
+        private void validaNome(object sender, RoutedEventArgs e)
+        {
+            bool result = isName(textNomePec.Text);
+
+            if (!result)
+                lblNomeIncorreto.Visibility = Visibility.Visible;
+
+            else
+                lblNomeIncorreto.Visibility = Visibility.Hidden;
+        }
+
+        private void validaValor(object sender, RoutedEventArgs e)
+        {
+            bool result = isValue(textValorPec.Text);
+
+            if (!result)
+                lblValorIncorreto.Visibility = Visibility.Visible;
+            else
+                lblValorIncorreto.Visibility = Visibility.Hidden;
+        }
+
+
+        public static bool isValue(string valor)
+        {
+            if (valor == "$0.00")
+                return false;
+
+            return true;
+        }
+
+        public static bool isName(string name)
+        {
+            Regex regex = new Regex(
+              "^(\\b[A-Za-z]*\\b\\s+\\b[A-Za-z]*\\b+\\.[A-Za-z])$",
+            RegexOptions.IgnoreCase
+            | RegexOptions.CultureInvariant
+            | RegexOptions.IgnorePatternWhitespace
+            | RegexOptions.Compiled
+            );
+            name = name.Trim();
+            if (name.Length < 3 || name == "" || regex.IsMatch(name))
+                return false;
+
+            return true;
+        }
+
+
     }
 }

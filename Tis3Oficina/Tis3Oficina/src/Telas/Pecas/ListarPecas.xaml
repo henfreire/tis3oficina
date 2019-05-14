@@ -7,6 +7,44 @@
         mc:Ignorable="d"
         Title="ListarPecas" Height="473" Width="800" WindowState="Maximized" WindowStartupLocation="CenterScreen" Background="#FF202020">
 
+    <Window.Resources>
+        <SolidColorBrush x:Key="Button.Disabled.Background" Color="#FFF4F4F4"/>
+        <SolidColorBrush x:Key="Button.Disabled.Border" Color="#FFADB2B5"/>
+        <SolidColorBrush x:Key="Button.Disabled.Foreground" Color="#FF838383"/>
+        <SolidColorBrush x:Key="Button.Enabled.Background" Color="#FF00AEFB"/>
+        <SolidColorBrush x:Key="Button.Enabled.Border" Color="#FF00AEFB"/>
+        <SolidColorBrush x:Key="Button.Enabled.Foreground" Color="White"/>
+        <SolidColorBrush x:Key="Button.MouseOver.Background" Color="#FFBEE6FD"/>
+        <SolidColorBrush x:Key="Button.MouseOver.Border" Color="#FF3C7FB1"/>
+        <Style x:Key="ButtonStyle1" TargetType="{x:Type Button}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border x:Name="border" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" SnapsToDevicePixels="true">
+                            <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Disabled.Background}"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Disabled.Border}"/>
+                                <Setter Property="TextElement.Foreground" TargetName="contentPresenter" Value="{StaticResource Button.Disabled.Foreground}"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="true">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Enabled.Background}"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Enabled.Border}"/>
+                                <Setter Property="TextElement.Foreground" TargetName="contentPresenter" Value="{StaticResource Button.Enabled.Foreground}"/>
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="true">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.MouseOver.Background}"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.MouseOver.Border}"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+
     <Grid>
         <Grid HorizontalAlignment="Center" Width="Auto">
 
@@ -24,9 +62,9 @@
             </Grid>
             <Grid Margin="24,341,10,31" Height="70">
                 <StackPanel Margin="10,0,24,0" Height="70" Orientation="Horizontal" HorizontalAlignment="Right">
-                    <Button Name="BDelete" Content="Deletar" Margin="0,0,10,0" VerticalAlignment="Bottom" Width="74" FontFamily="Roboto Black" FontSize="16" Background="#FF00AEFB" Foreground="White" BorderBrush="#FF00AEFB" Click="btnDeletar" IsEnabled="False"/>
-                    <Button Name="BEdit" Content="Editar" Margin="0,0,10,0" VerticalAlignment="Bottom" Width="74" FontFamily="Roboto Black" FontSize="16" Background="#FF00AEFB" Foreground="White" BorderBrush="#FF00AEFB" Click="btnEditar" IsEnabled="False"/>
-                    <Button Content="Voltar" HorizontalAlignment="Right" VerticalAlignment="Bottom"  Width="74" FontFamily="Roboto" FontSize="16" Background="#FF00AEFB" Foreground="White" BorderBrush="#FF00AEFB" Click="btnVoltar" Grid.Column="1"/>
+                    <Button Name="BDelete" Content="Deletar" Margin="0,0,10,0" VerticalAlignment="Bottom" Width="74" FontFamily="Roboto Black" FontSize="16" Click="btnDeletar" IsEnabled="False" Style="{StaticResource ButtonStyle1}"/>
+                    <Button Name="BEdit" Content="Editar" Margin="0,0,10,0" VerticalAlignment="Bottom" Width="74" FontFamily="Roboto Black" FontSize="16" Click="btnEditar" IsEnabled="False" Style="{StaticResource ButtonStyle1}"/>
+                    <Button Content="Voltar" HorizontalAlignment="Right" VerticalAlignment="Bottom"  Width="74" FontFamily="Roboto" FontSize="16" Click="btnVoltar" Grid.Column="1" Style="{StaticResource ButtonStyle1}"/>
                 </StackPanel>
                 <Button Content="CADASTRAR NOVA PEÇA" HorizontalAlignment="Center" VerticalAlignment="Bottom" Height="50" Width="182" FontFamily="Roboto" FontSize="16" Background="#FF00AEFB" Foreground="White" BorderBrush="#FF00AEFB" Click="btnCriarPeca" UseLayoutRounding="False" RenderTransformOrigin="0.501,0.5" Margin="273,0,271,0"/>
             </Grid>

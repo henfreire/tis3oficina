@@ -62,23 +62,38 @@ namespace Tis3Oficina.src.Telas.Servicos
             }
         }
 
+        // Botao de salvar serviço
         private void btnSalvar(object sender, RoutedEventArgs e)
         {
             Servico novoServico = new Servico();
 
-            novoServico.NomeServico = textNomeServico.Text;
-            novoServico.Valor = textValor.Text.Replace("_", "");
+            if (isName(textNomeServico.Text) && isValue(textValor.Text))
+            {
+                novoServico.NomeServico = textNomeServico.Text;
+                novoServico.Valor = textValor.Text.Replace("$", "").Replace(",", "");
 
-            DAOServico servico = new DAOServico();
-            servico.editar(novoServico, id);
-            var alerta = new Alerta();
-            alerta.conteudo.Content = "Serviço editado com sucesso";
-            alerta.ShowDialog();
+                DAOServico servico = new DAOServico();
+                servico.editar(novoServico,id);
+                var alerta = new Alerta();
+                alerta.conteudo.Content = "Serviço editado com sucesso";
+                alerta.ShowDialog();
 
 
-            var telaListaServico = new ListarServico();
-            this.Close();
-            telaListaServico.Show();
+                var telaListaServico = new ListarServico();
+                this.Close();
+                telaListaServico.Show();
+            }
+            else
+            {
+                if (!isName(textNomeServico.Text))
+                    lblNomeIncorreto.Visibility = Visibility.Visible;
+                if (!isValue(textValor.Text))
+                    lblValorIncorreto.Visibility = Visibility.Visible;
+
+                var alerta = new Alerta();
+                alerta.conteudo.Content = "Preencha os campos corretamente!";
+                alerta.ShowDialog();
+            }
         }
 
         //Botao Voltar
@@ -89,10 +104,56 @@ namespace Tis3Oficina.src.Telas.Servicos
             telaListarServico.Show();
         }
 
-        //Verificar se é so numero no telefone
-        private void txtValorEntrada(object sender, TextCompositionEventArgs e)
+        //Validando entrada de nome para somente caracteres
+        private void validateNome(object sender, TextCompositionEventArgs e)
         {
-            e.Handled = new Regex("[^0-9]+").IsMatch(e.Text);
+            e.Handled = new Regex("[^a-zA-Z]+").IsMatch(e.Text);
+        }
+
+        //Mostra messagem de erro para usuario caso nome esteja incorreto
+        private void validaNome(object sender, RoutedEventArgs e)
+        {
+            bool result = isName(textNomeServico.Text);
+
+            if (!result)
+                lblNomeIncorreto.Visibility = Visibility.Visible;
+
+            else
+                lblNomeIncorreto.Visibility = Visibility.Hidden;
+        }
+
+        private void validaValor(object sender, RoutedEventArgs e)
+        {
+            bool result = isValue(textValor.Text);
+
+            if (!result)
+                lblValorIncorreto.Visibility = Visibility.Visible;
+            else
+                lblValorIncorreto.Visibility = Visibility.Hidden;
+        }
+
+        public static bool isValue(string valor)
+        {
+            if (valor == "$0.00")
+                return false;
+
+            return true;
+        }
+
+        public static bool isName(string name)
+        {
+            Regex regex = new Regex(
+              "^(\\b[A-Za-z]*\\b\\s+\\b[A-Za-z]*\\b+\\.[A-Za-z])$",
+            RegexOptions.IgnoreCase
+            | RegexOptions.CultureInvariant
+            | RegexOptions.IgnorePatternWhitespace
+            | RegexOptions.Compiled
+            );
+            name = name.Trim();
+            if (name.Length < 3 || name == "" || regex.IsMatch(name))
+                return false;
+
+            return true;
         }
     }
 }
