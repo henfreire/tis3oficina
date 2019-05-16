@@ -1,5 +1,6 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -57,6 +58,35 @@ namespace Tis3Oficina.src.DAO
                 System.Windows.Forms.MessageBox.Show("Erro inserir Cliente : " + ex.Message, "Erro");
             }
             return dt;
+        }
+        public List <Peca >geTodos()
+        {
+            List<Peca> pecas = new List<Peca>(); 
+            try{
+                // Query mysql
+                String sql = "SELECT * FROM pecas";
+                MySqlCommand cmd = new MySqlCommand(sql, conexao.getInstancia());
+                using (MySqlDataReader dr = cmd.ExecuteReader())
+                {
+                    while (dr.Read())
+                    {
+                        Peca peca = new Peca();
+
+                        peca.CodPec = (String)dr["CodPec"];
+                        peca.NomePec = (String)dr["NomePec"];
+                        peca.QtdePeca = (String)dr["QtdePec"];
+                        peca.ValPec = (String)dr["ValPec"];
+
+                        pecas.Add(peca);
+                    }
+                }
+            
+            }
+            catch (Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show("Erro inserir buscar peças : " + ex.Message, "Erro");
+            }
+            return pecas;
         }
         public List<Peca> getTodos()
         {

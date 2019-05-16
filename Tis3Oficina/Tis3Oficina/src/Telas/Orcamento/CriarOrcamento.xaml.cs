@@ -14,6 +14,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using Tis3Oficina.src.Config;
+using Tis3Oficina.src.DAO;
+using Tis3Oficina.src.OBJETOS;
 
 namespace Tis3Oficina.src.Telas.Orcamento
 {
@@ -32,29 +34,28 @@ namespace Tis3Oficina.src.Telas.Orcamento
 
         public void carregarComboBox()
         {
-            DataTable dt = new DataTable();
-            try
+            DAOPeca daoPeca = new DAOPeca();
+            DAOServico daoServico = new DAOServico();
+            List <Peca> pecas = daoPeca.getTodos();
+            List<Servico> servicos = daoServico.getTodos();
+
+            foreach (Peca peca in pecas)
             {
-                // Query mysql
-                String sql = "SELECT NomePec FROM pecas";
-                MySqlCommand cmd = new MySqlCommand(sql, conexao.getInstancia());
-
-
-                using (MySqlDataReader dr = cmd.ExecuteReader())
-                {
-                    while (dr.Read())
-                    {
-                        ComboBoxItem item = new ComboBoxItem();
-                        item.Content = (String)dr["NomePec"];
-
-                        comboItem.Items.Add(item);
-                    }
-                }
+                ComboBoxItem cbi = new ComboBoxItem();
+                cbi.Content = peca.NomePec;
+                comboItemPecas.Items.Add(cbi);
+                Console.WriteLine("Peca1" + peca.NomePec);
             }
-            catch (Exception ex)
+            foreach (Servico servico in servicos)
             {
-                System.Windows.Forms.MessageBox.Show("Erro buscar todos Clientes : " + ex.Message, "Erro");
+                ComboBoxItem cbi = new ComboBoxItem();
+                cbi.Content = servico.NomeServico;
+                comboItemServicos.Items.Add(cbi);
+                Console.WriteLine("Servico" + servico.NomeServico);
             }
+
+
+
         }
 
         //Botao Voltar
@@ -82,9 +83,9 @@ namespace Tis3Oficina.src.Telas.Orcamento
         private void Handle()
         {
 
-            Console.WriteLine(comboItem.SelectedItem.ToString().Split(new string[] { ": " }, StringSplitOptions.None).Last().Replace(" ",""));
+            Console.WriteLine(comboItemPecas.SelectedItem.ToString().Split(new string[] { ": " }, StringSplitOptions.None).Last().Replace(" ",""));
             
-            switch (comboItem.SelectedItem.ToString().Split(new string[] { ": " }, StringSplitOptions.None).Last())
+            switch (comboItemPecas.SelectedItem.ToString().Split(new string[] { ": " }, StringSplitOptions.None).Last())
             {
                 case "COla":
                     qtdeInt.Maximum = 10;

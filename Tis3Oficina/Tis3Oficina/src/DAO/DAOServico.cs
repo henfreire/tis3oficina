@@ -59,6 +59,36 @@ namespace Tis3Oficina.src.DAO
             }
             return dt;
         }
+
+        public List<Servico> geTodos()
+        {
+            List<Servico> servicos = new List<Servico>();
+            try
+            {
+                // Query mysql
+                String sql = "SELECT * FROM servicos";
+                MySqlCommand cmd = new MySqlCommand(sql, conexao.getInstancia());
+                using (MySqlDataReader dr = cmd.ExecuteReader())
+                {
+                    while (dr.Read())
+                    {
+                        Servico servico = new Servico();
+
+                        servico.Id = (String)dr["id"];
+                        servico.NomeServico = (String)dr["nomeServico"];
+                        servico.Valor = (String)dr["valor"];
+
+                        servicos.Add(servico);
+                    }
+                }
+
+            }
+            catch (Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show("Erro inserir buscar serviços : " + ex.Message, "Erro");
+            }
+            return servicos;
+        }
         public List<Servico> getTodos()
         {
             List<Servico> listaServicos = new List<Servico>();
