@@ -19,15 +19,23 @@
                 <TextBlock><Run Text="Novo"/><LineBreak/><Run Text="Orçamento"/></TextBlock>
             </Label>
         </Grid>
-
         <Grid Margin="701,395,10,0">
             <Button Content="Voltar" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="75" FontFamily="Roboto Black" FontSize="16" Background="#FF00AEFB" Foreground="White" BorderBrush="#FF00AEFB" Click="btnVoltar" Height="24" Grid.Column="1" UseLayoutRounding="False" Padding="1,1,1,5"/>
         </Grid>
         <Grid Margin="179,123,474,239">
             <StackPanel>
+               
                 <Label Content="Peças" FontFamily="Roboto" FontSize="14" RenderTransformOrigin="-0.088,0.37" Foreground="White"/>
-                <ComboBox x:Name="comboItemPecas" SelectionChanged="Changed" DropDownClosed="Closes" SelectedIndex="0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="135">
-                    <ComboBoxItem Content="Selecione uma Peça"/>
+               
+                <ComboBox x:Name="comboItemPecas" SelectionChanged="Changed" DropDownClosed="Closes" SelectedIndex="0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="135" >
+                   
+                    <ComboBox.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="{Binding NomePec}" Width="100" />
+                            </StackPanel>
+                        </DataTemplate>
+                    </ComboBox.ItemTemplate>
                 </ComboBox>
             </StackPanel>
         </Grid>

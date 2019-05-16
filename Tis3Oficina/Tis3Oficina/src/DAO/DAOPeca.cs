@@ -74,9 +74,8 @@ namespace Tis3Oficina.src.DAO
 
                         peca.CodPec = (String)dr["CodPec"];
                         peca.NomePec = (String)dr["NomePec"];
-                        peca.QtdePeca = (String)dr["QtdePec"];
-                        peca.ValPec = (String)dr["ValPec"];
-
+                        peca.QtdePeca = (int)dr["QtdePec"];
+                        peca.ValPec = (double)dr["ValPec"];
                         pecas.Add(peca);
                     }
                 }
@@ -107,8 +106,8 @@ namespace Tis3Oficina.src.DAO
 
                         s.CodPec = dr["CodPec"].ToString();
                         s.NomePec = (String)dr["NomePec"];
-                        s.QtdePeca = (String)dr["QtdePec"];
-                        s.ValPec = (String)dr["ValPec"];
+                        s.QtdePeca = (int)dr["QtdePec"];
+                        s.ValPec = (double)dr["ValPec"];
 
                         listaPecas.Add(s);
                     }

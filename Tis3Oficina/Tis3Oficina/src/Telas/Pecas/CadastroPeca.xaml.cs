@@ -31,14 +31,14 @@ namespace Tis3Oficina.src.Telas.Pecas
         {
             Peca novaPeca = new Peca();
             string nome = textNomePec.Text.Trim();
-            string quantidade = textQtdePec.Text;
-            string valor = textValorPec.Text.Replace("$", "").Replace(",", "");
+            int quantidade = int.Parse(textQtdePec.Text);
+            double valor = double.Parse( textValorPec.Text.Replace("$", "").Replace(",", ""));
 
             if (isName(nome) && isValue(textValorPec.Text))
             {
                 novaPeca.NomePec = nome;
                 novaPeca.QtdePeca = quantidade;
-                novaPeca.ValPec = valor;
+                novaPeca.ValPec =  valor;
 
                 DAOPeca peca = new DAOPeca();
                 peca.inserir(novaPeca);

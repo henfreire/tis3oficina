@@ -100,6 +100,8 @@
     <Compile Include="src\DAO\DAOPeca.cs" />
     <Compile Include="src\DAO\DAOServico.cs" />
     <Compile Include="src\DAO\DAOCliente.cs" />
+    <Compile Include="src\OBJETOS\ItemOrcamento.cs" />
+    <Compile Include="src\OBJETOS\Orcamento.cs" />
     <Compile Include="src\OBJETOS\Peca.cs" />
     <Compile Include="src\OBJETOS\Servico.cs" />
     <Compile Include="src\OBJETOS\Cliente.cs" />

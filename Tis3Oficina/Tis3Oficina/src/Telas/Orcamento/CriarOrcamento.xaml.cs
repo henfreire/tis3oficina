@@ -25,39 +25,87 @@ namespace Tis3Oficina.src.Telas.Orcamento
     public partial class CriarOrcamento : Window
     {
         Conexao conexao = new Conexao();
+        List<ItemOrcamento> itensOrcamento;
+        List<Peca> pecas;
+        List<Servico> servicos;
         public CriarOrcamento()
         {
             InitializeComponent();
             conexao.conectar();
             carregarComboBox();
+            itensOrcamento = new List<ItemOrcamento>();
         }
 
         public void carregarComboBox()
         {
             DAOPeca daoPeca = new DAOPeca();
             DAOServico daoServico = new DAOServico();
-            List <Peca> pecas = daoPeca.getTodos();
-            List<Servico> servicos = daoServico.getTodos();
+            pecas = daoPeca.getTodos();
+            servicos = daoServico.getTodos();
 
-            foreach (Peca peca in pecas)
+            /*foreach (Peca peca in pecas)
             {
                 ComboBoxItem cbi = new ComboBoxItem();
                 cbi.Content = peca.NomePec;
+               
                 comboItemPecas.Items.Add(cbi);
                 Console.WriteLine("Peca1" + peca.NomePec);
-            }
+            } */
+            
+            comboItemPecas.ItemsSource = pecas;
+            /*
             foreach (Servico servico in servicos)
             {
                 ComboBoxItem cbi = new ComboBoxItem();
                 cbi.Content = servico.NomeServico;
+                cbi.Name = servico.Id;
                 comboItemServicos.Items.Add(cbi);
                 Console.WriteLine("Servico" + servico.NomeServico);
-            }
+            } */
 
 
 
         }
 
+        private void adicionarPeca(object sender, RoutedEventArgs e)
+        {
+            
+            String name = comboItemPecas.Name;
+
+           
+
+           int index =  comboItemPecas.SelectedIndex;
+            Peca peca = (Peca)comboItemPecas.SelectedItem;
+        
+            
+            ItemOrcamento item = new ItemOrcamento();
+            item.IdPeca =  peca.CodPec;
+            item.Nome = peca.NomePec;
+            item.Valor = peca.ValPec;
+            item.Quantidade = peca.QtdePeca;
+            Console.WriteLine(item);
+            itensOrcamento.Add(item);
+        }
+        private void adicionarServico(object sender, RoutedEventArgs e)
+        {
+
+        }
+        private void validaValor(object sender, RoutedEventArgs e)
+        {
+            bool result = isValue(textValor.Text);
+
+            if (!result)
+                lblValorIncorreto.Visibility = Visibility.Visible;
+            else
+                lblValorIncorreto.Visibility = Visibility.Hidden;
+        }
+        public static bool isValue(string valor)
+        {
+            if (valor == "$0.00")
+                return false;
+
+            return true;
+        }
         //Botao Voltar
         private void btnVoltar(object sender, RoutedEventArgs e)
         {
@@ -83,8 +131,8 @@ namespace Tis3Oficina.src.Telas.Orcamento
         private void Handle()
         {
 
-            Console.WriteLine(comboItemPecas.SelectedItem.ToString().Split(new string[] { ": " }, StringSplitOptions.None).Last().Replace(" ",""));
-            
+           
+           /* 
             switch (comboItemPecas.SelectedItem.ToString().Split(new string[] { ": " }, StringSplitOptions.None).Last())
             {
                 case "COla":
@@ -97,6 +145,7 @@ namespace Tis3Oficina.src.Telas.Orcamento
                     //Handle for the third combobox
                     break;
             }
+            */
         }
     }
 }
