@@ -26,8 +26,9 @@ namespace Tis3Oficina.src.DAO
             try
             {
                 // Query mysql
-                String query = "INSERT INTO pecas (NomePec,QtdePec,ValPec) VALUES('" + peca.NomePec + "', '" + peca.QtdePeca + "', '" + peca.ValPec + "')";
+                String query = "INSERT INTO pecas (NomePec,QtdePec,ValPec) VALUES('" + peca.NomePec + "', '" + peca.QtdePeca + "', '" + peca.ValPec.ToString().Replace(",", ".") + "')";
                 // Aqui passar a query e estância de conexão que é configurada na Classe no Conexao na pasta config
+                
                 MySqlCommand command = new MySqlCommand(query, conexao.getInstancia());
 
                 // Executa a query
@@ -127,7 +128,7 @@ namespace Tis3Oficina.src.DAO
             {
                 // Query mysql
                 String query = "UPDATE pecas SET NomePec = '" + peca.NomePec + "', QtdePec= '" + peca.QtdePeca + "', ValPec = '" + peca.ValPec + "' WHERE CodPec = " + codPec + "; ";
-
+                
                 // Aqui passar a query e estância de conexão que é configurada na Classe no Conexao na pasta config
                 MySqlCommand command = new MySqlCommand(query, conexao.getInstancia());
 
