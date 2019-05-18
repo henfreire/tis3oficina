@@ -72,6 +72,7 @@ namespace Tis3Oficina.src.Telas.Orcamento
             
             String name = comboItemPecas.Name;
 
+
            
 
            int index =  comboItemPecas.SelectedIndex;
