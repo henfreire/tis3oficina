@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -35,7 +36,7 @@ namespace Tis3Oficina.src.Telas.Servicos
             if (isName(textNomeServico.Text) && isValue(textValor.Text))
             {
                 novoServico.NomeServico = textNomeServico.Text;
-                novoServico.Valor = textValor.Text.Replace("$", "").Replace(",", "");
+                novoServico.Valor = double.Parse(textValor.Text.Replace("$", "").Replace(",", ""), CultureInfo.InvariantCulture);
 
                 DAOServico servico = new DAOServico();
                 servico.inserir(novoServico);

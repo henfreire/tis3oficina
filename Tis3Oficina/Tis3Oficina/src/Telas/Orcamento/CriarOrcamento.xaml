@@ -56,7 +56,13 @@
             </Button>
             <Label Content="Serviços" FontFamily="Roboto" FontSize="14" RenderTransformOrigin="-0.088,0.37" Foreground="White" Margin="179,200,474,192"/>
             <ComboBox x:Name="comboItemServicos" SelectionChanged="Changed" DropDownClosed="Closes" SelectedIndex="0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="135" Margin="179,227,0,0">
-                <ComboBoxItem Content="Selecione um Serviço"/>
+                <ComboBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="{Binding NomeServico}" Width="100" />
+                        </StackPanel>
+                    </DataTemplate>
+                </ComboBox.ItemTemplate>
             </ComboBox>
             <Button  HorizontalAlignment="Left" VerticalAlignment="Top" Width="135" Height="37" Margin="546,212,0,0"  x:Name="AdicionarServico" Background="{x:Null}" BorderBrush="White" Click="adicionarServico">
                 <Grid >
@@ -65,6 +71,12 @@
 
                 </Grid>
             </Button>
+            <DataGrid Name="GridItensOrcamento"  HorizontalAlignment="Left" Height="116" Margin="179,278,0,0" VerticalAlignment="Top" Width="502" ItemsSource="{Binding itensOrcamento}">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Nome" Binding="{Binding Nome}" />
+                    <DataGridTextColumn Header="Valor" Binding="{Binding Valor}" />
+                </DataGrid.Columns>
+            </DataGrid>
 
         </Grid>
         <Grid HorizontalAlignment="Left" Margin="377,225,0,0" VerticalAlignment="Top" Height="28" Width="105">

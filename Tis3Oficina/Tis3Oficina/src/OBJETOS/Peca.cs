@@ -11,9 +11,7 @@ namespace Tis3Oficina.src.OBJETOS
         string codPec, nomePec;
         double valPec;
         int qtdePeca;
-
-
-
+        
         public string CodPec { get => codPec; set => codPec = value; }
         public string NomePec { get => nomePec; set => nomePec = value; }
         public double ValPec { get => valPec; set => valPec = value; }

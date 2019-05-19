@@ -26,7 +26,7 @@ namespace Tis3Oficina.src.DAO
             try
             {
                 // Query mysql
-                String query = "INSERT INTO servico (nomeServico,valor) VALUES('" + servico.NomeServico + "', '" + servico.Valor + "')";
+                String query = "INSERT INTO servico (nomeServico,valor) VALUES('" + servico.NomeServico + "', '" + servico.Valor.ToString().Replace(",", ".") + "')";
                 // Aqui passar a query e estância de conexão que é configurada na Classe no Conexao na pasta config
                 MySqlCommand command = new MySqlCommand(query, conexao.getInstancia());
 
@@ -59,7 +59,7 @@ namespace Tis3Oficina.src.DAO
             }
             return dt;
         }
-
+       
         public List<Servico> geTodos()
         {
             List<Servico> servicos = new List<Servico>();
@@ -76,7 +76,7 @@ namespace Tis3Oficina.src.DAO
 
                         servico.Id = (String)dr["id"];
                         servico.NomeServico = (String)dr["nomeServico"];
-                        servico.Valor = (String)dr["valor"];
+                        servico.Valor = (double)dr["valor"];
 
                         servicos.Add(servico);
                     }
@@ -85,7 +85,7 @@ namespace Tis3Oficina.src.DAO
             }
             catch (Exception ex)
             {
-                System.Windows.Forms.MessageBox.Show("Erro inserir buscar serviços : " + ex.Message, "Erro");
+                System.Windows.Forms.MessageBox.Show("Erro getTodos serviços : " + ex.Message, "Erro");
             }
             return servicos;
         }
@@ -106,9 +106,9 @@ namespace Tis3Oficina.src.DAO
                     {
                         Servico s = new Servico();
 
-                        s.Id = dr["id"].ToString();
+                        s.Id = (String) dr["id"].ToString();
                         s.NomeServico = (String)dr["NomeServico"];
-                        s.Valor = (String)dr["Valor"];
+                        s.Valor = (double)dr["Valor"];
 
                         listaServicos.Add(s);
                     }

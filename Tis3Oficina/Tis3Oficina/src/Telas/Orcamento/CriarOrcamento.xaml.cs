@@ -42,43 +42,17 @@ namespace Tis3Oficina.src.Telas.Orcamento
             DAOServico daoServico = new DAOServico();
             pecas = daoPeca.getTodos();
             servicos = daoServico.getTodos();
-
-            /*foreach (Peca peca in pecas)
-            {
-                ComboBoxItem cbi = new ComboBoxItem();
-                cbi.Content = peca.NomePec;
-               
-                comboItemPecas.Items.Add(cbi);
-                Console.WriteLine("Peca1" + peca.NomePec);
-            } */
             
             comboItemPecas.ItemsSource = pecas;
-            /*
-            foreach (Servico servico in servicos)
-            {
-                ComboBoxItem cbi = new ComboBoxItem();
-                cbi.Content = servico.NomeServico;
-                cbi.Name = servico.Id;
-                comboItemServicos.Items.Add(cbi);
-                Console.WriteLine("Servico" + servico.NomeServico);
-            } */
-
-
-
+            comboItemServicos.ItemsSource = servicos;
+         
         }
 
         private void adicionarPeca(object sender, RoutedEventArgs e)
         {
             
-            String name = comboItemPecas.Name;
-
-
-           
-
-           int index =  comboItemPecas.SelectedIndex;
             Peca peca = (Peca)comboItemPecas.SelectedItem;
         
-            
             ItemOrcamento item = new ItemOrcamento();
             item.IdPeca =  peca.CodPec;
             item.Nome = peca.NomePec;
@@ -86,10 +60,19 @@ namespace Tis3Oficina.src.Telas.Orcamento
             item.Quantidade = peca.QtdePeca;
             Console.WriteLine(item);
             itensOrcamento.Add(item);
+            GridItensOrcamento.ItemsSource = itensOrcamento;
         }
         private void adicionarServico(object sender, RoutedEventArgs e)
         {
+            Servico servico = (Servico)comboItemServicos.SelectedItem;
 
+            ItemOrcamento item = new ItemOrcamento();
+            item.IdPeca = servico.Id;
+            item.Nome = servico.NomeServico;
+            item.Valor = servico.Valor;
+            Console.WriteLine(item);
+            itensOrcamento.Add(item);
+            GridItensOrcamento.ItemsSource = itensOrcamento;
         }
         private void validaValor(object sender, RoutedEventArgs e)
         {

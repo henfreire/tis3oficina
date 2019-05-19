@@ -9,11 +9,12 @@ namespace Tis3Oficina.src.OBJETOS
     public class Servico
     {
 
-        string id,nomeServico,valor;
+        string id, nomeServico;
+        double valor;
 
         public string Id { get => id; set => id = value; }
         public string NomeServico { get => nomeServico; set => nomeServico = value; }
-        public string Valor { get => valor; set => valor = value; }
+        public double Valor { get => valor; set => valor = value; }
         
 
         public override string ToString() {

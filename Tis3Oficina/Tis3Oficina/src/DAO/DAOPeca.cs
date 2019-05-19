@@ -21,8 +21,6 @@ namespace Tis3Oficina.src.DAO
 
         public void inserir(Peca peca)
         {
-
-
             try
             {
                 // Query mysql
@@ -116,7 +114,7 @@ namespace Tis3Oficina.src.DAO
             }
             catch (Exception ex)
             {
-                System.Windows.Forms.MessageBox.Show("Erro buscar todos Serviços : " + ex.Message, "Erro");
+                System.Windows.Forms.MessageBox.Show("Erro getTodos Peças : " + ex.Message, "Erro");
             }
 
             return listaPecas;
