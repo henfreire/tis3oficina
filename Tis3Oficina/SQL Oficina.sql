@@ -28,7 +28,7 @@ CREATE TABLE IF NOT EXISTS `cliente` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 
--- Copiando dados para a tabela oficina.cliente: ~0 rows (aproximadamente)
+-- Copiando dados para a tabela oficina.cliente: ~1 rows (aproximadamente)
 DELETE FROM `cliente`;
 /*!40000 ALTER TABLE `cliente` DISABLE KEYS */;
 INSERT INTO `cliente` (`id`, `nome`, `cpf`, `telefone`, `email`, `endereco`, `observacao`) VALUES
@@ -39,6 +39,7 @@ INSERT INTO `cliente` (`id`, `nome`, `cpf`, `telefone`, `email`, `endereco`, `ob
 CREATE TABLE IF NOT EXISTS `item_orcamento` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `nome` varchar(50) DEFAULT NULL,
+  `quantidade` int(11) DEFAULT NULL,
   `valor` double DEFAULT NULL,
   `observacao` varchar(50) DEFAULT NULL,
   `idPeca` int(11) DEFAULT NULL,
@@ -62,11 +63,10 @@ DELETE FROM `item_orcamento`;
 CREATE TABLE IF NOT EXISTS `orcamento` (
   `CodOrc` int(10) NOT NULL AUTO_INCREMENT,
   `QtdeItens` varchar(3) DEFAULT NULL,
-  `ItemOrc` varchar(100) NOT NULL,
   `TotOrc` varchar(7) DEFAULT NULL,
-  `idCliente` int(11) DEFAULT NULL,
+  `IdCliente` int(11) DEFAULT NULL,
   PRIMARY KEY (`CodOrc`),
-  KEY `FK_orcamento_cliente` (`idCliente`),
+  KEY `FK_orcamento_cliente` (`IdCliente`),
   CONSTRAINT `FK_orcamento_cliente` FOREIGN KEY (`idCliente`) REFERENCES `cliente` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -79,29 +79,34 @@ DELETE FROM `orcamento`;
 CREATE TABLE IF NOT EXISTS `pecas` (
   `CodPec` int(11) NOT NULL AUTO_INCREMENT,
   `NomePec` varchar(100) DEFAULT NULL,
-  `QtdePec` varchar(3) DEFAULT NULL,
-  `ValPec` varchar(8) DEFAULT NULL,
+  `QtdePec` int(11) DEFAULT NULL,
+  `ValPec` double DEFAULT NULL,
   PRIMARY KEY (`CodPec`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=latin1;
 
--- Copiando dados para a tabela oficina.pecas: ~0 rows (aproximadamente)
+-- Copiando dados para a tabela oficina.pecas: ~2 rows (aproximadamente)
 DELETE FROM `pecas`;
 /*!40000 ALTER TABLE `pecas` DISABLE KEYS */;
+INSERT INTO `pecas` (`CodPec`, `NomePec`, `QtdePec`, `ValPec`) VALUES
+	(24, 'Vela', 1, 65765),
+	(25, 'Rebimboca da parafuseta', 11, 0.06);
 /*!40000 ALTER TABLE `pecas` ENABLE KEYS */;
 
 -- Copiando estrutura para tabela oficina.servico
 CREATE TABLE IF NOT EXISTS `servico` (
   `id` int(100) NOT NULL AUTO_INCREMENT,
   `nomeServico` varchar(100) DEFAULT NULL,
-  `valor` varchar(1000) DEFAULT NULL,
+  `valor` double DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
--- Copiando dados para a tabela oficina.servico: ~0 rows (aproximadamente)
+-- Copiando dados para a tabela oficina.servico: ~3 rows (aproximadamente)
 DELETE FROM `servico`;
 /*!40000 ALTER TABLE `servico` DISABLE KEYS */;
 INSERT INTO `servico` (`id`, `nomeServico`, `valor`) VALUES
-	(1, 'oi', '188,');
+	(1, 'oi', 188),
+	(2, 'Trocar Peneu', 30),
+	(3, 'Pintura', 200);
 /*!40000 ALTER TABLE `servico` ENABLE KEYS */;
 
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
