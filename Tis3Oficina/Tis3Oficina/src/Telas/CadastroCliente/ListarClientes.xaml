@@ -15,6 +15,7 @@
         <SolidColorBrush x:Key="Button.Enabled.Foreground" Color="White"/>
         <SolidColorBrush x:Key="Button.MouseOver.Background" Color="#FFBEE6FD"/>
         <SolidColorBrush x:Key="Button.MouseOver.Border" Color="#FF3C7FB1"/>
+        
         <Style x:Key="ButtonStyle1" TargetType="{x:Type Button}">
             <Setter Property="Template">
                 <Setter.Value>
@@ -42,6 +43,23 @@
                 </Setter.Value>
             </Setter>
         </Style>
+
+        <Style x:Key="dtg1" TargetType="DataGrid">
+            <Setter Property="ColumnHeaderStyle" Value="{DynamicResource chs1}"></Setter>
+
+        </Style>
+
+        <Style x:Key="chs1" TargetType="DataGridColumnHeader">
+            <Setter Property="Background" Value="#FF045B83"></Setter>
+            <Setter Property="Foreground" Value="White"></Setter>
+            <Setter Property="FontFamily" Value="Roboto"></Setter>
+            <Setter Property="FontSize" Value="14"></Setter>
+            <Setter Property="Height" Value="20"></Setter>
+            <Setter Property="Padding" Value="10,0,0,0"></Setter>
+            
+        </Style>
+        
+
     </Window.Resources>
 
 
@@ -52,7 +70,39 @@
                 <ColumnDefinition Width="360*"/>
                 <ColumnDefinition Width="373*"/>
             </Grid.ColumnDefinitions>
-            <DataGrid Name="dataGrid1" HorizontalAlignment="Left" Height="278" Margin="24,99,0,0" VerticalAlignment="Top" Width="736" Grid.ColumnSpan="3" MouseDoubleClick="DataGrid1_MouseDoubleClick"/>
+            <DataGrid Name="dataGrid1" Style="{DynamicResource dtg1 }" HorizontalAlignment="Left" Height="278" Margin="24,99,0,0" VerticalAlignment="Top" Width="736" 
+                      Grid.ColumnSpan="3" MouseDoubleClick="DataGrid1_MouseDoubleClick"
+                      RowHeight="30" FontSize="12" FontFamily="Roboto"
+                      Foreground="White" BorderThickness="0,0,0,0" Background="{x:Null}"
+                      GridLinesVisibility="None" CanUserResizeColumns="False" CanUserReorderColumns="False"
+                      CanUserDeleteRows="False" RowBackground="#FF0E0E0E" CanUserAddRows="False" CanUserResizeRows="False" 
+                      CanUserSortColumns="False" HeadersVisibility="Column" AutoGenerateColumns="False" IsReadOnly="True">
+                
+                <DataGrid.Columns>
+                    <DataGridTextColumn MinWidth="100" Width="*" Header="Nome" Binding="{Binding Nome}" />
+                    <DataGridTextColumn Header="Telefone" Binding="{Binding Telefone}" />
+                    <DataGridTextColumn MinWidth="120" Width="*" Header="E-MAIL" Binding="{Binding Email}" />
+                    <DataGridTextColumn Header="CPF" Binding="{Binding Cpf}" />
+                    <DataGridTextColumn MinWidth="100" Width="*" Header="Endereço" Binding="{Binding Endereco}" />
+                    <DataGridTextColumn MinWidth="100" Width="*" Header="Obersevações" Binding="{Binding Observacao}" />
+                    <DataGridTemplateColumn>
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button Name="butEdit" Content="Editar" Width="74" FontFamily="Roboto Black" FontSize="16" Click="btnEdit" Style="{StaticResource ButtonStyle1}"/>
+                                
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTemplateColumn>
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                
+                                <Button Name="butDelete" Content="Deletar" Width="74" FontFamily="Roboto Black" FontSize="16" Click="btnDelete" Style="{StaticResource ButtonStyle1}"/>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                </DataGrid.Columns>
+            </DataGrid>
 
             <Button Margin="196,36,0,0" VerticalAlignment="Top" Width="145" Height="41" Click="btnNovoCliente" Grid.Column="2" Background="#FF202020" HorizontalAlignment="Left" BorderThickness="0">
                 <Grid>

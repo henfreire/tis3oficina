@@ -19,9 +19,25 @@ namespace Tis3Oficina.src.Telas
     /// </summary>
     public partial class Alerta : Window
     {
+        public bool yes=false;
+        public bool no=false;
         public Alerta()
         {
             InitializeComponent();
+        }
+
+        public Alerta(int tipo)
+        {
+            InitializeComponent();
+            if (tipo == 1)
+                alteraBox();
+        }
+
+        private void alteraBox()
+        {
+            btnYes.Visibility = Visibility.Visible;
+            btnNo.Visibility = Visibility.Visible;
+            btnOK.Visibility = Visibility.Hidden;
         }
 
         private void btnOk(object sender, RoutedEventArgs e)
@@ -29,5 +45,16 @@ namespace Tis3Oficina.src.Telas
             this.Close();
         }
 
+        private void btnSim(object sender, RoutedEventArgs e)
+        {
+            yes = true;
+            this.Close();
+        }
+
+        private void btnNao(object sender, RoutedEventArgs e)
+        {
+            no = true;
+            this.Close();
+        }
     }
 }

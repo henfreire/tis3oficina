@@ -9,9 +9,14 @@
     <Grid>
         <Label x:Name="conteudo" HorizontalContentAlignment="Center" Content="Observação" Margin="0,51,0,0" VerticalAlignment="Top" FontFamily="Roboto" FontSize="14" RenderTransformOrigin="-0.088,0.37" Foreground="White"/>
         <Grid HorizontalAlignment="Left" Height="34" Margin="169,98,0,0" VerticalAlignment="Top" Width="137">
-            <Button Content="OK" Click="btnOk" FontFamily="Roboto Black" FontSize="16" Background="#FF00AEFB" Foreground="White" BorderBrush="#FF00AEFB" RenderTransformOrigin="0.501,0.5" UseLayoutRounding="False"  Margin="0,0,0,10"/>
+            <Button x:Name="btnOK" Content="OK" Click="btnOk" FontFamily="Roboto Black" FontSize="16" Background="#FF00AEFB" Foreground="White" BorderBrush="#FF00AEFB" RenderTransformOrigin="0.501,0.5" UseLayoutRounding="False"  Margin="0,0,0,10" Visibility="Visible"/>
+            
         </Grid>
-        
+
+        <Grid Height="34" Width="294" VerticalAlignment="Bottom">
+            <Button x:Name="btnYes" Width="137" HorizontalAlignment="Left" Content="Sim" Click="btnSim" FontFamily="Roboto Black" FontSize="16" Background="#FF00AEFB" Foreground="White" BorderBrush="#FF00AEFB"  Margin="0,0,0,10" Visibility="Hidden"/>
+            <Button x:Name="btnNo" Width="137" HorizontalAlignment="Right" Content="Não" Click="btnNao" FontFamily="Roboto Black" FontSize="16" Background="#FF00AEFB" Foreground="White" BorderBrush="#FF00AEFB"  Margin="0,0,0,10" Visibility="Hidden"/>
+        </Grid>
 
 
     </Grid>
