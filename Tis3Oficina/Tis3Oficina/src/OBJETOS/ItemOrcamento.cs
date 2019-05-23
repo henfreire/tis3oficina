@@ -11,8 +11,8 @@ namespace Tis3Oficina.src.OBJETOS
 
         string nome, observacao, id, idPeca, idServico, idOrcamento;
 
-        double valor;
-        int quantidade;
+        double valor, total;
+        int quantidade = 1;
 
         public string Nome { get => nome; set => nome = value; }
         public string Observacao { get => observacao; set => observacao = value; }
@@ -21,6 +21,7 @@ namespace Tis3Oficina.src.OBJETOS
         public string IdServico { get => idServico; set => idServico = value; }
         public string IdOrcamento { get => idOrcamento; set => idOrcamento = value; }
         public double Valor { get => valor; set => valor = value; }
+        public double Total { get => valor * quantidade; set => total = value; }
         public int Quantidade { get => quantidade; set => quantidade = value; }
     }
 }

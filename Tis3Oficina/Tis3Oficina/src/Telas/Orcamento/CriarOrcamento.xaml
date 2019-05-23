@@ -43,7 +43,7 @@
         <Grid Margin="377,123,310,239">
             <StackPanel>
                 <Label Content="Quantidade" FontFamily="Roboto" FontSize="14" RenderTransformOrigin="-0.088,0.37" Foreground="White"/>
-                <wpfx:IntegerUpDown x:Name="qtdeInt" Value="1" Increment="1" Minimum="1"/>
+                <wpfx:IntegerUpDown x:Name="qtdePeca" Value="1" Increment="1" Minimum="1"/>
             </StackPanel>
         </Grid>
         <Grid>
@@ -71,10 +71,12 @@
 
                 </Grid>
             </Button>
-            <DataGrid Name="GridItensOrcamento"  HorizontalAlignment="Left" Height="116" Margin="179,278,0,0" VerticalAlignment="Top" Width="502" ItemsSource="{Binding itensOrcamento}">
+            <DataGrid Name="GridItensOrcamento" AutoGenerateColumns="False" HorizontalAlignment="Left" Height="116" Margin="179,278,0,0" VerticalAlignment="Top" Width="502"  ItemsSource="{Binding Source=itensOrcamento}" RowHeight="30" ColumnWidth="100" Background="LightGray" RowBackground="LightYellow" AlternatingRowBackground="LightBlue">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="Nome" Binding="{Binding Nome}" />
+                    <DataGridTextColumn Header="Quantidade" Binding="{Binding Quantidade}" />
                     <DataGridTextColumn Header="Valor" Binding="{Binding Valor}" />
+                    <DataGridTextColumn Header="Total" Binding="{Binding Total}" />
                 </DataGrid.Columns>
             </DataGrid>
 
@@ -82,7 +84,7 @@
         <Grid HorizontalAlignment="Left" Margin="377,225,0,0" VerticalAlignment="Top" Height="28" Width="105">
             <Label x:Name="lblValorIncorreto" Content="VALOR NÃO PODE SER $0.00" HorizontalAlignment="Right" VerticalAlignment="Top" FontFamily="Roboto" FontSize="14" RenderTransformOrigin="-0.088,0.37" Foreground="RED" Visibility="Hidden"/>
             <Label Content="Valor"  FontFamily="Roboto" FontSize="14" RenderTransformOrigin="-0.088,0.37" Foreground="White" Margin="0,0,0,112"/>
-            <CurrencyTextBoxControl:CurrencyTextBox x:Name="textValor" LostFocus="validaValor" MaxLength="7" TextWrapping="Wrap" Background="{x:Null}" BorderBrush="White" Foreground="White" FontSize="24" FontFamily="Roboto" BorderThickness="0,0,0,2" />
+            <CurrencyTextBoxControl:CurrencyTextBox x:Name="valorServico" LostFocus="validaValor" MaxLength="7" TextWrapping="Wrap" Background="{x:Null}" BorderBrush="White" Foreground="White" FontSize="24" FontFamily="Roboto" BorderThickness="0,0,0,2" />
 
         </Grid>
     </Grid>

@@ -1,7 +1,9 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Data;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -25,7 +27,12 @@ namespace Tis3Oficina.src.Telas.Orcamento
     public partial class CriarOrcamento : Window
     {
         Conexao conexao = new Conexao();
-        List<ItemOrcamento> itensOrcamento;
+        public ObservableCollection<ItemOrcamento> itensOrcamento;
+        public Double TotalOrcamento
+        {
+            get;
+            set;
+        }
         List<Peca> pecas;
         List<Servico> servicos;
         public CriarOrcamento()
@@ -33,8 +40,12 @@ namespace Tis3Oficina.src.Telas.Orcamento
             InitializeComponent();
             conexao.conectar();
             carregarComboBox();
-            itensOrcamento = new List<ItemOrcamento>();
+
+            ItensOrcamento = new ObservableCollection<ItemOrcamento>();
+            this.DataContext = itensOrcamento;
         }
+
+        
 
         public void carregarComboBox()
         {
@@ -54,29 +65,39 @@ namespace Tis3Oficina.src.Telas.Orcamento
             Peca peca = (Peca)comboItemPecas.SelectedItem;
         
             ItemOrcamento item = new ItemOrcamento();
+            int quantidade = (int) qtdePeca.Value;
             item.IdPeca =  peca.CodPec;
             item.Nome = peca.NomePec;
             item.Valor = peca.ValPec;
-            item.Quantidade = peca.QtdePeca;
-            Console.WriteLine(item);
-            itensOrcamento.Add(item);
-            GridItensOrcamento.ItemsSource = itensOrcamento;
+            item.Quantidade = quantidade;
+            ItensOrcamento.Add(item);
+           
+            GridItensOrcamento.ItemsSource = ItensOrcamento;
         }
         private void adicionarServico(object sender, RoutedEventArgs e)
         {
             Servico servico = (Servico)comboItemServicos.SelectedItem;
 
             ItemOrcamento item = new ItemOrcamento();
+          
+            double valServ = double.Parse(valorServico.Text.Replace("$", "").Replace(",", ""), CultureInfo.InvariantCulture);
             item.IdPeca = servico.Id;
             item.Nome = servico.NomeServico;
-            item.Valor = servico.Valor;
-            Console.WriteLine(item);
-            itensOrcamento.Add(item);
-            GridItensOrcamento.ItemsSource = itensOrcamento;
+            item.Quantidade = 1;
+            if(valServ != 0)
+            {
+                item.Valor = valServ;
+            }
+            else
+            {
+                item.Valor = servico.Valor;
+            }
+            ItensOrcamento.Add(item);
+            GridItensOrcamento.ItemsSource = ItensOrcamento;
         }
         private void validaValor(object sender, RoutedEventArgs e)
         {
-            bool result = isValue(textValor.Text);
+            bool result = isValue(valorServico.Text);
 
             if (!result)
                 lblValorIncorreto.Visibility = Visibility.Visible;
@@ -99,6 +120,9 @@ namespace Tis3Oficina.src.Telas.Orcamento
         }
 
         private bool handle = true;
+
+        public ObservableCollection<ItemOrcamento> ItensOrcamento { get => itensOrcamento; set => itensOrcamento = value; }
+
         private void Closes(object sender, EventArgs e)
         {
             if (handle) Handle();
