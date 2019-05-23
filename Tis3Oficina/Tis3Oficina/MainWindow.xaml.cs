@@ -15,7 +15,7 @@ using System.Windows.Shapes;
 using Tis3Oficina.src.Telas.Servicos;
 using Tis3Oficina.src.Telas.CadastroCliente;
 using Tis3Oficina.src.Telas.Pecas;
-using Tis3Oficina.src.Telas.Orcamento;
+using Tis3Oficina.src.Telas.Orcamentos;
 
 namespace Tis3Oficina
 {

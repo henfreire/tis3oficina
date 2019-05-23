@@ -1,0 +1,116 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Tis3Oficina.src.Telas"
+        xmlns:wpfx="http://schemas.xceed.com/wpf/xaml/toolkit"
+        xmlns:CurrencyTextBoxControl="clr-namespace:CurrencyTextBoxControl;assembly=CurrencyTextBoxControl" x:Class="Tis3Oficina.src.Telas.Orcamentos.CriarOrcamento"
+        mc:Ignorable="d"
+        Title="CriarOrcamento" Height="450" Width="800" WindowState="Maximized" WindowStartupLocation="CenterScreen" Background="#FF202020">
+    <Grid HorizontalAlignment="Center" Width="792">
+        <Grid HorizontalAlignment="Left" Height="129" Margin="10,10,0,0" VerticalAlignment="Top" Width="164">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0*"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Image Source="/Tis3Oficina;component/src/assets/icons/orca.png" Grid.ColumnSpan="2" HorizontalAlignment="Left" VerticalAlignment="Top" Width="53" Height="44"/>
+            <Label Grid.ColumnSpan="2" HorizontalAlignment="Left" VerticalAlignment="Center" Width="164" Height="86" Foreground="White" FontFamily="Roboto" FontSize="25" Margin="0,43,0,0">
+                <TextBlock><Run Text="Novo"/><LineBreak/><Run Text="Orçamento"/></TextBlock>
+            </Label>
+        </Grid>
+        <Grid Margin="701,395,10,0">
+            <Button Content="Voltar" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="75" FontFamily="Roboto Black" FontSize="16" Background="#FF00AEFB" Foreground="White" BorderBrush="#FF00AEFB" Click="btnVoltar" Height="24" Grid.Column="1" UseLayoutRounding="False" Padding="1,1,1,5"/>
+        </Grid>
+        <Grid Margin="174,19,479,318">
+            <StackPanel Margin="4,0,-4,27" Orientation="Vertical">
+
+                <Label Content="Cliente" FontFamily="Roboto" FontSize="14" RenderTransformOrigin="-0.088,0.37" Foreground="White" Height="26"/>
+                <ComboBox x:Name="comboItemClientes" SelectionChanged="Changed" DropDownClosed="Closes" SelectedIndex="0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="135"  >
+
+                    <ComboBox.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="{Binding Nome}" Width="100" />
+                            </StackPanel>
+                        </DataTemplate>
+                    </ComboBox.ItemTemplate>
+                </ComboBox>
+
+
+            </StackPanel>
+
+
+        </Grid>
+        <Grid Margin="179,123,474,239">
+            <StackPanel>
+
+                <Label Content="Peças" FontFamily="Roboto" FontSize="14" RenderTransformOrigin="-0.088,0.37" Foreground="White"/>
+
+                <ComboBox x:Name="comboItemPecas" SelectionChanged="Changed" DropDownClosed="Closes" SelectedIndex="0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="135" >
+
+                    <ComboBox.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="{Binding NomePec}" Width="100" />
+                            </StackPanel>
+                        </DataTemplate>
+                    </ComboBox.ItemTemplate>
+                </ComboBox>
+            </StackPanel>
+        </Grid>
+
+        <Grid Margin="377,123,310,239">
+            <StackPanel>
+                <Label Content="Quantidade" FontFamily="Roboto" FontSize="14" RenderTransformOrigin="-0.088,0.37" Foreground="White"/>
+                <wpfx:IntegerUpDown x:Name="qtdePeca" Value="1" Increment="1" Minimum="1"/>
+            </StackPanel>
+        </Grid>
+
+        <Button  HorizontalAlignment="Left" VerticalAlignment="Top" Width="135" Height="37" Margin="546,137,0,0"  Name="AdicionarPeca" Background="{x:Null}" BorderBrush="White" Click="adicionarPeca">
+            <Grid >
+                <Label Content="Adicionar" HorizontalAlignment="Left" Margin="42,3,0,0" FontFamily="Roboto" FontSize="14" RenderTransformOrigin="-0.088,0.37" Foreground="White" Width="70"/>
+                <Image Margin="18,3,88.733,7.6" Source="/Tis3Oficina;component/src/assets/icons/add.png" Stretch="Fill" UseLayoutRounding="False"/>
+
+            </Grid>
+        </Button>
+        <Label Content="Serviços" FontFamily="Roboto" FontSize="14" RenderTransformOrigin="-0.088,0.37" Foreground="White" Margin="179,200,474,192"/>
+        <ComboBox x:Name="comboItemServicos" SelectionChanged="Changed" DropDownClosed="Closes" SelectedIndex="0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="135" Margin="179,227,0,0">
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="{Binding NomeServico}" Width="100" />
+                    </StackPanel>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+        <Button  HorizontalAlignment="Left" VerticalAlignment="Top" Width="135" Height="37" Margin="546,212,0,0"  x:Name="AdicionarServico" Background="{x:Null}" BorderBrush="White" Click="adicionarServico">
+            <Grid >
+                <Label Content="Adicionar" HorizontalAlignment="Left" Margin="42,3,0,0" FontFamily="Roboto" FontSize="14" RenderTransformOrigin="-0.088,0.37" Foreground="White" Width="70"/>
+                <Image Margin="18,3,88.733,7.6" Source="/Tis3Oficina;component/src/assets/icons/add.png" Stretch="Fill" UseLayoutRounding="False"/>
+
+            </Grid>
+        </Button>
+        <DataGrid Name="GridItensOrcamento" AutoGenerateColumns="False" HorizontalAlignment="Left" Height="116" Margin="179,278,0,0" VerticalAlignment="Top" Width="502"  ItemsSource="{Binding Source=itensOrcamento}" RowHeight="30" ColumnWidth="100" Background="LightGray" RowBackground="LightYellow" AlternatingRowBackground="LightBlue">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Nome" Binding="{Binding Nome}" />
+                <DataGridTextColumn Header="Quantidade" Binding="{Binding Quantidade}" />
+                <DataGridTextColumn Header="Valor" Binding="{Binding Valor}" />
+                <DataGridTextColumn Header="Total" Binding="{Binding Total}" />
+            </DataGrid.Columns>
+        </DataGrid>
+
+
+
+        <Grid HorizontalAlignment="Left" Margin="377,225,0,0" VerticalAlignment="Top" Height="28" Width="105">
+            <Label x:Name="lblValorIncorreto" Content="VALOR NÃO PODE SER $0.00" HorizontalAlignment="Right" VerticalAlignment="Top" FontFamily="Roboto" FontSize="14" RenderTransformOrigin="-0.088,0.37" Foreground="RED" Visibility="Hidden"/>
+            <Label Content="Valor"  FontFamily="Roboto" FontSize="14" RenderTransformOrigin="-0.088,0.37" Foreground="White" Margin="0,0,0,112"/>
+            <CurrencyTextBoxControl:CurrencyTextBox x:Name="valorServico" LostFocus="validaValor" MaxLength="7" TextWrapping="Wrap" Background="{x:Null}" BorderBrush="White" Foreground="White" FontSize="24" FontFamily="Roboto" BorderThickness="0,0,0,2" />
+
+        </Grid>
+        <Label Content="Total:" HorizontalAlignment="Left" Margin="491,41,0,0" VerticalAlignment="Top" Foreground="White" FontSize="19"/>
+        <Label x:Name="labelTotal" HorizontalAlignment="Left" Margin="550,43,0,0" VerticalAlignment="Top" Foreground="White" FontSize="19" FontFamily="Roboto" FontWeight="Bold">
+            <TextBlock Text="{Binding totalOrcamento}" Width="100" />
+        </Label>
+    </Grid>
+</Window>

@@ -97,6 +97,8 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="src\Config\Conexao.cs" />
+    <Compile Include="src\DAO\DAOItemOrcamento.cs" />
+    <Compile Include="src\DAO\DAOOrcamento.cs" />
     <Compile Include="src\DAO\DAOPeca.cs" />
     <Compile Include="src\DAO\DAOServico.cs" />
     <Compile Include="src\DAO\DAOCliente.cs" />
@@ -111,7 +113,7 @@
     <Compile Include="src\Telas\CadastroCliente\CadastroCliente.xaml.cs">
       <DependentUpon>CadastroCliente.xaml</DependentUpon>
     </Compile>
-    <Compile Include="src\Telas\Orcamento\CriarOrcamento.xaml.cs">
+    <Compile Include="src\Telas\Orcamentos\CriarOrcamento.xaml.cs">
       <DependentUpon>CriarOrcamento.xaml</DependentUpon>
     </Compile>
     <Compile Include="src\Telas\Pecas\CadastroPeca.xaml.cs">
@@ -158,9 +160,9 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="src\Telas\Orcamento\CriarOrcamento.xaml">
-      <SubType>Designer</SubType>
+    <Page Include="src\Telas\Orcamentos\CriarOrcamento.xaml">
       <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="src\Telas\Pecas\CadastroPeca.xaml">
       <SubType>Designer</SubType>

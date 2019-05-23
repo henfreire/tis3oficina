@@ -61,6 +61,38 @@ namespace Tis3Oficina.src.DAO
             Console.WriteLine("Teste", dt.ToString());
             return dt;
         }
+        public List<Cliente> geTodos()
+        {
+            List<Cliente> clientes = new List<Cliente>();
+            try
+            {
+                // Query mysql
+                String sql = "SELECT * FROM cliente";
+                MySqlCommand cmd = new MySqlCommand(sql, conexao.getInstancia());
+                using (MySqlDataReader dr = cmd.ExecuteReader())
+                {
+                    while (dr.Read())
+                    {
+                        Cliente cliente = new Cliente();
+
+                        cliente.Id = dr["id"].ToString();
+                        cliente.Nome = (String)dr["nome"];
+                        cliente.Cpf = (String)dr["cpf"];
+                        cliente.Telefone = (String)dr["telefone"];
+                        cliente.Email = (String)dr["email"];
+                        cliente.Endereco = (String)dr["endereco"];
+                        cliente.Observacao = (String)dr["observacao"];
+                        clientes.Add(cliente);
+                    }
+                }
+
+            }
+            catch (Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show("Erro inserir buscar clientes : " + ex.Message, "Erro");
+            }
+            return clientes;
+        }
         public List<Cliente> getTodos()
         {
             List<Cliente> listaClientes = new List<Cliente>();

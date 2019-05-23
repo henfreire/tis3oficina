@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Tis3Oficina.src.DAO
 {
-    class ItemOrcamento
+    class DAOItemOrcamento
     {
     }
 }
