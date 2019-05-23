@@ -35,7 +35,6 @@ namespace Tis3Oficina.src.Telas.CadastroCliente
         {
             
           DAOCliente daoC = new DAOCliente();
-            DataTable result = daoC.listarTodos();
             List<Cliente> c = daoC.getTodos();
             dataGrid1.ItemsSource = c;
         }
@@ -67,6 +66,7 @@ namespace Tis3Oficina.src.Telas.CadastroCliente
             DataTable result = delete.listarTodos();
             List<Cliente> c = delete.getTodos();
             dataGrid1.ItemsSource = c;
+            dataGrid1.Columns[1].Visibility = Visibility.Collapsed;
             BEdit.IsEnabled = false;
             BDelete.IsEnabled = false;
         }
@@ -90,6 +90,31 @@ namespace Tis3Oficina.src.Telas.CadastroCliente
             {
                 BEdit.IsEnabled = true;
                 BDelete.IsEnabled = true;
+            }
+        }
+
+        private void btnEdit(object sender, RoutedEventArgs e)
+        {
+            Cliente cl = dataGrid1.SelectedItem as Cliente;
+            var editarCliente = new EditarCliente(cl.Id);
+            this.Close();
+            editarCliente.Show();
+        }
+
+        private void btnDelete(object sender, RoutedEventArgs e)
+        {
+            var alerta = new Alerta(1);
+            alerta.conteudo.Content = "Tem certeza que deseja deletar?";
+            alerta.ShowDialog();
+            
+            if (alerta.yes)
+            {
+                Cliente cl = dataGrid1.SelectedItem as Cliente;
+                DAOCliente delete = new DAOCliente();
+                delete.deletar(cl.Id);
+                DataTable result = delete.listarTodos();
+                List<Cliente> c = delete.getTodos();
+                dataGrid1.ItemsSource = c;
             }
         }
     }
