@@ -18,25 +18,30 @@ namespace Tis3Oficina.src.DAO
             conexao.conectar();
         }
 
-        public void inserir(Orcamento orc)
+        public String inserir(Orcamento orc)
         {
 
-
+            String idOrc = null;
             try
             {
                 // Query mysql
-                String query = "INSERT INTO orcamento (QtdeItens,TotOrc,idCliente) VALUES('" + orc.QtdeItens + "', '" + orc.TotOrc + "', '" + orc.IdCliente + "')";
+                String query = "INSERT INTO orcamento (QtdeItens,TotOrc,idCliente) VALUES('" + orc.QtdeItens + "', '" + orc.TotOrc + "', '" + orc.IdCliente + "'); SELECT LAST_INSERT_ID() as id;";
                 // Aqui passar a query e estância de conexão que é configurada na Classe no Conexao na pasta config
-                MySqlCommand command = new MySqlCommand(query, conexao.getInstancia());
+                MySqlCommand cmd = new MySqlCommand(query, conexao.getInstancia());
 
-                // Executa a query
-
-                command.ExecuteNonQuery();
+                using (MySqlDataReader dr = cmd.ExecuteReader())
+                {
+                    while (dr.Read())
+                    {
+                        idOrc = (String)dr["id"];
+                    }
+                }  
             }
             catch (Exception ex)
             {
                 System.Windows.Forms.MessageBox.Show("Erro inserir Serviço : " + ex.Message, "Erro");
             }
+            return idOrc;
         }
         public DataTable listarTodos()
         {
@@ -75,10 +80,10 @@ namespace Tis3Oficina.src.DAO
                     {
                         Orcamento orc = new Orcamento();
 
-                        orc.CodOrc = (int)dr["CodOrc"];
+                        orc.CodOrc = (String)dr["CodOrc"];
                         orc.QtdeItens = (int)dr["QtdeItens"];
                         orc.TotOrc = (int)dr["TotOrc"];
-                        orc.IdCliente = (int)dr["IdCliente"];
+                        orc.IdCliente = (string)dr["IdCliente"];
                         
                        
                     }

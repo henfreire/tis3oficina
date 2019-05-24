@@ -27,13 +27,9 @@ namespace Tis3Oficina.src.Telas.Orcamentos
     public partial class CriarOrcamento : Window
     {
         Conexao conexao = new Conexao();
-        public ObservableCollection<ItemOrcamento> itensOrcamento;
-        
-        public Double totalOrcamento
-        {
-            get;
-            set;
-        }
+        public List<ItemOrcamento> itensOrcamento;
+        Orcamento orc;
+        Double totalOrcamento;
       
         List<Peca> pecas;
         List<Servico> servicos;
@@ -44,8 +40,9 @@ namespace Tis3Oficina.src.Telas.Orcamentos
             conexao.conectar();
             carregarComboBox();
 
-            ItensOrcamento = new ObservableCollection<ItemOrcamento>();
+            ItensOrcamento = new List<ItemOrcamento>();
             this.DataContext = itensOrcamento;
+            Orc = new Orcamento();
         }
 
         
@@ -100,8 +97,7 @@ namespace Tis3Oficina.src.Telas.Orcamentos
             {
                 item.Valor = servico.Valor;
             }
-            totalOrcamento += item.Total;
-            labelTotal.Content = totalOrcamento;
+
             ItensOrcamento.Add(item);
             GridItensOrcamento.ItemsSource = ItensOrcamento;
         }
@@ -131,7 +127,8 @@ namespace Tis3Oficina.src.Telas.Orcamentos
 
         private bool handle = true;
 
-        public ObservableCollection<ItemOrcamento> ItensOrcamento { get => itensOrcamento; set => itensOrcamento = value; }
+        public List<ItemOrcamento> ItensOrcamento { get => itensOrcamento; set => itensOrcamento = value; }
+        public Orcamento Orc { get => orc; set => orc = value; }
 
         private void Closes(object sender, EventArgs e)
         {
@@ -164,6 +161,35 @@ namespace Tis3Oficina.src.Telas.Orcamentos
                     break;
             }
             */
+        }
+
+        private void BtnGerarOrcamento_Click(object sender, RoutedEventArgs e)
+        {
+            Orc.ItemOrc = ItensOrcamento;
+            DAOOrcamento daoOrc = new DAOOrcamento();
+            String idOrc = daoOrc.inserir(Orc);
+            Console.WriteLine("Orc" + Orc.ToString());
+            if(idOrc != null)
+            {
+                MessageBox.Show("Orçamento gerado" + idOrc);
+            }
+            else
+            {
+                MessageBox.Show("Não foi possível gerar orçamento" + idOrc);
+            }
+        }
+
+        private void ComboItemClientes_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            Cliente cliente = new Cliente();
+            cliente = (Cliente)comboItemClientes.SelectedItem;
+            if (cliente.Id != null && Orc != null)
+            {
+
+                Orc.IdCliente = cliente.Id;
+            }
+            
+            
         }
     }
 }
