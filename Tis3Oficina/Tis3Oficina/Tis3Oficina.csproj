@@ -252,5 +252,11 @@
   <ItemGroup>
     <Resource Include="src\assets\icons\orca.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="src\assets\icons\delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="src\assets\icons\edit.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

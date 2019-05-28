@@ -85,19 +85,23 @@
                     <DataGridTextColumn Header="CPF" Binding="{Binding Cpf}" />
                     <DataGridTextColumn MinWidth="100" Width="*" Header="Endereço" Binding="{Binding Endereco}" />
                     <DataGridTextColumn MinWidth="100" Width="*" Header="Obersevações" Binding="{Binding Observacao}" />
+                    
                     <DataGridTemplateColumn>
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
-                                <Button Name="butEdit" Content="Editar" Width="74" FontFamily="Roboto Black" FontSize="16" Click="btnEdit" Style="{StaticResource ButtonStyle1}"/>
-                                
+                                <Button Name="butEdit" Width="30" Click="btnEdit" BorderBrush="{x:Null}" Background="{x:Null}">
+                                    <Image Source="C:\Users\Caique\Documents\TIS3\tis3oficina\Tis3Oficina\Tis3Oficina\src\assets\icons\edit.png" Stretch="Fill"/>
+                                </Button>
                             </DataTemplate>
                         </DataGridTemplateColumn.CellTemplate>
                     </DataGridTemplateColumn>
                     <DataGridTemplateColumn>
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
-                                
-                                <Button Name="butDelete" Content="Deletar" Width="74" FontFamily="Roboto Black" FontSize="16" Click="btnDelete" Style="{StaticResource ButtonStyle1}"/>
+
+                                <Button Name="butDelete" Width="30" Click="btnDelete" BorderBrush="{x:Null}" Background="{x:Null}">
+                                    <Image Source="C:\Users\Caique\Documents\TIS3\tis3oficina\Tis3Oficina\Tis3Oficina\src\assets\icons\delete.png" Stretch="Fill"/>
+                                </Button>
                             </DataTemplate>
                         </DataGridTemplateColumn.CellTemplate>
                     </DataGridTemplateColumn>
