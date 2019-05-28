@@ -29,7 +29,7 @@ namespace Tis3Oficina.src.Telas.Orcamentos
         Conexao conexao = new Conexao();
         public List<ItemOrcamento> itensOrcamento;
         Orcamento orc;
-        Double totalOrcamento;
+        Double totalOrcamento = 0;
       
         List<Peca> pecas;
         List<Servico> servicos;
@@ -77,7 +77,11 @@ namespace Tis3Oficina.src.Telas.Orcamentos
             ItensOrcamento.Add(item);
             totalOrcamento += item.Total;
             labelTotal.Content = totalOrcamento;
+            foreach(ItemOrcamento i in ItensOrcamento ){
+                Console.WriteLine("Teste " + i.Nome);
+            }
             GridItensOrcamento.ItemsSource = ItensOrcamento;
+            GridItensOrcamento.Items.Refresh();
         }
         private void adicionarServico(object sender, RoutedEventArgs e)
         {
@@ -99,7 +103,9 @@ namespace Tis3Oficina.src.Telas.Orcamentos
             }
 
             ItensOrcamento.Add(item);
+
             GridItensOrcamento.ItemsSource = ItensOrcamento;
+            GridItensOrcamento.Items.Refresh();
         }
         private void validaValor(object sender, RoutedEventArgs e)
         {
@@ -167,10 +173,17 @@ namespace Tis3Oficina.src.Telas.Orcamentos
         {
             Orc.ItemOrc = ItensOrcamento;
             DAOOrcamento daoOrc = new DAOOrcamento();
+            DAOItemOrcamento daoItemOrc = new DAOItemOrcamento();
             String idOrc = daoOrc.inserir(Orc);
             Console.WriteLine("Orc" + Orc.ToString());
             if(idOrc != null)
             {
+                foreach(ItemOrcamento i in ItensOrcamento)
+                {
+                    i.IdOrcamento = idOrc;
+                    daoItemOrc.inserir(i);
+                }
+               
                 MessageBox.Show("Orçamento gerado" + idOrc);
             }
             else

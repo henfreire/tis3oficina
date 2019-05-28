@@ -26,6 +26,7 @@ namespace Tis3Oficina.src.DAO
             {
                 // Query mysql
                 String query = "INSERT INTO orcamento (QtdeItens,TotOrc,idCliente) VALUES('" + orc.QtdeItens + "', '" + orc.TotOrc + "', '" + orc.IdCliente + "'); SELECT LAST_INSERT_ID() as id;";
+                Console.WriteLine("query" + query);
                 // Aqui passar a query e estância de conexão que é configurada na Classe no Conexao na pasta config
                 MySqlCommand cmd = new MySqlCommand(query, conexao.getInstancia());
 
@@ -33,13 +34,14 @@ namespace Tis3Oficina.src.DAO
                 {
                     while (dr.Read())
                     {
-                        idOrc = (String)dr["id"];
+                     
+                        idOrc = dr["id"].ToString();
                     }
                 }  
             }
             catch (Exception ex)
             {
-                System.Windows.Forms.MessageBox.Show("Erro inserir Serviço : " + ex.Message, "Erro");
+                System.Windows.Forms.MessageBox.Show("Erro inserir Orçamento : " + ex.Message, "Erro");
             }
             return idOrc;
         }
@@ -133,7 +135,7 @@ namespace Tis3Oficina.src.DAO
             }
             catch (Exception ex)
             {
-                System.Windows.Forms.MessageBox.Show("Erro inserir Cliente : " + ex.Message, "Erro");
+                System.Windows.Forms.MessageBox.Show("Erro deletar Orçamento : " + ex.Message, "Erro");
             }
         }
 

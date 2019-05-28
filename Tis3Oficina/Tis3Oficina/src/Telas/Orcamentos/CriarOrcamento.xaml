@@ -25,7 +25,7 @@
         <Grid Margin="174,19,479,318">
             <StackPanel Margin="4,0,-4,27" Orientation="Vertical">
 
-                <Label Content="Cliente" FontFamily="Roboto" FontSize="14" RenderTransformOrigin="-0.088,0.37" Foreground="White" Height="33" Margin="0,0,-149,0"/>
+                <Label Content="Clientes" FontFamily="Roboto" FontSize="14" RenderTransformOrigin="-0.088,0.37" Foreground="White" Height="33" Margin="0,0,-149,0"/>
                 <ComboBox x:Name="comboItemClientes"  DropDownClosed="Closes" SelectedIndex="0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="288" Margin="0,0,-149,0" SelectionChanged="ComboItemClientes_SelectionChanged"  >
 
                     <ComboBox.ItemTemplate>
@@ -47,7 +47,7 @@
 
                 <Label Content="Peças" FontFamily="Roboto" FontSize="14" RenderTransformOrigin="-0.088,0.37" Foreground="White"/>
 
-                <ComboBox x:Name="comboItemPecas" SelectionChanged="Changed" DropDownClosed="Closes" SelectedIndex="0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="135" >
+                <ComboBox x:Name="comboItemPecas"  DropDownClosed="Closes" SelectedIndex="0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="135" >
 
                     <ComboBox.ItemTemplate>
                         <DataTemplate>
@@ -76,7 +76,7 @@
         </Button>
         <Grid Margin="179,135,474,235">
             <Label Content="Serviços" FontFamily="Roboto" FontSize="14" RenderTransformOrigin="-0.088,0.37" Foreground="White" Margin="0,0,0,22"/>
-            <ComboBox x:Name="comboItemServicos" SelectionChanged="Changed" DropDownClosed="Closes" SelectedIndex="0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="135" Margin="0,27,0,0">
+            <ComboBox x:Name="comboItemServicos" DropDownClosed="Closes" SelectedIndex="0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="135" Margin="0,27,0,0">
                 <ComboBox.ItemTemplate>
                     <DataTemplate>
                         <StackPanel Orientation="Horizontal">
@@ -93,7 +93,7 @@
 
             </Grid>
         </Button>
-        <DataGrid Name="GridItensOrcamento" AutoGenerateColumns="False" HorizontalAlignment="Left" Height="142" Margin="174,208,0,0" VerticalAlignment="Top" Width="594"  ItemsSource="{Binding Source=itensOrcamento}" RowHeight="30" ColumnWidth="100" Background="LightGray" RowBackground="LightYellow" AlternatingRowBackground="LightBlue">
+        <DataGrid Name="GridItensOrcamento" AutoGenerateColumns="False" HorizontalAlignment="Left" Height="142" Margin="174,208,0,0" VerticalAlignment="Top" Width="594"  ItemsSource="{Binding ItensOrcamento}" RowHeight="30" ColumnWidth="100" Background="LightGray" RowBackground="LightYellow" AlternatingRowBackground="LightBlue">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Nome" Binding="{Binding Nome}" />
                 <DataGridTextColumn Header="Quantidade" Binding="{Binding Quantidade}" />
