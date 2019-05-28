@@ -43,12 +43,61 @@
                 </Setter.Value>
             </Setter>
         </Style>
+
+        <Style x:Key="dtg1" TargetType="DataGrid">
+            <Setter Property="ColumnHeaderStyle" Value="{DynamicResource chs1}"></Setter>
+
+        </Style>
+
+        <Style x:Key="chs1" TargetType="DataGridColumnHeader">
+            <Setter Property="Background" Value="#FF045B83"></Setter>
+            <Setter Property="Foreground" Value="White"></Setter>
+            <Setter Property="FontFamily" Value="Roboto"></Setter>
+            <Setter Property="FontSize" Value="14"></Setter>
+            <Setter Property="Height" Value="20"></Setter>
+            <Setter Property="Padding" Value="10,0,0,0"></Setter>
+
+        </Style>
     </Window.Resources>
 
     <Grid>
         <Grid HorizontalAlignment="Center" Width="Auto">
 
-            <DataGrid Background="#FF202020" Name="dataGrid1" HorizontalAlignment="Left" Height="255" Margin="24,99,0,0" VerticalAlignment="Top" Width="736" Grid.ColumnSpan="2" MouseDoubleClick="DataGrid1_MouseDoubleClick"/>
+            <DataGrid Name="dataGrid1" Style="{DynamicResource dtg1 }" HorizontalAlignment="Left" Height="278" Margin="24,99,0,0" VerticalAlignment="Top" Width="736" 
+                      Grid.ColumnSpan="3"
+                      RowHeight="30" FontSize="12" FontFamily="Roboto"
+                      Foreground="White" BorderThickness="0,0,0,0" Background="{x:Null}"
+                      GridLinesVisibility="None" CanUserResizeColumns="False" CanUserReorderColumns="False"
+                      CanUserDeleteRows="False" RowBackground="#FF0E0E0E" CanUserAddRows="False" CanUserResizeRows="False" 
+                      CanUserSortColumns="False" HeadersVisibility="Column" AutoGenerateColumns="False" IsReadOnly="True">
+
+                <DataGrid.Columns>
+                    <DataGridTextColumn MinWidth="100" Width="*" Header="Nome" Binding="{Binding NomePec}" />
+                    <DataGridTextColumn MinWidth="120" Width="*" Header="Valor da Peça" Binding="{Binding ValPec}" />
+                    <DataGridTextColumn MinWidth="100" Width="*" Header="Quantidade peças em estoque" Binding="{Binding QtdePeca}" />
+ 
+
+                    <DataGridTemplateColumn>
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button Name="butEdit" Width="30" Click="btnEditar" BorderBrush="{x:Null}" Background="{x:Null}">
+                                    <Image Source="/src/assets/icons/edit.png" Stretch="Fill"/>
+                                </Button>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTemplateColumn>
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+
+                                <Button Name="butDelete" Width="30" Click="btnDeletar" BorderBrush="{x:Null}" Background="{x:Null}">
+                                    <Image Source="/src/assets/icons/delete.png" Stretch="Fill"/>
+                                </Button>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                </DataGrid.Columns>
+            </DataGrid>
 
 
             <Grid HorizontalAlignment="Left" Height="41" Margin="24,36,0,0" VerticalAlignment="Top" Width="385">
@@ -62,8 +111,6 @@
             </Grid>
             <Grid Margin="24,341,10,31" Height="70">
                 <StackPanel Margin="10,0,24,0" Height="70" Orientation="Horizontal" HorizontalAlignment="Right">
-                    <Button Name="BDelete" Content="Deletar" Margin="0,0,10,0" VerticalAlignment="Bottom" Width="74" FontFamily="Roboto Black" FontSize="16" Click="btnDeletar" IsEnabled="False" Style="{StaticResource ButtonStyle1}"/>
-                    <Button Name="BEdit" Content="Editar" Margin="0,0,10,0" VerticalAlignment="Bottom" Width="74" FontFamily="Roboto Black" FontSize="16" Click="btnEditar" IsEnabled="False" Style="{StaticResource ButtonStyle1}"/>
                     <Button Content="Voltar" HorizontalAlignment="Right" VerticalAlignment="Bottom"  Width="74" FontFamily="Roboto" FontSize="16" Click="btnVoltar" Grid.Column="1" Style="{StaticResource ButtonStyle1}"/>
                 </StackPanel>
                 <Button Content="CADASTRAR NOVA PEÇA" HorizontalAlignment="Center" VerticalAlignment="Bottom" Height="50" Width="182" FontFamily="Roboto" FontSize="16" Background="#FF00AEFB" Foreground="White" BorderBrush="#FF00AEFB" Click="btnCriarPeca" UseLayoutRounding="False" RenderTransformOrigin="0.501,0.5" Margin="273,0,271,0"/>

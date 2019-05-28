@@ -71,7 +71,7 @@
                 <ColumnDefinition Width="373*"/>
             </Grid.ColumnDefinitions>
             <DataGrid Name="dataGrid1" Style="{DynamicResource dtg1 }" HorizontalAlignment="Left" Height="278" Margin="24,99,0,0" VerticalAlignment="Top" Width="736" 
-                      Grid.ColumnSpan="3" MouseDoubleClick="DataGrid1_MouseDoubleClick"
+                      Grid.ColumnSpan="3"
                       RowHeight="30" FontSize="12" FontFamily="Roboto"
                       Foreground="White" BorderThickness="0,0,0,0" Background="{x:Null}"
                       GridLinesVisibility="None" CanUserResizeColumns="False" CanUserReorderColumns="False"
@@ -90,7 +90,7 @@
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
                                 <Button Name="butEdit" Width="30" Click="btnEdit" BorderBrush="{x:Null}" Background="{x:Null}">
-                                    <Image Source="C:\Users\Caique\Documents\TIS3\tis3oficina\Tis3Oficina\Tis3Oficina\src\assets\icons\edit.png" Stretch="Fill"/>
+                                    <Image Source="/src/assets/icons/edit.png" Stretch="Fill"/>
                                 </Button>
                             </DataTemplate>
                         </DataGridTemplateColumn.CellTemplate>
@@ -100,7 +100,7 @@
                             <DataTemplate>
 
                                 <Button Name="butDelete" Width="30" Click="btnDelete" BorderBrush="{x:Null}" Background="{x:Null}">
-                                    <Image Source="C:\Users\Caique\Documents\TIS3\tis3oficina\Tis3Oficina\Tis3Oficina\src\assets\icons\delete.png" Stretch="Fill"/>
+                                    <Image Source="/src/assets/icons/delete.png" Stretch="Fill"/>
                                 </Button>
                             </DataTemplate>
                         </DataGridTemplateColumn.CellTemplate>
@@ -119,8 +119,7 @@
                 </Grid>
             </Button>
             <Button Content="Voltar" HorizontalAlignment="Left" Margin="267,382,0,0" VerticalAlignment="Top" Width="74" FontFamily="Roboto Black" FontSize="16" Click="btnVoltar" Grid.Column="2" Style="{StaticResource ButtonStyle1}"/>
-            <Button Name="BEdit" Content="Editar" HorizontalAlignment="Left" Margin="178,382,0,0" VerticalAlignment="Top" Width="74" FontFamily="Roboto Black" FontSize="16" Click="btnEditar" Grid.Column="2" IsEnabled="False" Style="{StaticResource ButtonStyle1}"/>
-            <Button Name="BDelete" Content="Deletar" HorizontalAlignment="Left" Margin="88,382,0,0" VerticalAlignment="Top" Width="74" FontFamily="Roboto Black" FontSize="16"  Click="btnDeletar" Grid.Column="2" IsEnabled="False" Style="{StaticResource ButtonStyle1}"/>
+
             <Grid HorizontalAlignment="Left" Height="41" Margin="24,36,0,0" VerticalAlignment="Top" Width="385" Grid.ColumnSpan="2">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="0*"/>

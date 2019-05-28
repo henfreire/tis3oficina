@@ -21,7 +21,6 @@ namespace Tis3Oficina.src.Telas.Pecas
     /// </summary>
     public partial class ListarPecas : Window
     {
-        public static string codPec = "";
         public ListarPecas()
         {
             InitializeComponent();
@@ -53,35 +52,27 @@ namespace Tis3Oficina.src.Telas.Pecas
             menu.Show();
         }
 
-        private void DataGrid1_MouseDoubleClick(object sender, MouseButtonEventArgs e)
-        {
-            if (dataGrid1.Items.IndexOf(dataGrid1.CurrentItem) != -1)
-            {
-                object item = dataGrid1.SelectedItem;
-                codPec = (dataGrid1.SelectedCells[0].Column.GetCellContent(item) as TextBlock).Text;
-            }
-            if (codPec != null)
-            {
-                BEdit.IsEnabled = true;
-                BDelete.IsEnabled = true;
-            }
-        }
-
         //Botao Deletar
         private void btnDeletar(object sender, RoutedEventArgs e)
         {
+            var alerta = new Alerta(1);
+            alerta.conteudo.Content = "Tem certeza que deseja deletar?";
+            alerta.ShowDialog();
 
-            DAOPeca delete = new DAOPeca();
-            delete.deletar(codPec);
-            List<Peca> c = delete.getTodos();
-            dataGrid1.ItemsSource = c;
-            BEdit.IsEnabled = false;
-            BDelete.IsEnabled = false;
+            if (alerta.yes)
+            {
+                Peca pl = dataGrid1.SelectedItem as Peca;
+                DAOPeca delete = new DAOPeca();
+                delete.deletar(pl.CodPec);
+                List<Peca> c = delete.getTodos();
+                dataGrid1.ItemsSource = c;
+            }
         }
 
         private void btnEditar(object sender, RoutedEventArgs e)
         {
-            var editarPeca = new EditarPeca(codPec);
+            Peca pl = dataGrid1.SelectedItem as Peca;
+            var editarPeca = new EditarPeca(pl.CodPec);
             this.Close();
             editarPeca.Show();
         }

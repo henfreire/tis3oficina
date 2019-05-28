@@ -52,7 +52,7 @@ namespace Tis3Oficina.src.Telas.Servicos
                         {
                             achou = true;
                             textNomeServico.Text = (String)dr["NomeServico"];
-                            textValor.Text = (String)dr["Valor"];
+                            textValor.Text = dr["Valor"].ToString();
                         }
                     }
                 }

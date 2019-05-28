@@ -90,7 +90,7 @@ namespace Tis3Oficina.src.Telas.Orcamentos
             ItemOrcamento item = new ItemOrcamento();
           
             double valServ = double.Parse(valorServico.Text.Replace("$", "").Replace(",", ""), CultureInfo.InvariantCulture);
-            item.IdPeca = servico.Id;
+            item.IdServico = servico.Id;
             item.Nome = servico.NomeServico;
             item.Quantidade = 1;
             if(valServ != 0)
@@ -174,7 +174,7 @@ namespace Tis3Oficina.src.Telas.Orcamentos
             Orc.ItemOrc = ItensOrcamento;
             DAOOrcamento daoOrc = new DAOOrcamento();
             DAOItemOrcamento daoItemOrc = new DAOItemOrcamento();
-            String idOrc = daoOrc.inserir(Orc);
+            string idOrc = daoOrc.inserir(Orc);
             Console.WriteLine("Orc" + Orc.ToString());
             if(idOrc != null)
             {
@@ -183,8 +183,10 @@ namespace Tis3Oficina.src.Telas.Orcamentos
                     i.IdOrcamento = idOrc;
                     daoItemOrc.inserir(i);
                 }
-               
-                MessageBox.Show("Orçamento gerado" + idOrc);
+
+                var alerta = new Alerta();
+                alerta.conteudo.Content = "Orçamento criado com sucesso";
+                alerta.ShowDialog();
             }
             else
             {

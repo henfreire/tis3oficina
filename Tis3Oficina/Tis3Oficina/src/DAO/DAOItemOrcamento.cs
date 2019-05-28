@@ -25,7 +25,16 @@ namespace Tis3Oficina.src.DAO
             try
             {
                 // Query mysql
-                String query = "INSERT INTO item_orcamento (nome,quantidade,valor, total, observacao, idPeca, idServico, idOrcamento) VALUES('" + item.Nome + "', '" + item.Quantidade.ToString() + "', '" + item.Valor + "','"  + item.Total + "', '"+ item.Observacao +  "','" + item.IdPeca != null ? item.IdPeca : null+ "', '" + item.IdServico != null ? item.IdServico: null +  "', '" + item.IdOrcamento+ "');";
+                string peca = item.IdPeca != null ? item.IdPeca : null ;
+                string servico = item.IdServico != null ? item.IdServico : null;
+                string query="";
+
+
+                if (peca != null && servico == null)
+                    query = "INSERT INTO item_orcamento (nome,quantidade,valor, total, observacao, idPeca, idServico, idOrcamento) VALUES('" + item.Nome + "', '" + item.Quantidade.ToString() + "', '" + item.Valor + "','" + item.Total + "', '" + item.Observacao + "','" + item.IdPeca + "', null , '" + item.IdOrcamento + "');";
+                else if (peca == null && servico != null)
+                    query = "INSERT INTO item_orcamento (nome,quantidade,valor, total, observacao, idPeca, idServico, idOrcamento) VALUES('" + item.Nome + "', '" + item.Quantidade.ToString() + "', '" + item.Valor + "','" + item.Total + "', '" + item.Observacao + "', null , '" + item.IdServico + "' , '" + item.IdOrcamento + "');";
+               
                 Console.WriteLine("query" + query);
                 // Aqui passar a query e estância de conexão que é configurada na Classe no Conexao na pasta config
                 MySqlCommand cmd = new MySqlCommand(query, conexao.getInstancia());

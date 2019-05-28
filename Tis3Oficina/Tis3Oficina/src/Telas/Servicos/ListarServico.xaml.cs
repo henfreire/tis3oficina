@@ -22,7 +22,6 @@ namespace Tis3Oficina.src.Telas.Servicos
     /// </summary>
     public partial class ListarServico : Window
     {
-        public static string id = "";
 
         public ListarServico()
         {
@@ -56,35 +55,27 @@ namespace Tis3Oficina.src.Telas.Servicos
             menu.Show();
         }
 
-        private void DataGrid1_MouseDoubleClick(object sender, MouseButtonEventArgs e)
-        {
-            if (dataGrid1.Items.IndexOf(dataGrid1.CurrentItem) != -1)
-            {
-                object item = dataGrid1.SelectedItem;
-                id = (dataGrid1.SelectedCells[0].Column.GetCellContent(item) as TextBlock).Text;
-            }
-            if (id != null)
-            {
-                BEdit.IsEnabled = true;
-                BDelete.IsEnabled = true;
-            }
-        }
-
         //Botao Deletar
         private void btnDeletar(object sender, RoutedEventArgs e)
         {
+            var alerta = new Alerta(1);
+            alerta.conteudo.Content = "Tem certeza que deseja deletar?";
+            alerta.ShowDialog();
 
-            DAOServico delete = new DAOServico();
-            delete.deletar(id);
-            List<Servico> c = delete.getTodos();
-            dataGrid1.ItemsSource = c;
-            BEdit.IsEnabled = false;
-            BDelete.IsEnabled = false;
+            if (alerta.yes)
+            {
+                Servico sl = dataGrid1.SelectedItem as Servico;
+                DAOServico delete = new DAOServico();
+                delete.deletar(sl.Id);
+                List<Servico> c = delete.getTodos();
+                dataGrid1.ItemsSource = c;
+            }
         }
 
         private void btnEditar(object sender, RoutedEventArgs e)
         {
-            var editarServico = new EditarServico(id);
+            Servico sl = dataGrid1.SelectedItem as Servico;
+            var editarServico = new EditarServico(sl.Id);
             this.Close();
             editarServico.Show();
         }

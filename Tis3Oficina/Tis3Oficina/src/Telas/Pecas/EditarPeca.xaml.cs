@@ -51,8 +51,8 @@ namespace Tis3Oficina.src.Telas.Pecas
                         {
                             achou = true;
                             textNomePec.Text = (String)dr["NomePec"];
-                            textQtdePec.Text = (String)dr["QtdePec"];
-                            textValorPec.Text = (String)dr["ValPec"];
+                            textQtdePec.Text = dr["QtdePec"].ToString();
+                            textValorPec.Text = dr["ValPec"].ToString();
                         }
                     }
                 }

@@ -22,7 +22,6 @@ namespace Tis3Oficina.src.Telas.CadastroCliente
     /// </summary>
     public partial class ListarClientes : Window
     {
-        public static string id="";
 
         public ListarClientes()
         {
@@ -47,50 +46,12 @@ namespace Tis3Oficina.src.Telas.CadastroCliente
             menu.Show();
         }
 
-        //Botao Editar
-        private void btnEditar(object sender, RoutedEventArgs e)
-        {
-            
-            var editarCliente = new EditarCliente(id);
-            this.Close();
-            editarCliente.Show();
-
-        }
-
-        //Botao Deletar
-        private void btnDeletar(object sender, RoutedEventArgs e)
-        {
-
-            DAOCliente delete = new DAOCliente();
-            delete.deletar(id);
-            DataTable result = delete.listarTodos();
-            List<Cliente> c = delete.getTodos();
-            dataGrid1.ItemsSource = c;
-            dataGrid1.Columns[1].Visibility = Visibility.Collapsed;
-            BEdit.IsEnabled = false;
-            BDelete.IsEnabled = false;
-        }
-
         //Botao Criar novo Cliente
         private void btnNovoCliente(object sender, RoutedEventArgs e)
         {
             var Cadastro = new CadastroCliente();
             this.Close();
             Cadastro.Show();
-        }
-
-        private void DataGrid1_MouseDoubleClick(object sender, MouseButtonEventArgs e)
-        {
-            if(dataGrid1.Items.IndexOf(dataGrid1.CurrentItem) != -1)
-            {
-                object item = dataGrid1.SelectedItem;
-                id = (dataGrid1.SelectedCells[0].Column.GetCellContent(item) as TextBlock).Text;
-            }
-            if (id != null)
-            {
-                BEdit.IsEnabled = true;
-                BDelete.IsEnabled = true;
-            }
         }
 
         private void btnEdit(object sender, RoutedEventArgs e)
@@ -112,7 +73,6 @@ namespace Tis3Oficina.src.Telas.CadastroCliente
                 Cliente cl = dataGrid1.SelectedItem as Cliente;
                 DAOCliente delete = new DAOCliente();
                 delete.deletar(cl.Id);
-                DataTable result = delete.listarTodos();
                 List<Cliente> c = delete.getTodos();
                 dataGrid1.ItemsSource = c;
             }
