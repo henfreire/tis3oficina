@@ -30,7 +30,9 @@ namespace Tis3Oficina.src.Telas.Orcamentos
         public List<ItemOrcamento> itensOrcamento;
         Orcamento orc;
         Double totalOrcamento = 0;
-      
+        int qtdeTotal;
+
+
         List<Peca> pecas;
         List<Servico> servicos;
         List<Cliente> clientes;
@@ -77,13 +79,16 @@ namespace Tis3Oficina.src.Telas.Orcamentos
             item.Quantidade = quantidade;
             ItensOrcamento.Add(item);
             totalOrcamento += item.Total;
-            labelTotal.Content = totalOrcamento;
+            labelTotal.Content = String.Format("{0:0.00}", totalOrcamento); 
             foreach(ItemOrcamento i in ItensOrcamento ){
                 Console.WriteLine("Teste " + i.Nome);
             }
             GridItensOrcamento.ItemsSource = ItensOrcamento;
             GridItensOrcamento.Items.Refresh();
             lblEmpty.Visibility = Visibility.Hidden;
+            qtdePeca.Maximum = qtdeTotal - item.Quantidade;
+            qtdePeca.Text = (qtdeTotal - item.Quantidade).ToString();
+
         }
         private void adicionarServico(object sender, RoutedEventArgs e)
         {
@@ -105,7 +110,7 @@ namespace Tis3Oficina.src.Telas.Orcamentos
                 item.Valor = servico.Valor;
             }
             totalOrcamento += item.Valor;
-            labelTotal.Content = totalOrcamento;
+            labelTotal.Content = String.Format("{0:0.00}", totalOrcamento);
 
             ItensOrcamento.Add(item);
 
@@ -146,7 +151,7 @@ namespace Tis3Oficina.src.Telas.Orcamentos
         {
             Peca peca = (Peca)comboItemPecas.SelectedItem;
             DAOPeca total = new DAOPeca();
-            int qtdeTotal = total.getQtdeTotal(peca.CodPec);
+            qtdeTotal = total.getQtdeTotal(peca.CodPec);
             qtdePeca.Maximum = qtdeTotal;
             if (handle) Handle();
             handle = true;
@@ -194,7 +199,10 @@ namespace Tis3Oficina.src.Telas.Orcamentos
                 {
                     i.IdOrcamento = idOrc;
                     daoItemOrc.inserir(i);
+                    
                 }
+
+                
 
                 var alerta = new Alerta();
                 alerta.conteudo.Content = "Orçamento criado com sucesso";
