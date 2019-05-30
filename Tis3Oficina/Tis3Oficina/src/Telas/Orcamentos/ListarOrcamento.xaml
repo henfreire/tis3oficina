@@ -1,0 +1,109 @@
+﻿<Window x:Class="Tis3Oficina.src.Telas.Orcamentos.ListarOrcamento"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Tis3Oficina.src.Telas.Orcamentos"
+        xmlns:teste="clr-namespace:CurrencyTextBoxControl;assembly=CurrencyTextBoxControl"
+        mc:Ignorable="d"
+        Title="Orçamentos disponíveis" Height="450" Width="800" WindowState="Maximized" WindowStartupLocation="CenterScreen" Background="#FF202020">
+
+    <Window.Resources>
+        <SolidColorBrush x:Key="Button.Disabled.Background" Color="#FFF4F4F4"/>
+        <SolidColorBrush x:Key="Button.Disabled.Border" Color="#FFADB2B5"/>
+        <SolidColorBrush x:Key="Button.Disabled.Foreground" Color="#FF838383"/>
+        <SolidColorBrush x:Key="Button.Enabled.Background" Color="#FF00AEFB"/>
+        <SolidColorBrush x:Key="Button.Enabled.Border" Color="#FF00AEFB"/>
+        <SolidColorBrush x:Key="Button.Enabled.Foreground" Color="White"/>
+        <SolidColorBrush x:Key="Button.MouseOver.Background" Color="#FFBEE6FD"/>
+        <SolidColorBrush x:Key="Button.MouseOver.Border" Color="#FF3C7FB1"/>
+
+        <Style x:Key="ButtonStyle1" TargetType="{x:Type Button}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border x:Name="border" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" SnapsToDevicePixels="true">
+                            <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Disabled.Background}"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Disabled.Border}"/>
+                                <Setter Property="TextElement.Foreground" TargetName="contentPresenter" Value="{StaticResource Button.Disabled.Foreground}"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="true">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Enabled.Background}"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Enabled.Border}"/>
+                                <Setter Property="TextElement.Foreground" TargetName="contentPresenter" Value="{StaticResource Button.Enabled.Foreground}"/>
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="true">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.MouseOver.Background}"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.MouseOver.Border}"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="dtg1" TargetType="DataGrid">
+            <Setter Property="ColumnHeaderStyle" Value="{DynamicResource chs1}"></Setter>
+        </Style>
+
+        <Style x:Key="chs1" TargetType="DataGridColumnHeader">
+            <Setter Property="Background" Value="#FF045B83"></Setter>
+            <Setter Property="Foreground" Value="White"></Setter>
+            <Setter Property="FontFamily" Value="Roboto"></Setter>
+            <Setter Property="FontSize" Value="14"></Setter>
+            <Setter Property="Height" Value="20"></Setter>
+            <Setter Property="Padding" Value="10,0,0,0"></Setter>
+        </Style>
+    </Window.Resources>
+
+    <Grid HorizontalAlignment="Center" Width="792">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="59*"/>
+            <ColumnDefinition Width="360*"/>
+            <ColumnDefinition Width="373*"/>
+        </Grid.ColumnDefinitions>
+        <DataGrid Name="dataGrid1" Style="{DynamicResource dtg1 }" HorizontalAlignment="Left" Height="278" Margin="24,99,0,0" VerticalAlignment="Top" Width="736" 
+                      Grid.ColumnSpan="3"
+                      RowHeight="30" FontSize="12" FontFamily="Roboto"
+                      Foreground="White" BorderThickness="0,0,0,0" Background="{x:Null}"
+                      GridLinesVisibility="None" CanUserResizeColumns="False" CanUserReorderColumns="False"
+                      CanUserDeleteRows="False" RowBackground="#FF0E0E0E" CanUserAddRows="False" CanUserResizeRows="False" 
+                      CanUserSortColumns="False" HeadersVisibility="Column" AutoGenerateColumns="False" IsReadOnly="True">
+
+            <DataGrid.Columns>
+                <DataGridTextColumn MinWidth="150" Header="Número orçamento" Binding="{Binding CodOrc}" />
+                <DataGridTextColumn MinWidth="150" Header="Quantidade de itens" Binding="{Binding QtdeItens}" />
+                <DataGridTextColumn MinWidth="150" Header="Total do orçamento" Binding="{Binding TotOrc}" />
+                <DataGridTextColumn MinWidth="150" Header="Cliente" Binding="{Binding IdCliente}" />
+
+
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Content="Visualizar Orçamento" Width="74" FontFamily="Roboto Black" FontSize="16" Click="btnVisualizar" Grid.Column="2" Style="{StaticResource ButtonStyle1}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        
+
+        
+        <Button Content="Voltar" HorizontalAlignment="Left" Margin="267,382,0,0" VerticalAlignment="Top" Width="74" FontFamily="Roboto Black" FontSize="16" Click="btnVoltar" Grid.Column="2" Style="{StaticResource ButtonStyle1}"/>
+
+        <Grid HorizontalAlignment="Left" Height="41" Margin="24,36,0,0" VerticalAlignment="Top" Width="385" Grid.ColumnSpan="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0*"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Image Source="/Tis3Oficina;component/src/assets/icons/orca.png" Grid.ColumnSpan="2" HorizontalAlignment="Left" VerticalAlignment="Top" Width="53" Height="44"/>
+            <Label Grid.ColumnSpan="2" Content="Orçamentos disponíveis" HorizontalAlignment="Left" Margin="56,-1,0,-2" VerticalAlignment="Top" Width="319" Height="44" Foreground="White" FontFamily="Roboto" FontSize="25"/>
+        </Grid>
+        
+    </Grid>
+
+</Window>

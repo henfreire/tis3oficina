@@ -13,7 +13,7 @@ namespace Tis3Oficina.src.OBJETOS
         List<ItemOrcamento> itemOrc = new List<ItemOrcamento>();
         String idCliente, codOrc;
         double totOrc;
-        public int QtdeItens { get => ItemOrc.Count(); set => qtdeItens = value; }
+        public int QtdeItens { get => qtdeItens; set => qtdeItens = value; }
         public String IdCliente { get => idCliente; set => idCliente = value; }
         public double TotOrc { get => totOrc; set => totOrc = value; }
         public String CodOrc { get => codOrc; set => codOrc = value; }

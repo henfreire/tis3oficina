@@ -206,5 +206,13 @@ namespace Tis3Oficina.src.Telas.Orcamentos
             
             
         }
+
+
+        private void btnList(object sender, RoutedEventArgs e)
+        {
+            var listar = new ListarOrcamento();
+            this.Close();
+            listar.Show();
+        }
     }
 }

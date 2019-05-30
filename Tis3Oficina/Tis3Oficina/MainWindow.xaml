@@ -37,5 +37,6 @@
                 <Image Margin="21,19,12,54" Source="src/assets/icons/battery.png" Stretch="Fill"/>
             </Grid>
         </Button>
+        
     </Grid>
 </Window>

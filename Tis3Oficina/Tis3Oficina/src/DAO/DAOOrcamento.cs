@@ -65,14 +65,13 @@ namespace Tis3Oficina.src.DAO
             }
             return dt;
         }
-        public List<Peca> getTodos()
+        public List<Orcamento> getTodos()
         {
-            List<Peca> listaorcamento = new List<Peca>();
-            DataTable dt = new DataTable();
+            List<Orcamento> listaOrc = new List<Orcamento>();
             try
             {
                 // Query mysql
-                String sql = "SELECT * FROM orcamento";
+                String sql = "SELECT CodOrc, QtdeItens, TotOrc, C.nome FROM orcamento O INNER JOIN cliente C ON O.IdCliente = C.id";
                 MySqlCommand cmd = new MySqlCommand(sql, conexao.getInstancia());
 
 
@@ -82,11 +81,12 @@ namespace Tis3Oficina.src.DAO
                     {
                         Orcamento orc = new Orcamento();
 
-                        orc.CodOrc = (String)dr["CodOrc"];
-                        orc.QtdeItens = (int)dr["QtdeItens"];
-                        orc.TotOrc = (int)dr["TotOrc"];
-                        orc.IdCliente = (string)dr["IdCliente"];
-                        
+                        orc.CodOrc = dr["CodOrc"].ToString();
+                        orc.QtdeItens = int.Parse(dr["QtdeItens"].ToString());
+                        Console.WriteLine(int.Parse(dr["QtdeItens"].ToString()));
+                        orc.TotOrc = int.Parse(dr["TotOrc"].ToString());
+                        orc.IdCliente = dr["nome"].ToString();
+                        listaOrc.Add(orc);
                        
                     }
                 }
@@ -96,7 +96,33 @@ namespace Tis3Oficina.src.DAO
                 System.Windows.Forms.MessageBox.Show("Erro buscar todos Serviços : " + ex.Message, "Erro");
             }
 
-            return listaorcamento;
+            return listaOrc;
+        }
+
+        public String getNomeCliente(string ID)
+        {
+            string nome = "";
+            try
+            {
+                // Query mysql
+                String sql = "SELECT C.nome FROM orcamento O INNER JOIN cliente C ON O.IdCliente = C.id WHERE O.CodOrc = "+ ID +"";
+                MySqlCommand cmd = new MySqlCommand(sql, conexao.getInstancia());
+
+
+                using (MySqlDataReader dr = cmd.ExecuteReader())
+                {
+                    while (dr.Read())
+                    {
+                        nome = dr["nome"].ToString() ;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show("Erro buscar todos Serviços : " + ex.Message, "Erro");
+            }
+
+            return nome;
         }
 
         public void editar(Peca peca, string codPec)

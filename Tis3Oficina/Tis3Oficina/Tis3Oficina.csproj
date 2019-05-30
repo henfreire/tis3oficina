@@ -116,6 +116,12 @@
     <Compile Include="src\Telas\Orcamentos\CriarOrcamento.xaml.cs">
       <DependentUpon>CriarOrcamento.xaml</DependentUpon>
     </Compile>
+    <Compile Include="src\Telas\Orcamentos\ListarOrcamento.xaml.cs">
+      <DependentUpon>ListarOrcamento.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="src\Telas\Orcamentos\VisualizarOrcamento.xaml.cs">
+      <DependentUpon>VisualizarOrcamento.xaml</DependentUpon>
+    </Compile>
     <Compile Include="src\Telas\Pecas\CadastroPeca.xaml.cs">
       <DependentUpon>CadastroPeca.xaml</DependentUpon>
     </Compile>
@@ -163,6 +169,14 @@
     <Page Include="src\Telas\Orcamentos\CriarOrcamento.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="src\Telas\Orcamentos\ListarOrcamento.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="src\Telas\Orcamentos\VisualizarOrcamento.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="src\Telas\Pecas\CadastroPeca.xaml">
       <SubType>Designer</SubType>

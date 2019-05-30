@@ -101,6 +101,37 @@ namespace Tis3Oficina.src.DAO
             return listaorcamento;
         }
 
+        public List<ItemOrcamento> getTodosByID(string ID)
+        {
+            List<ItemOrcamento> listaOrc = new List<ItemOrcamento>();
+            try
+            {
+                // Query mysql
+                String sql = "SELECT nome, quantidade, valor FROM item_orcamento WHERE idOrcamento = "+ ID +";";
+                MySqlCommand cmd = new MySqlCommand(sql, conexao.getInstancia());
+
+
+                using (MySqlDataReader dr = cmd.ExecuteReader())
+                {
+                    while (dr.Read())
+                    {
+                        ItemOrcamento itemOrc = new ItemOrcamento();
+
+                        itemOrc.Nome = dr["nome"].ToString();
+                        itemOrc.Quantidade = int.Parse(dr["quantidade"].ToString());
+                        itemOrc.Valor = double.Parse(dr["valor"].ToString());
+                        listaOrc.Add(itemOrc);
+
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show("Erro buscar todos Serviços : " + ex.Message, "Erro");
+            }
+
+            return listaOrc;
+        }
         public void editar(Peca peca, string codPec)
         {
             try
