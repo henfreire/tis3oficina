@@ -40,6 +40,7 @@ namespace Tis3Oficina.src.Telas.Orcamentos
             conexao.conectar();
             carregarComboBox();
 
+            lblEmpty.Visibility = Visibility.Visible;
             ItensOrcamento = new List<ItemOrcamento>();
             this.DataContext = itensOrcamento;
             Orc = new Orcamento();
@@ -82,6 +83,7 @@ namespace Tis3Oficina.src.Telas.Orcamentos
             }
             GridItensOrcamento.ItemsSource = ItensOrcamento;
             GridItensOrcamento.Items.Refresh();
+            lblEmpty.Visibility = Visibility.Hidden;
         }
         private void adicionarServico(object sender, RoutedEventArgs e)
         {
@@ -106,6 +108,7 @@ namespace Tis3Oficina.src.Telas.Orcamentos
 
             GridItensOrcamento.ItemsSource = ItensOrcamento;
             GridItensOrcamento.Items.Refresh();
+            lblEmpty.Visibility = Visibility.Hidden;
         }
         private void validaValor(object sender, RoutedEventArgs e)
         {
@@ -172,6 +175,7 @@ namespace Tis3Oficina.src.Telas.Orcamentos
         private void BtnGerarOrcamento_Click(object sender, RoutedEventArgs e)
         {
             Orc.ItemOrc = ItensOrcamento;
+            Orc.QtdeItens = ItensOrcamento.Count;
             DAOOrcamento daoOrc = new DAOOrcamento();
             DAOItemOrcamento daoItemOrc = new DAOItemOrcamento();
             string idOrc = daoOrc.inserir(Orc);

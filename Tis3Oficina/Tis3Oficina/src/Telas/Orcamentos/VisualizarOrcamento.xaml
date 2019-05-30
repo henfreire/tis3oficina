@@ -88,5 +88,6 @@
         </Grid>
 
         <Button Content="Voltar" Margin="697,379,21,10" Width="74" Height="30" FontFamily="Roboto Black" FontSize="16" Click="btnVoltar" Style="{StaticResource ButtonStyle1}"/>
+        <Button Content="Imprimir" Margin="592,379,126,10" Width="74" Height="30" FontFamily="Roboto Black" FontSize="16" Click="btnPrint" Style="{StaticResource ButtonStyle1}"/>
     </Grid>
 </Window>
