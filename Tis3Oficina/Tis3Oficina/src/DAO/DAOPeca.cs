@@ -58,6 +58,25 @@ namespace Tis3Oficina.src.DAO
                 System.Windows.Forms.MessageBox.Show("Erro inserir Cliente : " + ex.Message, "Erro");
             }
         }
+        public void atualizarQuantidade(string codPec, int quant)
+        {
+            try
+            {
+                // Query mysql
+                String query = "UPDATE pecas AS p, (SELECT QtdePec FROM pecas WHERE CodPec = "+codPec+ ") AS result SET p.QtdePec = (result.QtdePec - "+ quant + ") WHERE p.CodPec =" + codPec + "; ";
+
+                // Aqui passar a query e estância de conexão que é configurada na Classe no Conexao na pasta config
+                MySqlCommand command = new MySqlCommand(query, conexao.getInstancia());
+
+                // Executa a query
+
+                command.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show("Erro inserir Cliente : " + ex.Message, "Erro");
+            }
+        }
 
         public DataTable listarTodos()
         {

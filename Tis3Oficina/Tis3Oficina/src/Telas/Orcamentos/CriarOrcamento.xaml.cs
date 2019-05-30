@@ -193,6 +193,7 @@ namespace Tis3Oficina.src.Telas.Orcamentos
             Orc.TotOrc = totalOrcamento;
             DAOOrcamento daoOrc = new DAOOrcamento();
             DAOItemOrcamento daoItemOrc = new DAOItemOrcamento();
+            DAOPeca daoPeca = new DAOPeca();
             string idOrc = daoOrc.inserir(Orc);
             Console.WriteLine("Orc" + Orc.ToString());
             if(idOrc != null)
@@ -201,7 +202,7 @@ namespace Tis3Oficina.src.Telas.Orcamentos
                 {
                     i.IdOrcamento = idOrc;
                     daoItemOrc.inserir(i);
-                    
+                    daoPeca.atualizarQuantidade(i.IdPeca, i.Quantidade);
                 }
 
                 
