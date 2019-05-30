@@ -59,9 +59,10 @@ namespace Tis3Oficina.src.Telas.Orcamentos
             servicos = daoServico.getTodos();
             clientes = daoCliente.geTodos();
 
+            comboItemClientes.ItemsSource = clientes;
             comboItemPecas.ItemsSource = pecas;
             comboItemServicos.ItemsSource = servicos;
-            comboItemClientes.ItemsSource = clientes;
+            
 
 
         }
@@ -87,7 +88,8 @@ namespace Tis3Oficina.src.Telas.Orcamentos
             GridItensOrcamento.Items.Refresh();
             lblEmpty.Visibility = Visibility.Hidden;
             qtdePeca.Maximum = qtdeTotal - item.Quantidade;
-            qtdePeca.Text = (qtdeTotal - item.Quantidade).ToString();
+            peca.QtdePeca = peca.QtdePeca - item.Quantidade;
+            qtdePeca.Text = (peca.QtdePeca - item.Quantidade).ToString();
 
         }
         private void adicionarServico(object sender, RoutedEventArgs e)
@@ -151,7 +153,7 @@ namespace Tis3Oficina.src.Telas.Orcamentos
         {
             Peca peca = (Peca)comboItemPecas.SelectedItem;
             DAOPeca total = new DAOPeca();
-            qtdeTotal = total.getQtdeTotal(peca.CodPec);
+            qtdeTotal = peca.QtdePeca;
             qtdePeca.Maximum = qtdeTotal;
             if (handle) Handle();
             handle = true;
@@ -216,14 +218,14 @@ namespace Tis3Oficina.src.Telas.Orcamentos
 
         private void ComboItemClientes_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            Cliente cliente = new Cliente();
+            /*Cliente cliente = new Cliente();
             cliente = (Cliente)comboItemClientes.SelectedItem;
             if (cliente.Id != null && Orc != null)
             {
 
                 Orc.IdCliente = cliente.Id;
             }
-            
+            */
             
         }
 

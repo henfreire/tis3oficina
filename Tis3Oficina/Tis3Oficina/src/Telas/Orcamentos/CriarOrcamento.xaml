@@ -44,7 +44,7 @@
 
                 <Label Content="Clientes" FontFamily="Roboto" FontSize="14" RenderTransformOrigin="-0.088,0.37" Foreground="White" Height="33" Margin="0,0,-149,0"/>
                 <ComboBox x:Name="comboItemClientes" FontFamily="Roboto" DropDownClosed="Closes" SelectedIndex="0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="288" Margin="0,0,-149,0" SelectionChanged="ComboItemClientes_SelectionChanged"  >
-
+                    
                     <ComboBox.ItemTemplate>
                         <DataTemplate>
                             <StackPanel Orientation="Horizontal">
@@ -65,7 +65,7 @@
                 <Label Content="Peças" FontFamily="Roboto" FontSize="14" RenderTransformOrigin="-0.088,0.37" Foreground="White"/>
 
                 <ComboBox x:Name="comboItemPecas" FontFamily="Roboto" DropDownClosed="Closes" SelectedIndex="0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="135" >
-
+                    
                     <ComboBox.ItemTemplate>
                         <DataTemplate>
                             <StackPanel Orientation="Horizontal">
@@ -94,6 +94,7 @@
         <Grid Margin="179,135,474,235">
             <Label Content="Serviços" FontFamily="Roboto" FontSize="14" RenderTransformOrigin="-0.088,0.37" Foreground="White" Margin="0,0,0,22"/>
             <ComboBox x:Name="comboItemServicos" FontFamily="Roboto" DropDownClosed="Closes" SelectedIndex="0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="135" Margin="0,27,0,0">
+                
                 <ComboBox.ItemTemplate>
                     <DataTemplate>
                         <StackPanel Orientation="Horizontal">
