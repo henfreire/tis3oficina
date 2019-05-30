@@ -56,7 +56,7 @@
             <Setter Property="FontFamily" Value="Roboto"></Setter>
             <Setter Property="FontSize" Value="14"></Setter>
             <Setter Property="Height" Value="20"></Setter>
-            <Setter Property="Padding" Value="10,0,0,0"></Setter>
+            <Setter Property="Padding" Value="3,0,0,0"></Setter>
         </Style>
     </Window.Resources>
 
@@ -84,16 +84,16 @@
                 <DataGridTemplateColumn>
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <Button Content="Visualizar Orçamento" Width="74" FontFamily="Roboto Black" FontSize="16" Click="btnVisualizar" Grid.Column="2" Style="{StaticResource ButtonStyle1}"/>
+                            <Button Content="Visualizar Orçamento" FontWeight="Bold" Width="80" FontFamily="Roboto Black" FontSize="16" Click="btnVisualizar" Grid.Column="2" Style="{StaticResource ButtonStyle1}"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
-        
 
-        
-        <Button Content="Voltar" HorizontalAlignment="Left" Margin="267,382,0,0" VerticalAlignment="Top" Width="74" FontFamily="Roboto Black" FontSize="16" Click="btnVoltar" Grid.Column="2" Style="{StaticResource ButtonStyle1}"/>
+
+
+        <Button Content="Voltar" FontWeight="Bold" HorizontalAlignment="Left" Margin="267,382,0,0" VerticalAlignment="Top" Width="74" FontFamily="Roboto Black" FontSize="16" Click="btnVoltar" Grid.Column="2" Style="{StaticResource ButtonStyle1}"/>
 
         <Grid HorizontalAlignment="Left" Height="41" Margin="24,36,0,0" VerticalAlignment="Top" Width="385" Grid.ColumnSpan="2">
             <Grid.ColumnDefinitions>

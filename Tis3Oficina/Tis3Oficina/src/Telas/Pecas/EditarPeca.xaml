@@ -29,15 +29,17 @@
                 </TextBox.ContextMenu>
             </TextBox>
         </Grid>
-        <Grid x:Name="gridQuantidade" Margin="10,184,301,165" Height="70">
-            <Label Content="Quantidade" HorizontalAlignment="Left" Margin="10,0,0,43" FontFamily="Roboto" FontSize="14" RenderTransformOrigin="-0.088,0.37" Foreground="White"/>
-            <wpfx:IntegerUpDown x:Name="textQtdePec" PreviewTextInput="validateNumber" Value="1" Increment="1" Minimum="1" MaxLength="3" Background="{x:Null}" BorderBrush="White" Foreground="White" FontSize="24" FontFamily="Roboto" BorderThickness="0,0,0,2" Margin="10,27,0,10" AllowTextInput="False"/>
-        </Grid>
+        
 
         <Grid Margin="21,92,32,257" Height="70" Grid.Column="1">
             <Label x:Name="lblValorIncorreto" Content="VALOR NÃO PODE SER $0.00" HorizontalAlignment="Right" VerticalAlignment="Top" FontFamily="Roboto" FontSize="14" RenderTransformOrigin="-0.088,0.37" Foreground="RED" Visibility="Hidden"/>
             <Label Content="Valor da peça" HorizontalAlignment="Left" Margin="40,0,0,0" VerticalAlignment="Top" FontFamily="Roboto" FontSize="14" RenderTransformOrigin="-0.088,0.37" Foreground="White"/>
             <teste:CurrencyTextBox x:Name="textValorPec" LostFocus="validaValor" MaxLength="7" TextWrapping="Wrap" Background="{x:Null}" BorderBrush="White" Foreground="White" FontSize="24" FontFamily="Roboto" BorderThickness="0,0,0,2" Margin="40,27,138,10"/>
+        </Grid>
+
+        <Grid x:Name="gridQuantidade" Margin="10,184,301,165" Height="70">
+            <Label Content="Quantidade" HorizontalAlignment="Left" Margin="10,0,0,43" FontFamily="Roboto" FontSize="14" RenderTransformOrigin="-0.088,0.37" Foreground="White"/>
+            <wpfx:IntegerUpDown x:Name="textQtdePec" PreviewTextInput="validateNumber" Value="1" Increment="1" Minimum="1" MaxLength="3" Background="{x:Null}" BorderBrush="White" Foreground="White" FontSize="24" FontFamily="Roboto" BorderThickness="0,0,0,2" Margin="10,27,0,10" AllowTextInput="False"/>
         </Grid>
 
         <Grid Margin="291,395,10,0" Height="24" Grid.Column="1">
@@ -52,7 +54,7 @@
                 <ColumnDefinition Width="45*"/>
                 <ColumnDefinition Width="11*"/>
             </Grid.ColumnDefinitions>
-            <Button Content="SALVAR" FontFamily="Roboto Black" FontSize="16" Background="#FF00AEFB" Foreground="White" BorderBrush="#FF00AEFB" Click="btnSalvar" UseLayoutRounding="False" Grid.RowSpan="2" RenderTransformOrigin="0.501,0.5" Margin="0,0,0,10" Grid.ColumnSpan="2"/>
+            <Button Content="SALVAR" FontWeight="Bold" FontFamily="Roboto Black" FontSize="16" Background="#FF00AEFB" Foreground="White" BorderBrush="#FF00AEFB" Click="btnSalvar" UseLayoutRounding="False" Grid.RowSpan="2" RenderTransformOrigin="0.501,0.5" Margin="0,0,0,10" Grid.ColumnSpan="2"/>
         </Grid>
         <Grid HorizontalAlignment="Left" Height="41" Margin="10,10,0,0" VerticalAlignment="Top" Width="385">
             <Grid.ColumnDefinitions>

@@ -55,7 +55,7 @@
             <Setter Property="FontFamily" Value="Roboto"></Setter>
             <Setter Property="FontSize" Value="14"></Setter>
             <Setter Property="Height" Value="20"></Setter>
-            <Setter Property="Padding" Value="10,0,0,0"></Setter>
+            <Setter Property="Padding" Value="3,0,0,0"></Setter>
 
         </Style>
     </Window.Resources>
@@ -110,7 +110,7 @@
                 <StackPanel Margin="10,0,24,0" Height="70" Orientation="Horizontal" HorizontalAlignment="Right">
                     <Button Content="Voltar" HorizontalAlignment="Right" VerticalAlignment="Bottom"  Width="74" FontFamily="Roboto" FontSize="16" Click="btnVoltar" Grid.Column="1" Style="{StaticResource ButtonStyle1}"/>
                 </StackPanel>
-                <Button Content="CRIAR NOVO SERVIÇO" HorizontalAlignment="Center" VerticalAlignment="Bottom" Height="50" Width="180" FontFamily="Roboto" FontSize="16" Background="#FF00AEFB" Foreground="White" BorderBrush="#FF00AEFB" Click="btnCriarServico" UseLayoutRounding="False" RenderTransformOrigin="0.501,0.5" Grid.Column="1"/>
+                <Button Content="CRIAR NOVO SERVIÇO" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Bottom" Height="50" Width="180" FontFamily="Roboto" FontSize="16" Background="#FF00AEFB" Foreground="White" BorderBrush="#FF00AEFB" Click="btnCriarServico" UseLayoutRounding="False" RenderTransformOrigin="0.501,0.5" Grid.Column="1"/>
             </Grid>
         </Grid>
 
