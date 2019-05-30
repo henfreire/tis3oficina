@@ -202,7 +202,11 @@ namespace Tis3Oficina.src.Telas.Orcamentos
                 {
                     i.IdOrcamento = idOrc;
                     daoItemOrc.inserir(i);
-                    daoPeca.atualizarQuantidade(i.IdPeca, i.Quantidade);
+                    if(i.IdPeca != null)
+                    {
+                        daoPeca.atualizarQuantidade(i.IdPeca, i.Quantidade);
+                    }
+                   
                 }
 
                 
@@ -219,14 +223,14 @@ namespace Tis3Oficina.src.Telas.Orcamentos
 
         private void ComboItemClientes_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            /*Cliente cliente = new Cliente();
+            Cliente cliente = new Cliente();
             cliente = (Cliente)comboItemClientes.SelectedItem;
             if (cliente.Id != null && Orc != null)
             {
 
                 Orc.IdCliente = cliente.Id;
             }
-            */
+            
             
         }
 
