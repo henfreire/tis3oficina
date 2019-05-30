@@ -127,7 +127,7 @@ namespace Tis3Oficina.src.DAO
             try
             {
                 // Query mysql
-                String query = "UPDATE servico SET nomeServico = '" + servico.NomeServico + "', valor= '" + servico.Valor + "' WHERE id = " + id + "; ";
+                String query = "UPDATE servico SET nomeServico = '" + servico.NomeServico + "', valor= '" + servico.Valor.ToString().Replace(",", ".") + "' WHERE id = " + id + "; ";
                 Console.WriteLine(query);
 
                 // Aqui passar a query e estância de conexão que é configurada na Classe no Conexao na pasta config

@@ -80,7 +80,7 @@
         <Grid Margin="360,73,327,289">
             <StackPanel>
                 <Label Content="Quantidade" FontFamily="Roboto" FontSize="14" RenderTransformOrigin="-0.088,0.37" Foreground="White"/>
-                <wpfx:IntegerUpDown x:Name="qtdePeca" FontFamily="Roboto" Value="1" Increment="1" Minimum="1"/>
+                <wpfx:IntegerUpDown x:Name="qtdePeca" FontFamily="Roboto" Value="1" Increment="1" Minimum="1" />
             </StackPanel>
         </Grid>
 

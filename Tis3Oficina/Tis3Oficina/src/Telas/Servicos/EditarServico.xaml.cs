@@ -71,7 +71,8 @@ namespace Tis3Oficina.src.Telas.Servicos
             if (isName(textNomeServico.Text) && isValue(textValor.Text))
             {
                 novoServico.NomeServico = textNomeServico.Text;
-                novoServico.Valor  = double.Parse(textValor.Text.Replace("$", "").Replace(",", ""), CultureInfo.InvariantCulture);
+                novoServico.Valor = double.Parse(textValor.Text.Replace("$", "").Replace(",", ""), CultureInfo.InvariantCulture);
+
                 DAOServico servico = new DAOServico();
                 servico.editar(novoServico,id);
                 var alerta = new Alerta();

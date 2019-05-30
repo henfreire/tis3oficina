@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -68,7 +69,8 @@ namespace Tis3Oficina.src.Telas.Pecas
             Peca novaPeca = new Peca();
             string nome = textNomePec.Text.Trim();
             int quantidade = int.Parse(textQtdePec.Text);
-            double valor = double.Parse(textValorPec.Text.Replace("$", "").Replace(",", ""));
+
+            double valor = double.Parse(textValorPec.Text.Replace("$", "").Replace(",", ""), CultureInfo.InvariantCulture);
 
             if (isName(nome) && isValue(textValorPec.Text))
             {

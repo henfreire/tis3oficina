@@ -54,7 +54,7 @@
                 <ColumnDefinition Width="45*"/>
                 <ColumnDefinition Width="11*"/>
             </Grid.ColumnDefinitions>
-            <Button Content="SALVAR" FontWeight="Bold" FontFamily="Roboto Black" FontSize="16" Background="#FF00AEFB" Foreground="White" BorderBrush="#FF00AEFB" Click="btnSalvar" UseLayoutRounding="False" Grid.RowSpan="2" RenderTransformOrigin="0.501,0.5" Margin="0,0,0,10" Grid.ColumnSpan="2"/>
+            <Button Content="EDITAR" FontWeight="Bold" FontFamily="Roboto Black" FontSize="16" Background="#FF00AEFB" Foreground="White" BorderBrush="#FF00AEFB" Click="btnSalvar" UseLayoutRounding="False" Grid.RowSpan="2" RenderTransformOrigin="0.501,0.5" Margin="0,0,0,10" Grid.ColumnSpan="2"/>
         </Grid>
         <Grid HorizontalAlignment="Left" Height="41" Margin="10,10,0,0" VerticalAlignment="Top" Width="385">
             <Grid.ColumnDefinitions>

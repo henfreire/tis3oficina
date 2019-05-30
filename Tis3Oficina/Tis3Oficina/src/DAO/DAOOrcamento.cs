@@ -83,8 +83,7 @@ namespace Tis3Oficina.src.DAO
 
                         orc.CodOrc = dr["CodOrc"].ToString();
                         orc.QtdeItens = int.Parse(dr["QtdeItens"].ToString());
-                        Console.WriteLine(int.Parse(dr["QtdeItens"].ToString()));
-                        orc.TotOrc = int.Parse(dr["TotOrc"].ToString());
+                        orc.TotOrc = Double.Parse(dr["TotOrc"].ToString());
                         orc.IdCliente = dr["nome"].ToString();
                         listaOrc.Add(orc);
                        
@@ -99,13 +98,13 @@ namespace Tis3Oficina.src.DAO
             return listaOrc;
         }
 
-        public String getNomeCliente(string ID)
+        public String[] getNomeeTotal(string ID)
         {
-            string nome = "";
+            String[] nomeTotal= new String[2];
             try
             {
                 // Query mysql
-                String sql = "SELECT C.nome FROM orcamento O INNER JOIN cliente C ON O.IdCliente = C.id WHERE O.CodOrc = "+ ID +"";
+                String sql = "SELECT C.nome, TotOrc FROM orcamento O INNER JOIN cliente C ON O.IdCliente = C.id WHERE O.CodOrc = "+ ID +"";
                 MySqlCommand cmd = new MySqlCommand(sql, conexao.getInstancia());
 
 
@@ -113,7 +112,8 @@ namespace Tis3Oficina.src.DAO
                 {
                     while (dr.Read())
                     {
-                        nome = dr["nome"].ToString() ;
+                        nomeTotal[0]= (dr["nome"].ToString());
+                        nomeTotal[1]= (dr["TotOrc"].ToString());
                     }
                 }
             }
@@ -122,7 +122,7 @@ namespace Tis3Oficina.src.DAO
                 System.Windows.Forms.MessageBox.Show("Erro buscar todos Serviços : " + ex.Message, "Erro");
             }
 
-            return nome;
+            return nomeTotal;
         }
 
         public void editar(Peca peca, string codPec)

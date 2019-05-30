@@ -33,8 +33,10 @@ namespace Tis3Oficina.src.Telas.Orcamentos
 
         public void carregarDados()
         {
-            DAOOrcamento nome = new DAOOrcamento();
-            lblNome.Content = nome.getNomeCliente(codOrc);
+            DAOOrcamento Orc = new DAOOrcamento();
+            String[] nomeTot = Orc.getNomeeTotal(codOrc);
+            lblNome.Content = nomeTot[0];
+            lblTotal.Content = nomeTot[1];
             DAOItemOrcamento daoItemOrc = new DAOItemOrcamento();
             List<ItemOrcamento> listaOrc = daoItemOrc.getTodosByID(codOrc);
             dataGrid1.ItemsSource = listaOrc;
@@ -66,6 +68,7 @@ namespace Tis3Oficina.src.Telas.Orcamentos
             DAOOrcamento nome = new DAOOrcamento();
             DAOItemOrcamento daoItemOrc = new DAOItemOrcamento();
             List<ItemOrcamento> listaOrc = daoItemOrc.getTodosByID(codOrc);
+            String[] NomeTot = nome.getNomeeTotal(codOrc);
 
             // Create a FlowDocument  
             FlowDocument doc = new FlowDocument();
@@ -79,7 +82,7 @@ namespace Tis3Oficina.src.Telas.Orcamentos
             // Create and add a new Bold, Italic and Underline  
             Bold bld = new Bold();
             Bold bld2 = new Bold();
-            bld.Inlines.Add(new Run("Nome do cliente: "+ nome.getNomeCliente(codOrc)));
+            bld.Inlines.Add(new Run("Nome do cliente: "+ NomeTot[0]));
             
        
             // Add Bold, Italic, Underline to Paragraph  
@@ -91,7 +94,7 @@ namespace Tis3Oficina.src.Telas.Orcamentos
             bld2.Inlines.Add(new Run("Total: "));
 
             paragTotal.Inlines.Add(bld2);
-            paragTotal.Inlines.Add(new Run("100"));
+            paragTotal.Inlines.Add(new Run(NomeTot[1]));
             // Add Paragraph to Section  
             sec.Blocks.Add(paragNome);
             sec.Blocks.Add(paragItens);

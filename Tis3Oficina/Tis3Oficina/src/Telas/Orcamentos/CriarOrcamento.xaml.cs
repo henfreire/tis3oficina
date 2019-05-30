@@ -95,7 +95,8 @@ namespace Tis3Oficina.src.Telas.Orcamentos
             item.IdServico = servico.Id;
             item.Nome = servico.NomeServico;
             item.Quantidade = 1;
-            if(valServ != 0)
+            
+            if (valServ != 0)
             {
                 item.Valor = valServ;
             }
@@ -103,6 +104,8 @@ namespace Tis3Oficina.src.Telas.Orcamentos
             {
                 item.Valor = servico.Valor;
             }
+            totalOrcamento += item.Valor;
+            labelTotal.Content = totalOrcamento;
 
             ItensOrcamento.Add(item);
 
@@ -141,6 +144,10 @@ namespace Tis3Oficina.src.Telas.Orcamentos
 
         private void Closes(object sender, EventArgs e)
         {
+            Peca peca = (Peca)comboItemPecas.SelectedItem;
+            DAOPeca total = new DAOPeca();
+            int qtdeTotal = total.getQtdeTotal(peca.CodPec);
+            qtdePeca.Maximum = qtdeTotal;
             if (handle) Handle();
             handle = true;
         }
@@ -176,6 +183,7 @@ namespace Tis3Oficina.src.Telas.Orcamentos
         {
             Orc.ItemOrc = ItensOrcamento;
             Orc.QtdeItens = ItensOrcamento.Count;
+            Orc.TotOrc = totalOrcamento;
             DAOOrcamento daoOrc = new DAOOrcamento();
             DAOItemOrcamento daoItemOrc = new DAOItemOrcamento();
             string idOrc = daoOrc.inserir(Orc);
